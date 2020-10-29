@@ -12,6 +12,7 @@ Também temos o arquivo (logica_de_programacao.py) na extensão Python.
 ```
 
 #A partir deste ponto os códigos podem ser copiados e executados em alguma plataforma de Python para leitura e execução.
+#Nota: Os scripts foram executados pelo Jupyter Notebook.
 
 #Script 1
 nome = 'Sempreboni'

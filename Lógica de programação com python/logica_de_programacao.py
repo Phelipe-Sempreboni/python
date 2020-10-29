@@ -2,6 +2,8 @@
 
 #Python para Data Science - Lógica de Programação.
 
+#Nota: Os scripts foram executados pelo Jupyter Notebook.
+
 #Script 1
 nome = 'Sempreboni'
 idade = 26
