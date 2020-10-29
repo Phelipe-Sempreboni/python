@@ -1,6 +1,10 @@
 # Python para Ciência de Dados - Lógica de Programação.
 
-### Abaixo temos um pouco de um dos cursos realizados de Python para Data Science, onde, o intuito é apresentar a lógica de programação para os usuários, porém, se já houver lógica de programação do usuário derivados de outros sistemas como Java, SQL Server, por exemplo, fica mais fácil a compreensão.
+---
+
+#### Abaixo temos um pouco de um dos cursos realizados de Python voltado para ciência dedados, onde, o intuito é apresentar a lógica de programação para os usuários, porém, se o usuário já tiver conhecimento de lógica de programação, fica mais fácil a compreensão.
+
+---
 
 Abaixo temos os scripts que podem ser executados no vscode, Jupyter, e outras plataformas.
 Também temos o arquivo (logica_de_programacao.py) na extensão Python.
