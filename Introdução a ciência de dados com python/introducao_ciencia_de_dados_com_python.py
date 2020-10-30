@@ -233,4 +233,4 @@ print(notas_do_jumanji.nota.std())
 #Script 56
 print(np.std(filme1), np.std(filme2))
 
-print(f'Projeto Finalizado')
+print(f'Projeto finalizado com sucesso')
