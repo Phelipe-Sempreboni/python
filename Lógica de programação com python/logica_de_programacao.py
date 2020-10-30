@@ -204,4 +204,4 @@ for nota in notas:
  plt.title(nota[0])
  plt.show()
 
- print(f'Curso finalizado')
+ print(f'Projeto finalizado com sucesso')
