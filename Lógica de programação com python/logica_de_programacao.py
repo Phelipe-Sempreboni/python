@@ -3,6 +3,7 @@
 #Python para Data Science - Lógica de Programação.
 
 #Nota: Os scripts foram executados pelo Jupyter Notebook.
+#Nota: O arquivo no GitHub (aula_logica_de_programacao.ipynb) pode ser baixado e executado diretamente e completo no Jupyter Notebook.
 
 #Script 1
 nome = 'Sempreboni'
