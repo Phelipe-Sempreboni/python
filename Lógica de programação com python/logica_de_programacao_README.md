@@ -1,4 +1,4 @@
-# Python para Ciência de Dados - Lógica de Programação.
+# Python para Ciência de Dados - Lógica de Programação
 
 ---
 
