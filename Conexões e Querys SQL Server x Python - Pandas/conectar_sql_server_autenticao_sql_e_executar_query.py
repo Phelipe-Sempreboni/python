@@ -6,10 +6,11 @@
 #Nota3: Por ser login no SQL Server com (Autenticação SQL Server), a linha de código 16 ("Trusted_Connection=no;") necessita estar como "no", indicando o login por esse tipo de autenticação"
 #Nota4: Neste caso abaixo, houve execução da query com utilização da biblioteca Pandas, que é mais utilizada para área de dados, logo, o "df" na linha 22, sigfica Data Frame.
 
-def conectar_ao_sql_server_e_executar_query():
-    import pandas as pd
-    import pyodbc
-    cnxn = pyodbc.connect(
+import pandas as pd
+import pyodbc
+
+def conectar():
+    conexao = pyodbc.connect(
         "Driver={SQL Server Native Client 11.0};"
         "Server=SERVIDOR;"
         "Database=DATABASENAME;"
@@ -17,9 +18,9 @@ def conectar_ao_sql_server_e_executar_query():
         "pwd=SENHA;"
         "Trusted_Connection=no;"
     )
-    cursor = cnxn.cursor()
+    cursor = conexao.cursor()
     query = "SELECT * FROM ..."
-    df = pd.read_sql(query, cnxn)
+    df = pd.read_sql(query, conexao)
     print(df.head())
     
-conectar_ao_sql_server_e_executar_query()
+conectar()
