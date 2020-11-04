@@ -8,7 +8,7 @@
 
 Criei esse repositório para compartilhar informações de Python e melhorar os meus conhecimentos de forma contínua, pois, meu foco é em Ciência de Dados, onde a ferramenta Python é muito utilizada para análise exploratória de dados. Compartilharei minha caminhada no aprendizado dessa ferramenta, tanto no trabalho, estudos, pesquisas na Web, fórum, etc.
 
-Espero que esse repositório contribua para as pessoas que tiverem interesse ou curiosidade do assunto.
+Espero que esse repositório contribua para as pessoas que tiverem interesse e/ou curiosidade do assunto.
 
 ---
 
