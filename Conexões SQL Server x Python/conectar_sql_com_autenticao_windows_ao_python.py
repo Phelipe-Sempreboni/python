@@ -49,3 +49,57 @@ def conectar():
 #----------#----------#----------#----------#----------#----------#----------#----------#----------#----------#----------#
 
 #Maneira 3:
+#Menção a maneira 1, mas, com teste de execução por uma query.
+
+import pyodbc
+
+def conectar():
+    conexao = pyodbc.connect(
+        "Driver={SQL Server Native Client 11.0};"
+        "Server=SERVER;"
+        "Database=DATABASENAME;"
+        "uid=USUARIO;"
+        "Trusted_Connection=yes;"
+    )
+    cursor = conexao.cursor()
+    cursor.execute("SELECT * FROM ...")
+    query_resultado = cursor.fetchall()
+    print(query_resultado)
+
+conectar()
+
+#----------#----------#----------#----------#----------#----------#----------#----------#----------#----------#----------#
+#----------#----------#----------#----------#----------#----------#----------#----------#----------#----------#----------#
+#----------#----------#----------#----------#----------#----------#----------#----------#----------#----------#----------#
+
+
+#Maneira 4:
+#Menção a maneira 2, mas, com teste de execução por uma query.
+
+
+import pyodbc
+
+def conectar():
+    try:
+        conexao = pyodbc.connect(
+            "Driver={SQL Server Native Client 11.0};"
+            "Server=SERVER;"
+            "Database=DATABASENAME;"
+            "uid=USUARIO;"
+            "Trusted_Connection=yes;"
+        )
+        return conexao.cursor()
+    except:
+        return 1
+
+def query():
+    try:
+        cursor = conectar()
+        cursor.execute("SELECT * FROM [SUCOS_VENDAS].[dbo].[TABELA DE VENDEDORES]")
+        query_resultado = cursor.fetchall()
+    except:
+        print('Não foi possivel retornar os dados da consulta.')
+    finally:
+        print(query_resultado)
+        print('Consulta realizada com sucesso.')
+query()
