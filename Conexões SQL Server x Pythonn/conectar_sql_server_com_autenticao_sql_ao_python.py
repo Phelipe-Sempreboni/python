@@ -1,4 +1,3 @@
-#testes
 #Exemplo de conexão do Python com o SQL Server com autenticação do SQL Server, com necessidade de senha.
 #Neste caso, pode ser utilizado quando a autentição for pelo SQL Server, pois, nota-se que possui a linha 15 ("pwd=SENHA").
 
