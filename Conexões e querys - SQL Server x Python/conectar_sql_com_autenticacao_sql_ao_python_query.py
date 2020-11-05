@@ -1,4 +1,4 @@
-#Exemplo de conexão do Python com o SQL Server com autenticação do SQL Server, com necessidade de senha e execução de query com biblioteca pandas também.
+#Exemplo de conexão do Python com o SQL Server com autenticação do SQL Server, com necessidade de senha e execução de query.
 #Neste caso, pode ser utilizado quando a autentição for pelo SQL Server, pois, nota-se que possui a linha 15 ("pwd=SENHA").
 
 #Nota: Pode ser utilizado no Jupyter Notebook.
