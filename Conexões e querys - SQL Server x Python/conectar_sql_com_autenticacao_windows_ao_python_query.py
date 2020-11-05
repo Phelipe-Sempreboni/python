@@ -30,7 +30,7 @@ def conectar():
 def query():
     try:
         cursor = conectar()
-        cursor.execute("SELECT * FROM [SUCOS_VENDAS].[dbo].[TABELA DE VENDEDORES]")
+        cursor.execute("SELECT * FROM ...")
         query_resultado = cursor.fetchall()
         return query_resultado
     except:
@@ -42,11 +42,14 @@ def query():
 def encerrar_cursor_conexao():
     try:    
         cursor = conectar()
-        conexao = conectar()
         cursor.close()
+        conexao = conectar()
         conexao.close()
+        return()
     except:
         print("Não foi possível encerrar o cursor e a conexão.")
+    finally:
+        print("Cursor e conexão encerradas")
 
 def execucoes():
     try:

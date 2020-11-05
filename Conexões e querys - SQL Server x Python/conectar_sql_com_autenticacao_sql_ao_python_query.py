@@ -43,11 +43,14 @@ def query():
 def encerrar_cursor_conexao():
     try:    
         cursor = conectar()
-        conexao = conectar()
         cursor.close()
+        conexao = conectar()
         conexao.close()
+        return()
     except:
         print("Não foi possível encerrar o cursor e a conexão.")
+    finally:
+        print("Cursor e conexão encerradas")
 
 def execucoes():
     try:
