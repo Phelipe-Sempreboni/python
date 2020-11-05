@@ -5,6 +5,10 @@
 #Nota2: Por ser login no SQL Server com (Autenticação SQL Server), a linha de código 20 da maneira 1 e linha de código 41 da maneira 2 ("Trusted_Connection=no;") necessita estar como "no", indicando o login por esse tipo de autenticação SQL que requer senha.
 #Nota3: Normalmente nas maneiras 1 e 2 , não temos como verificar realmente a mensagem de conexão, só vai ser possível com o teste de execução de uma query qualquer, pra isso criei as maneiras 3 e 4, para uma verificação realmente se temos conexão.
 
+#----------#----------#----------#----------#----------#----------#----------#----------#----------#----------#----------#
+#----------#----------#----------#----------#----------#----------#----------#----------#----------#----------#----------#
+#----------#----------#----------#----------#----------#----------#----------#----------#----------#----------#----------#
+
 #Maneira 1 sem teste com query:
 #Nota: Nesta maneira, não haverá nenhuma mensagem 
 

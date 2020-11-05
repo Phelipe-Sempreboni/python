@@ -5,6 +5,10 @@
 #Nota2: Por ser login no SQL Server com (Autenticação SQL Server), a linha de código 18 ("Trusted_Connection=no;") necessita estar como "no", indicando o login por esse tipo de autenticação SQL Server.
 #Nota3: Esse código, realiza a conexão, elabora a query e encerra o cursor e a conexão com SQL Server. 
 
+#----------#----------#----------#----------#----------#----------#----------#----------#----------#----------#----------#
+#----------#----------#----------#----------#----------#----------#----------#----------#----------#----------#----------#
+#----------#----------#----------#----------#----------#----------#----------#----------#----------#----------#----------#
+
 #Maneira 1:
 #Nota: A maneira 1 tem mais comandos e considero mais completo que a maneira 2, que considero mais simples.
 
