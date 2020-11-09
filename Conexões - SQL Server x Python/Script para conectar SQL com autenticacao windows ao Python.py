@@ -17,11 +17,11 @@ import pyodbc
 def conectar():
 
     conexao = pyodbc.connect(
-        "Driver={SQL Server Native Client 11.0};"
-        "Server=SERVIDOR;"
-        "Database=DATABASENAME;"
-        "uid=USUARIO;"
-        "Trusted_Connection=yes;"
+        Driver='{SQL Server Native Client 11.0}',
+        Server='SERVIDOR',
+        Database='DATABASENAME',
+        uid='USUARIO',
+        Trusted_Connection='yes'
     )
 conectar()
 
@@ -37,11 +37,11 @@ import pyodbc
 def conectar():
     try:
         conexao = pyodbc.connect(
-            "Driver={SQL Server Native Client 11.0};"
-            "Server=SERVER;"
-            "Database=DATABASENAME;"
-            "uid=USUARIO;"
-            "Trusted_Connection=yes;"
+            Driver='{SQL Server Native Client 11.0}',
+            Server='SERVIDOR',
+            Database='DATABASENAME',
+            uid='USUARIO',
+            Trusted_Connection='yes'
         )
         return conexao.cursor()
     except:
@@ -58,11 +58,11 @@ import pyodbc
 
 def conectar():
     conexao = pyodbc.connect(
-        "Driver={SQL Server Native Client 11.0};"
-        "Server=SERVER;"
-        "Database=DATABASENAME;"
-        "uid=USUARIO;"
-        "Trusted_Connection=yes;"
+        Driver='{SQL Server Native Client 11.0}',
+        Server='SERVIDOR',
+        Database='DATABASENAME',
+        uid='USUARIO',
+        Trusted_Connection='yes'
     )
     cursor = conexao.cursor()
     cursor.execute("SELECT * FROM ...")
@@ -85,11 +85,11 @@ import pyodbc
 def conectar():
     try:
         conexao = pyodbc.connect(
-            "Driver={SQL Server Native Client 11.0};"
-            "Server=SERVER;"
-            "Database=DATABASENAME;"
-            "uid=USUARIO;"
-            "Trusted_Connection=yes;"
+            Driver='{SQL Server Native Client 11.0}',
+            Server='SERVIDOR',
+            Database='DATABASENAME',
+            uid='USUARIO',
+            Trusted_Connection='yes'
         )
         return conexao.cursor()
     except:
@@ -98,7 +98,7 @@ def conectar():
 def query():
     try:
         cursor = conectar()
-        cursor.execute("SELECT * FROM [SUCOS_VENDAS].[dbo].[TABELA DE VENDEDORES]")
+        cursor.execute("SELECT * FROM ...")
         query_resultado = cursor.fetchall()
     except:
         print('Não foi possivel retornar os dados da consulta.')
