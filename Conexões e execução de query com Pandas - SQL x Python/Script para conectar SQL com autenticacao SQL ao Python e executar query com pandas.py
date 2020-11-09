@@ -11,12 +11,12 @@ import pyodbc
 
 def conectar():
     conexao = pyodbc.connect(
-        "Driver={SQL Server Native Client 11.0};"
-        "Server=SERVIDOR;"
-        "Database=DATABASENAME;"
-        "uid=USUARIO;"
-        "pwd=SENHA;"
-        "Trusted_Connection=no;"
+        Driver='{SQL Server Native Client 11.0}',
+        Server='SERVIDOR',
+        Database='DATABASENAME',
+        uid='USUARIO',
+        pwd='SENHA',
+        Trusted_Connection='no',
     )
     cursor = conexao.cursor()
     query = "SELECT * FROM ..."
