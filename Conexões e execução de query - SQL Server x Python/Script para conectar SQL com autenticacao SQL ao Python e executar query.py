@@ -33,7 +33,7 @@ def query():
         cursor = conectar()
         cursor.execute("SELECT * FROM ...")
         query_resultado = cursor.fetchall()
-        return query_resultado
+        return()
     except:
         print('Não foi possivel retornar os dados da consulta.')
     finally:
