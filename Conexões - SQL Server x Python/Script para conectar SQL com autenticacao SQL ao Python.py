@@ -16,12 +16,12 @@ import pyodbc
 
 def conectar():
     conexao = pyodbc.connect(
-        "Driver={SQL Server Native Client 11.0};"
-        "Server=SERVER;"
-        "Database=DATABASENAME;"
-        "uid=USUARIO;"
-        "pwd=SENHA;"
-        "Trusted_Connection=no;"
+        Driver='{SQL Server Native Client 11.0}',
+        Server='SERVIDOR',
+        Database='DATABASENAME',
+        uid='USUARIO',
+        pwd='SENHA',
+        Trusted_Connection='no'
     )
 conectar()
 
@@ -37,12 +37,12 @@ import pyodbc
 def conectar():
     try:
         conexao = pyodbc.connect(
-            "Driver={SQL Server Native Client 11.0};"
-            "Server=SERVER;"
-            "Database=DATABASENAME;"
-            "uid=USUARIO;"
-            "pwd=SENHA;"
-            "Trusted_Connection=no;"
+            Driver='{SQL Server Native Client 11.0}',
+            Server='SERVIDOR',
+            Database='DATABASENAME',
+            uid='USUARIO',
+            pwd='SENHA',
+            Trusted_Connection='no'
         )
         return conexao.cursor()
     except:
@@ -59,12 +59,12 @@ import pyodbc
 
 def conectar():
     conexao = pyodbc.connect(
-        "Driver={SQL Server Native Client 11.0};"
-        "Server=SERVER;"
-        "Database=DATABASENAME;"
-        "uid=USUARIO;"
-        "pwd=SENHA;"
-        "Trusted_Connection=no;"
+        Driver='{SQL Server Native Client 11.0}',
+        Server='SERVIDOR',
+        Database='DATABASENAME',
+        uid='USUARIO',
+        pwd='SENHA',
+        Trusted_Connection='no'
     )
     cursor = conexao.cursor()
     cursor.execute("SELECT * FROM ...")
@@ -85,12 +85,12 @@ import pyodbc
 def conectar():
     try:
         conexao = pyodbc.connect(
-            "Driver={SQL Server Native Client 11.0};"
-            "Server=SERVER;"
-            "Database=DATABASENAME;"
-            "uid=USUARIO;"
-            "pwd=SENHA;"
-            "Trusted_Connection=no;"
+            Driver='{SQL Server Native Client 11.0}',
+            Server='SERVIDOR',
+            Database='DATABASENAME',
+            uid='USUARIO',
+            pwd='SENHA',
+            Trusted_Connection='no'
         )
         return conexao.cursor()
     except:
