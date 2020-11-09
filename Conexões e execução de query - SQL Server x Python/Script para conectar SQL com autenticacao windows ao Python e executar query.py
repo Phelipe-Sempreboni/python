@@ -17,11 +17,11 @@ import pyodbc
 def conectar():
     try:
         conexao = pyodbc.connect(
-            "Driver={SQL Server Native Client 11.0};"
-            "Server=SERVIDOR;"
-            "Database=DATABASENAME;"
-            "uid=USUARIO;"
-            "Trusted_Connection=yes;"
+            Driver='{SQL Server Native Client 11.0}',
+            Server='SERVIDOR',
+            Database='DATABASENAME',
+            uid='USUARIO',
+            Trusted_Connection='yes'
         )
         return conexao.cursor()
     except:
@@ -32,7 +32,7 @@ def query():
         cursor = conectar()
         cursor.execute("SELECT * FROM ...")
         query_resultado = cursor.fetchall()
-        return query_resultado
+        return ()
     except:
         print('Não foi possivel retornar os dados da consulta.')
     finally:
@@ -64,20 +64,28 @@ execucoes()
 #----------#----------#----------#----------#----------#----------#----------#----------#----------#----------#----------#
 #----------#----------#----------#----------#----------#----------#----------#----------#----------#----------#----------#
 
+#Maneira 2:
+
 import pyodbc
 
 def conectar():
     conexao = pyodbc.connect(
-        "Driver={SQL Server Native Client 11.0};"
-        "Server=SERVIDOR;"
-        "Database=DATABASENAME;"
-        "uid=USUARIO;"
-        "Trusted_Connection=yes;"
+        Driver='{SQL Server Native Client 11.0}',
+        Server='SERVIDOR',
+        Database='DATABASENAME',
+        uid='USUARIO',
+        Trusted_Connection='yes'
     )
     cursor = conexao.cursor()
     cursor.execute("SELECT * FROM ...")
     query_resultado = cursor.fetchall()
     print(query_resultado)
     print("Consulta realizada com sucesso")
+    try:
+        cursor.close()
+        conexao.close()
+        return()
+    finally:
+        print('Conexao e cursor encerrados com sucesso')
 
 conectar()
