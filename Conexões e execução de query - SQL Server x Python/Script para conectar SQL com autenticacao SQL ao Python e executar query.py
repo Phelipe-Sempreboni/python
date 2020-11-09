@@ -83,5 +83,11 @@ def conectar():
     query_resultado = cursor.fetchall()
     print(query_resultado)
     print("Consulta realizada com sucesso")
+    try:
+        cursor.close()
+        conexao.close()
+        return()
+    finally:
+        print('Conexao e cursor encerrados com sucesso')
 
 conectar()
