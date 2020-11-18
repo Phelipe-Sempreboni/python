@@ -25,6 +25,22 @@ print (type(repositorio))
 print (type(num_respositorio))
 print (type(num_respositorio_2))
 
+# Descobrindo o tipo de dado da variável com mensagem:
+# O comando print('\n') é para (pula/quebrar a linha).
+print('\n')
+print ('Valor: ',(github))
+print ('Tipo: ',type(github))
+print('\n')
+print ('Valor: ',repositorio)
+print ('Tipo: ',type(repositorio))
+print('\n')
+print ('Valor: ',num_respositorio)
+print ('Tipo: ',type(num_respositorio))
+print('\n')
+print ('Valor: ',num_respositorio_2)
+print ('Tipo: ',type(num_respositorio_2))
+print('\n')
+
 # Terminadores de comando do Python, neste caso, demonstrando com o (ponto e vírgula (;)).
 # Os principais de Python são o o (ENTER) quando você quebra uma linha e o (ponto e vírgula (;)), principalmente se for escrever o código conforme o exemplo abaixo, ou seja, na mesma linha.
 github_2 = 'Repositório da nossa empresa'; repositorio_3 = 'SOCIEDADE BRASIL BR'; num_respositorio_3 = 8; num_respositorio_4 = 2.5898
