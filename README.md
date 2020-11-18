@@ -2,11 +2,11 @@
 
 ----
 
-### Repositório para informações e apoio de Python.
+### Repositório para informações e apoio de Python, com informações gerais e para dados.
 
 ---
 
-Criei esse repositório para compartilhar informações de Python e melhorar os meus conhecimentos de forma contínua, pois, meu foco é em Ciência de Dados, onde a ferramenta Python é muito utilizada para análise exploratória de dados. Compartilharei minha caminhada no aprendizado dessa ferramenta, tanto no trabalho, estudos, pesquisas na Web, fórum, etc.
+Criei esse repositório para compartilhar informações de Python e melhorar os meus conhecimentos de forma contínua. Meu foco é em Ciência de Dados, onde a ferramenta Python é muito utilizada para análise exploratória de dados, porém, haverão informações gerais, pois, todo aprendizado é bem vindo! Compartilharei minha caminhada no aprendizado dessa ferramenta, tanto no trabalho, estudos, pesquisas na Web, fórum, etc.
 
 Espero que esse repositório contribua para as pessoas que tiverem interesse e/ou curiosidade do assunto.
 
