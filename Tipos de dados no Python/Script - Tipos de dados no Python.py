@@ -2,6 +2,7 @@
 # O comando print('\n') é para pular/quebrar linhas.
 
 #Tipo: Sting;
+print('\n')
 nome = 'Luiz Phelipe'
 print('Valor: ', nome)
 print('Tipo: ',type(nome))

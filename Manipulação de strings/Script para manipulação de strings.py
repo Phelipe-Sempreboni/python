@@ -1,4 +1,4 @@
-#exemplos abaixo com alguns comandos úteis para manipulação de strings.
+#Exemplos abaixo com alguns comandos úteis para manipulação de strings.
 
 #--------------#--------------#--------------#--------------#--------------#--------------#--------------#--------------#--------------#--------------#--------------#--------------#--------------#--------------
 
@@ -90,7 +90,7 @@ retirar_espacos_inicio_final_string()
 #Exemplo abaixo do comando split, onde ele 'corta' ou 'interrompe' uma string dependendo do parametro que você utilziar, por exemplo, espaços, barras, etc.
 
 def interromper_string():
-    print('Executando a funçãointerromper_string()')
+    print('Executando a função interromper_string()')
     empresa = 'Sociedade Brasileira de Programação'
 
     x = empresa.split(' ') #Aqui pode ser vírgula, ponto e vírgula, barra, etc.
@@ -100,8 +100,93 @@ def interromper_string():
     print(x[3])
 
     print(empresa.split(" "))
+    print('\n')
 
 interromper_string()
 
 #--------------#--------------#--------------#--------------#--------------#--------------#--------------#--------------#--------------#--------------#--------------#--------------#--------------#--------------
 
+#Exemplo da utilização do comando in, que server para verificar se certa clausula contém em determinado resultado. Se houver devolverá o comando True, caso contrário devolverá False.
+#No exemplo abaixo, faremos ocorrer o True e o False.
+#Cuidado na utilização da escrita da string no comando, pois, caso não esteja igual a strin da variável, ocorrerá execução incorreta do comando. O Python é sensitive case, ou seja, diferencia maiuscula de minuscula.
+
+def comando_in():
+    print('Executando a função comando_in()')
+    empresa = 'Sociedade Brasileira de Programação'
+
+    resultado = 'Brasileira' in empresa #Existe na variável empresa a string 'Brasileira'.
+    print(resultado) 
+
+    resultado_2 = 'Empresa' in empresa #Não existe na variável empresa a string 'Empresa'.
+    print(resultado_2)
+    print('\n')
+
+comando_in()
+
+#--------------#--------------#--------------#--------------#--------------#--------------#--------------#--------------#--------------#--------------#--------------#--------------#--------------#--------------
+
+#Exemplo da utilização do comando not in, que server para verificar se certa clausula não contém em determinado resultado. Se não houver devolverá o comando True, caso contrário devolverá False.
+#No exemplo abaixo, faremos ocorrer o True e o False.
+#Cuidado na utilização da escrita da string no comando, pois, caso não esteja igual a strin da variável, ocorrerá execução incorreta do comando. O Python é sensitive case, ou seja, diferencia maiuscula de minuscula.
+
+def comando_not_in():
+    print('Executando a função comando_not_in()')
+    empresa = 'Sociedade Brasileira de Programação'
+
+    resultado = 'Brasileira' not in empresa #Existe na variável empresa a string 'Brasileira'. False.
+    print(resultado) 
+
+    resultado_2 = 'Empresa' not in empresa #Não existe na variável empresa a string 'Empresa'. True.
+    print(resultado_2)
+    print('\n')
+
+comando_not_in()
+
+#--------------#--------------#--------------#--------------#--------------#--------------#--------------#--------------#--------------#--------------#--------------#--------------#--------------#--------------
+
+#Exemplo abaixo para concatenação de strings.
+
+def concatenacao_string():
+    print('Executando a função concatenacao_string()')
+    empresa = 'Sociedade Brasileira de Programação'
+    logradouro = 'Rua Abreu Mesquia, 5053, Alto da Lapa, São Paulo - SP'
+
+    #comando normal.
+    print(empresa)
+    print(logradouro)
+
+    #Comando com concatenção usando vírgula.
+    #Com o comando utilizando vírgula não é necessário fazer conversões como inteiro para string.
+    print('A empresa',empresa, 'está lolizada no endereço', logradouro,'.')
+
+    #Comando com concatenação usando sinal de (+).
+    #Com o comando utilizando sinal de (+) é necessário fazer conversões como inteiro para string.
+    print('A empresa '+empresa+ ' está lolizada no endereço '+ logradouro+'.')
+
+    print('\n')
+
+concatenacao_string()
+
+#--------------#--------------#--------------#--------------#--------------#--------------#--------------#--------------#--------------#--------------#--------------#--------------#--------------#--------------
+
+#Exemplo abaixo de concacatenação com comando format.
+#O format substitui as variáveis do (concatenar) pelas variáveis declaradas.
+
+def concatenacao_format_string():
+    print('Executando a função concatenacao_format_string()')
+    estado     = 'São Paulo'
+    região     = 'Carapicuíba'
+    bairro     = 'Vila Dirce'
+    rua        = 'Rua Castro Neves'
+    número     = 17
+    referência = 'Av. Major Ferreira Neto'
+
+    concatenar =  '{}, {}, {}, {}, {}, {}'
+
+    print(concatenar.format(estado, região, bairro, rua, número, referência))
+
+    print('\n')
+
+concatenacao_format_string()
+
+#--------------#--------------#--------------#--------------#--------------#--------------#--------------#--------------#--------------#--------------#--------------#--------------#--------------#--------------
