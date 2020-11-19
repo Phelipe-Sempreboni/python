@@ -30,7 +30,7 @@ def conectar():
 def query():
     try:
         cursor = conectar()
-        cursor.execute('''
+        cursor.execute("""
             CREATE TABLE [LPUS_ENERGIA].[clientes].[tbl_cadastro_clientes]
             (
                 N_IDCLIENTE INT IDENTITY (1,1) NOT NULL,
@@ -39,7 +39,7 @@ def query():
                 T_EMAILCLIENTE VARCHAR (40)
                 CONSTRAINT PK_N_IDCLIENTE PRIMARY KEY CLUSTERED (N_IDCLIENTE)
             )
-            ''')
+            """)
         cursor.commit()
     except:
         print('Não foi possivel criar a tabela.')

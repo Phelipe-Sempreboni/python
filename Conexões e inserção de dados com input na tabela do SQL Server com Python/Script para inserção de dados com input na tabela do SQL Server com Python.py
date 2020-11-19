@@ -1,9 +1,11 @@
-# Exemplo de conexão do Python com o SQL Server com autenticação do SQL Server, com necessidade de senha e de uma query para inserção de dados na tabela.
+# Exemplo de conexão do Python com o SQL Server com autenticação do SQL Server, com necessidade de senha.
+# Notar que o comando abaixo faz a conexão e a inserção de dados, porém com declaração e input, ou seja, você poderá inserir direto pelo teclado.
 # Neste caso, pode ser utilizado quando a autentição for pelo SQL Server, pois, nota-se que possui o campo ("pwd=SENHA").
 
 #Nota: Caso não queira autenticação por SQL Server e sim autenticação por Windows, altere o comando da função (conectar()) chamado (Trusted_Connection) de 'no' para 'yes', e, retire o campo (pwd), pois, conexões com autenticação não necessitam de senhas, logo, o campo pode ser apagado.
 
 #Nota2: Para verificar o (DRIVER) do SQL Server, conforme temos em todos comandos, você pode seguir o caminho: Tecla do Windows ou no pesquisa, digitar (ODBC), irá abrir uma janela com algumas abas, procure por (DRIVERS) e procure os referente a (SQL Server). Lá estarão as informações de (DRIVERS).
+
 
 def conectar():
 
@@ -22,19 +24,21 @@ def conectar():
     except:
         print('Não foi possível conectar ao banco de dados.')
 
+
 # Nota: Neste caso, você pode trocar o comando de (INSERT INTO) e os parametros para o que preferir. Irei deixar o exemplo abaixo onde:
 # [LPUS_ENERGIA]          = database
 # [clientes]              = schema (agrupaemento) da tabela
 # [tbl_cadastro_clientes] = tabela criada para cadastro de clientes.
+# Váriaveis (nome, telefone e email) declaradas para utilização com input, ou seja, você irá digitar direto do teclado.
 def query():
+
+    nome = input('Digite o nome: ')
+    telefone = input ('Digite o telefone: ')
+    email = input ('Digite o email: ')
+
     try:
         cursor = conectar()
-        cursor.execute("""
-            INSERT INTO [LPUS_ENERGIA].[clientes].[tbl_cadastro_clientes] VALUES ('Ronaldo Henrique', '1194458264', 'ronaldoe@outlook.com')
-            INSERT INTO [LPUS_ENERGIA].[clientes].[tbl_cadastro_clientes] VALUES ('Adriano Barbosa', '1194454785', 'adriano@outlook.com')
-            INSERT INTO [LPUS_ENERGIA].[clientes].[tbl_cadastro_clientes] VALUES ('Eduardo Leão', '1188596347', 'eduardo@outlook.com')
-            INSERT INTO [LPUS_ENERGIA].[clientes].[tbl_cadastro_clientes] VALUES ('Silvio de Lima', '11974126895', 'silvio@outlook.com')
-            """)
+        cursor.execute("INSERT INTO [LPUS_ENERGIA].[clientes].[tbl_cadastro_clientes] VALUES ('"+nome+"', '"+telefone+"', '"+email+"')") #Altere conforme sua necessidade.
         cursor.commit()
     except:
         print('Não foi possivel inserir os dados na tabela.')
