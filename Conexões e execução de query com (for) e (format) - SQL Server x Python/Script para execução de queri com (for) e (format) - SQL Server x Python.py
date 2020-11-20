@@ -1,15 +1,13 @@
-# Exemplo de conexão do Python com o SQL Server com autenticação do SQL Server, com necessidade de senha e de uma query para deletar dados de uma tabela.
+# Exemplo de conexão do Python com o SQL Server com autenticação do SQL Server, com necessidade de senha.
+# Notar que o comando abaixo faz a conexão e consulta todos os dados da tabela conforme abaixo.
 # Neste caso, pode ser utilizado quando a autentição for pelo SQL Server, pois, nota-se que possui o campo ("pwd=SENHA").
 
 #Nota: Caso não queira autenticação por SQL Server e sim autenticação por Windows, altere o comando da função (conectar()) chamado (Trusted_Connection) de 'no' para 'yes', e, retire o campo (pwd), pois, conexões com autenticação não necessitam de senhas, logo, o campo pode ser apagado.
 
 #Nota2: Para verificar o (DRIVER) do SQL Server, conforme temos em todos comandos, você pode seguir o caminho: Tecla do Windows ou no pesquisa, digitar (ODBC), irá abrir uma janela com algumas abas, procure por (DRIVERS) e procure os referente a (SQL Server). Lá estarão as informações de (DRIVERS).
 
-#Nota3: Sobre o (DELETE):
-#Cuidado com o comando (DELETE). Use de preferencia com o comando (WHERE) para filtrar o que será excluído e somente delete tudo se tiver certeza da ação.
-
-#Nota4: Caso queira testar este comando Python com o a consulta (DELETE) que foi deixada como exemplo, irei deixar abaixo do comando Python, um script para ser executado no SQL Server que irá gerar essa infos.
-#Nota5: Copie e cole a parte do SQL Server Management Studio no SQL ou no Visual Studio Code e execute. Leia os passos antes para entender como e o quê executar.
+#Nota3: Caso queira testar este comando Python com o a consulta (UPDATE) que foi deixada como exemplo, irei deixar abaixo do comando Python, um script para ser executado no SQL Server que irá gerar essa infos.
+#Nota4: Copie e cole a parte do SQL Server Management Studio no SQL ou no Visual Studio Code e execute. Leia os passos antes para entender como e o quê executar.
 
 def conectar():
 
@@ -29,21 +27,25 @@ def conectar():
         print('Não foi possível conectar ao banco de dados.')
 
 
-# Nota: Neste caso, você pode trocar o comando de (DELETE) e os parametros para o que preferir. Irei deixar o exemplo abaixo onde:
+# Nota: Neste caso, você pode trocar o comando de (SELECT) e os parametros para o que preferir. Irei deixar o exemplo abaixo onde:
 # [LPUS_ENERGIA]          = database
 # [clientes]              = schema (agrupaemento) da tabela
 # [tbl_cadastro_clientes] = tabela criada para cadastro de clientes.
 def query():
 
-    try:
+    try:  
         cursor = conectar()
-        cursor.execute("DELETE [LPUS_ENERGIA].[clientes].[tbl_cadastro_clientes]")
-        cursor.commit()
+        cursor.execute("SELECT * FROM [LPUS_ENERGIA].[clientes].[tbl_cadastro_clientes]") #Insira sua consulta.
+        resultado = cursor.fetchall()
+        for r in resultado: #Comando for (laço de repetição). Neste caso, tudo será executado de uma só vez.
+            print("ID: {0: <3} Nome: {1: <30} Telefone: {2: <15} E-mail {3: <30}".format(r[0], r[1], r[2], r[3])) #Este é o resultado da query, porém, formatada para aparecer em um formato amigável.
+            #"ID: {0: <3} -> Número da coluna, o espaço para diferenciar os caracteres e o <3 indicando a quantidade de caracteres que o ID pode chegar.
+            #Válido para todos os outros campos formatados.
     except:
-        print('Não foi possivel deletar os dados da tabela.')
-    else:
-        print('Dados deletados com sucesso da tabela.')
-        
+        print('Não foi possível retornar os dados da consulta')
+    finally:
+        print('Consulta executada com sucesso.')
+
 query()
 
 #------------#------------#------------#------------#------------#------------#------------#------------#------------#------------#------------#------------#------------#------------#------------#------------
