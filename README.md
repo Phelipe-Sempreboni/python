@@ -1,4 +1,4 @@
-# Python para ciência de dados
+# Python
 
 ----
 
