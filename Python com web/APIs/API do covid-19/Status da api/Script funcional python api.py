@@ -1,7 +1,7 @@
 '''
-Esse scritp acessa um site de API com informações do COVID-19 e nos retorna resultados de todos os Estados do Brasil.
+Esse scritp acessa um site de API com informações do COVID-19 e nos retorna o status de funcionamento atual da API.
 
-Esse script é útil para criação de reports e análise exploratória.
+Esse script é útil para utilização juntamente com outras informações da API, como a API de consulta de casos nos Estados do Brasil, onde analisamos o status da API.
 
 É realizado um tratamento do formato JSON e disponibilização do resultado tabulado.
 
