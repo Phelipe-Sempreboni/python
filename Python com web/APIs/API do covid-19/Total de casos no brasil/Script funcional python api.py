@@ -1,3 +1,16 @@
+  
+'''
+
+Esse scritp acessa um site de API com informações do COVID-19 e nos retorna resultados de todos os Estados do Brasil.
+
+Esse script é útil para criação de reports e análise exploratória.
+
+É realizado um tratamento do formato JSON e disponibilização do resultado tabulado.
+
+Espero que essa API ajude.
+
+'''
+
 # Importação das bibliotecas.
 import requests
 import pandas as pd
