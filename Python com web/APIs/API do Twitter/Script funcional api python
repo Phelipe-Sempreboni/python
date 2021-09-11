@@ -1,0 +1,67 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "6c8aa1d3",
+   "metadata": {},
+   "source": [
+    "## Coleta de dados no Twitter utilizando o pacote Tweepy do Python\n",
+    "\n",
+    "**Por:** *Luiz Phelipe Utiama Sempreboni*\n",
+    "\n",
+    "Este notebook demonstra os seguintes exemplos:\n",
+    "\n",
+    "1. Buscar os tweets de um determinado usuário (timeline).\n",
+    "2. Realizar a busca dos trends tweets.\n",
+    "  * Trends em múltiplas localizações\n",
+    "  * Trends no Brasil\n",
+    "3. Realizar a busca por palavra chave.\n",
+    "4. Armazenar o tweets coletados em arquivo JSON.\n",
+    "\n",
+    "**OBSERVAÇÃO: Antes de utilizar qualquer pacote, será sempre necessário instalar o(s) pacote(s) previamente. A instalação só é necessária uma única vez.\n",
+    "\n",
+    "* Para instalar um pacote pelo Jupyter e isso também serve para o Google Colab, utilize o seguinte comando:\n",
+    "  * !pip install nome_do_pacote\n",
+    "  \n",
+    "Scripts abaixo."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "6ba366f4",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "'''\n",
+    "Coleta de dados no Twitter utilizando \n",
+    "\n",
+    "\n",
+    "\n",
+    "\n",
+    "'''"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.8.8"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
