@@ -3,10 +3,10 @@
 ---
 
 Podemos utilizar esse método no Windows com:
+
 - Visual Studio Code
 - PyCharm
 - Prompt de Comando
-- Power Shell 
 
 ---
 
@@ -47,7 +47,7 @@ C:\User\Zé\Desktop\Projeto> python -m venv venv
 
 ```
 
-
+5º - 
 
 
 
