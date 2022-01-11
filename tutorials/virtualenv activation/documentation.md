@@ -1,4 +1,4 @@
-## Ativando e utilizando o ambiente virtual (virtualenv) do Python no Windows
+## Criando, ativando e utilizando o ambiente virtual (virtualenv) do Python no Windows
 
 ---
 
@@ -7,6 +7,18 @@ Podemos utilizar esse método no Windows com:
 - Visual Studio Code
 - PyCharm
 - Prompt de Comando
+
+---
+
+Certifique-se de ter o Python instalado em sua máquina corretamente.
+
+Para verificar siga os passos abaixo:
+
+1º - Abra o Prompt de Comando.
+
+2º - Digite o comando (python --version).
+
+3º - Caso seja apontado a versão do Python no Prompt de Comando, logo você tem o Python instalado e pode continuar com o tutorial.
 
 ---
 
@@ -55,17 +67,29 @@ C:\User\Zé\Desktop\Projeto> python -m venv venv
 
 # Após ativação do ambiente virtual, o caminho ficará parecido com isso "(venv) C:\User\Zé\Desktop\Projeto>"
 
+# Notar que caso você tenha nomeado, sua virtualenv com outro nome, como (teste_env), então, o comando abaixo ficaria (C:\User\Zé\Desktop\Projeto> .\teste_env\Scripts\activate.bat), então, depende da nomeação que você deu na criação do seu ambiente virtual.
+
 C:\User\Zé\Desktop\Projeto> .\venv\Scripts\activate.bat
 
 ```
 
+6º - Para testar a virtualenv, digite o comando o abaixo para instalar a biblioteca, e caso seja instalada corretamente, a virtualenv está funcionando e é possível utilizar o ambiente virtual com segurança e em seus projetos.
 
+```python
 
+# Digamos que esteja ativada o ambiente, digite o comando (pip install pandas).
 
+(venv) C:\User\Zé\Desktop\Projeto> pip install pandas
 
+```
 
+Ambiente virtual criado, ativado e pronto para utilização.
 
+---
 
+Fim do tutorial.
 
+---
 
+_Espero ajudar_ :smiley:
 
