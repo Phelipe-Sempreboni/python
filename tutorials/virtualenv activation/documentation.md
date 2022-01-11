@@ -47,7 +47,17 @@ C:\User\Zé\Desktop\Projeto> python -m venv venv
 
 ```
 
-5º - 
+5º - Digitar o comando abaixo do Python para ativar a virtualenv que foi criada no repositório.
+
+```python
+
+# Digite o comando para ativar a virtualenv e conseguir utilizar o ambiente virtual.
+
+# Após ativação do ambiente virtual, o caminho ficará parecido com isso "(venv) C:\User\Zé\Desktop\Projeto>"
+
+C:\User\Zé\Desktop\Projeto> .\venv\Scripts\activate.bat
+
+```
 
 
 
