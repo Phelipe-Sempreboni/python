@@ -35,4 +35,34 @@ C:\User\Zé\Desktop\Projeto>
 
 ```
 
-5º - 
+---
+
+5º - Dentro do local que está o arquivo (requirements.txt), digite o comando conforme o exemplo abaixo e aguarde a instalação das bibliotecas e dependências.
+
+```python
+
+(venv) C:\User\Zé\Desktop\Projeto> pip install -r requirements.txt
+
+```
+
+---
+
+6º - Após a finalização, digita o comando conforme o exemplo abaixo e verifique se as bibliotecas foram instaladas. Essa é uma etapa para validar a informação e caso o desenvolvedor queira realizar.
+
+```python
+
+(venv) C:\User\Zé\Desktop\Projeto> pip list
+
+```
+
+---
+
+7º - Caso as biblitocas e dependências tenham sido instalada com sucesso, é só prosseguir com seu desenvolvimento em seu ambiente.
+
+---
+
+Fim do tutorial.
+
+---
+
+_Espero ajudar_ :smiley:
