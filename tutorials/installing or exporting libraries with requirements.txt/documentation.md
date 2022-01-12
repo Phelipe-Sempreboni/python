@@ -57,7 +57,18 @@ C:\User\Zé\Desktop\Projeto>
 
 ---
 
-7º - Caso as biblitocas e dependências tenham sido instalada com sucesso, é só prosseguir com seu desenvolvimento em seu ambiente.
+7º - Caso queira exportar uma lista de bibliotecas ou dependências do ambiente, utilize o comando abaixo e note a observação na descrição.
+
+```python
+
+# Notar que caso o arquivo já exista com certo nome no repositório que for realizar a exportação, então terá que alterar, conforme o exemplo abaixo.
+
+(venv) C:\User\Zé\Desktop\Projeto> pip freeze > requirements_copia.txt
+
+```
+---
+
+8º - Caso as biblitocas e dependências tenham sido instalada com sucesso, é só prosseguir com seu desenvolvimento em seu ambiente.
 
 ---
 
