@@ -2,13 +2,13 @@
 
 ---
 
-Strings:
+- [x] Strings:
 
 - A string foi adicionada nessa documentação devido a um detalhe especifico, que é que as strings tem uma importante propriedade conhecida como imutabilidade. Isto significa que uma vez que é criada uma string, os elementos dentro dela não podem ser substituídos ou alterados.
 
 ---
 
-Listas:
+- [x] Listas:
 
 - As listas são mutáveis, ou seja, os elementos dentro de uma lista podem ser alterados.
 
@@ -20,7 +20,7 @@ Listas:
 
 ---
 
-Dicionários:
+- [x] Dicionários:
 
 - Os dicionários são mutáveis, ou seja, os elementos dentro de um dicionários podem ser alterados.
 
@@ -30,7 +30,7 @@ Dicionários:
 
 ---
 
-Tuplas:
+- [x] Tuplas:
 
 - Tuplas são imutáveis, o que siginifica que não podem ser alteradas. Um exemplo, seria utilizar uma tupla para apresentar dados que não devem ser alterados, como os dias da semana ou datas em um calendário.
 
