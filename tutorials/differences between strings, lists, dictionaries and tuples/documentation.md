@@ -2,6 +2,20 @@
 
 ---
 
+Listas:
+
+---
+
+Dicionários:
+
+---
+
+Tuplas:
+
+
+- Alteração de um item de uma tupla, mesmo o objeto sendo imutável:
+
+  - É possível converter a (tupla) em [lista], realizar a alteração necessária nessa lista, e posteriormente converter a lista para tupla, logo, dessa maneira é possível contornar a situação e executar essa alteração.
 
 ---
 
