@@ -40,4 +40,10 @@ Tuplas:
 
 ---
 
+- Notas:
+
+![image](https://user-images.githubusercontent.com/57469401/149641394-9e92988c-4e36-48a2-8737-caa73584759f.png)
+
+---
+
 _Espero ajudar_ :smiley:
