@@ -1,27 +1,40 @@
 # Game Ping-Pong
 
+# Importação de bibliotecas
 from tkinter import *
 import random
 import time
 
+# Declaração de variável
 level = int(input("Qual nível você gostaria de jogar? 1/2/3/4/5 \n"))
+
+# Declaração de variável
 length = 500/level
 
-
+# Declração de variável
 root = Tk()
+
+# Atribuição de valor a variável com método
 root.title("Ping Pong")
 root.resizable(0,0)
 root.wm_attributes("-topmost", -1)
 
+# Declaraçaõ de variável
 canvas = Canvas(root, width=800, height=600, bd=0,highlightthickness=0)
+
+# Utilização da variável com método
 canvas.pack()
 
+# Utilização de variável com método
 root.update()
 
-# Variável
+# Declaração de variável
 count = 0
+
+# Declaração de variável
 lost = False
 
+# Criaçaõ de uma classe
 class Bola:
     def __init__(self, canvas, Barra, color):
         self.canvas = canvas
@@ -38,7 +51,7 @@ class Bola:
         self.canvas_height = self.canvas.winfo_height()
         self.canvas_width = self.canvas.winfo_width()
 
-
+    # Criação de uma função
     def draw(self):
         self.canvas.move(self.id, self.x, self.y)
 
@@ -74,7 +87,7 @@ class Bola:
             global lost
             lost = True
 
-
+# Criação de uma classe
 class Barra:
     def __init__(self, canvas, color):
         self.canvas = canvas
@@ -88,6 +101,7 @@ class Barra:
         self.canvas.bind_all("<KeyPress-Left>", self.move_left)
         self.canvas.bind_all("<KeyPress-Right>", self.move_right)
 
+    # Criação de uma função
     def draw(self):
         self.canvas.move(self.id, self.x, 0)
 
@@ -104,15 +118,17 @@ class Barra:
         if lost == False:
             self.canvas.after(10, self.draw)
 
+    # Criação de uma função
     def move_left(self, event):
         if self.pos[0] >= 0:
             self.x = -3
 
+    # Criação de uma função
     def move_right(self, event):
         if self.pos[2] <= self.canvas_width:
             self.x = 3
 
-
+# Criação de uma função
 def start_game(event):
     global lost, count
     lost = False
@@ -124,24 +140,30 @@ def start_game(event):
     Barra.draw()
     Bola.draw()
 
-
+# Criação de uma função
 def score():
     canvas.itemconfig(score_now, text="Pontos: " + str(count))
 
+# Criação de uma função
 def game_over():
     canvas.itemconfig(game, text="Game over!")
 
-
+# Declaração de variável
 Barra = Barra(canvas, "orange")
+
+# Declaração de variável
 Bola = Bola(canvas, Barra, "purple")
 
-
+# Declaração de variável
 score_now = canvas.create_text(430, 20, text="Pontos: " + str(count), fill = "green", font=("Arial", 16))
+
+# Declaração de variável
 game = canvas.create_text(400, 300, text=" ", fill="red", font=("Arial", 40))
 
-
+# Utilização de variável com método
 canvas.bind_all("<Button-1>", start_game)
 
+# Utilização de variável com método
 root.mainloop()
 
 
