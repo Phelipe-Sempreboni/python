@@ -9,13 +9,12 @@ Last modification: 29/01/2022.
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #
 
 # Importing libraries
-import os
 import openpyxl
 
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #
 
 # Variável com o caminho do repositório de origem.
-source_repository_path = r'C:\Users\pheli\OneDrive\Archives\2 - Github\Repositories\python\projects\excel\read files and write data to database\archives'
+source_repository_path = r'C:\Users\pheli\OneDrive\Archives\2 - Github\Repositories\python\projects\excel\reading a single excel file\archives'
 
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #
 
@@ -63,7 +62,7 @@ for row in sheet_employee_registration.iter_rows(min_row=2, values_only=True):
 
     tuples = tuple(empty_list_to_receive_values)
 
-    print(tuples[0][0])
+    print(tuples[0][0:2])
 
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #
 
