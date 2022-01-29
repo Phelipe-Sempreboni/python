@@ -50,19 +50,25 @@ empty_list_to_receive_values = []
 
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #
 
-# O comando (iter_rows) realiza a iteração de comandos com as linhas.
-# O comando (iter_cols) realiza a iteração de comandos com as colunas.
-# Neste caso, estamos percorrendo a planilha, ou sheet, chamada ('employee_registration'), que está na variável (sheet_employee_registration).
-# Estamos percorrendo essa planilha, iniciando na linha minima 2, e lendo todos os valores.
-# Estamos utilizando o loop for para realizar a leitura completa dessa planilha, onde, para cada linha (row), retornamos os valores da instrução sheet_employee_registration.iter_rows(min_row=2, values_only=True).
-# Notar que teremos os valores devolvidos como tuplas, e tuplas são objetos imutáveis no python, ou seja, não é possível realizar nenhum tipo de modificação.
-for row in sheet_employee_registration.iter_rows(min_row=2, values_only=True):
+try:
 
-    empty_list_to_receive_values.append(row)
+    # O comando (iter_rows) realiza a iteração de comandos com as linhas.
+    # O comando (iter_cols) realiza a iteração de comandos com as colunas.
+    # Neste caso, estamos percorrendo a planilha, ou sheet, chamada ('employee_registration'), que está na variável (sheet_employee_registration).
+    # Estamos percorrendo essa planilha, iniciando na linha minima 2, e lendo todos os valores.
+    # Estamos utilizando o loop for para realizar a leitura completa dessa planilha, onde, para cada linha (row), retornamos os valores da instrução sheet_employee_registration.iter_rows(min_row=2, values_only=True).
+    # Notar que teremos os valores devolvidos como tuplas, e tuplas são objetos imutáveis no python, ou seja, não é possível realizar nenhum tipo de modificação.
+    for row in sheet_employee_registration.iter_rows(min_row=2, values_only=True):
 
-    tuples = tuple(empty_list_to_receive_values)
+        empty_list_to_receive_values.append(row)
 
-    print(tuples[0][0:2])
+        tuples = tuple(empty_list_to_receive_values)
+
+        print(tuples[0][0:2])
+
+except Exception as error:
+
+    print(f'Erro {error.__class__}')
 
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #
 
