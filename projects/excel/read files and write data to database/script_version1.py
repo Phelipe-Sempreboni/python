@@ -47,7 +47,7 @@ sheet_employee_registration = wbk_employee['employee_registration']
 
 # Variável de lista que está vazia, pois, irá receber os valores da planilha que ficarão armazenados e posteriormente adicionados no banco de dados.
 # No final do script essa lista será esvaziada por questões de segurança, para não ocorrer erros e/ou acumulo de valores na próxima execução de script.
-lists = []
+empty_list_to_receive_values = []
 
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #
 
@@ -59,11 +59,11 @@ lists = []
 # Notar que teremos os valores devolvidos como tuplas, e tuplas são objetos imutáveis no python, ou seja, não é possível realizar nenhum tipo de modificação.
 for row in sheet_employee_registration.iter_rows(min_row=2, values_only=True):
 
-    lists.append(row)
+    empty_list_to_receive_values.append(row)
 
-    tuples = tuple(lists)
+    tuples = tuple(empty_list_to_receive_values)
 
-    print(tuples[0][1])
+    print(tuples[0][0])
 
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #
 
