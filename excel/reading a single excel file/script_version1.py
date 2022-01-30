@@ -3,18 +3,20 @@ Created by: Sempreboni.
 
 Created in: 29/01/2022.
 
-Last modification: 29/01/2022.
+Last modification: 30/01/2022.
 '''
 
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #
 
 # Importing libraries
+import os.path
+
 import openpyxl
 
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #
 
 # Variável com o caminho do repositório de origem.
-source_repository_path = r'C:\Users\pheli\OneDrive\Archives\2 - Github\Repositories\python\projects\excel\reading a single excel file\archives'
+source_repository_path = r'C:\Users\pheli\OneDrive\Archives\2 - Github\Repositories\python\excel\reading a single excel file\archivess'
 
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #
 
@@ -26,6 +28,11 @@ employees_file_name = 'employee_registration.xlsx'
 # Variável com a concatenação do repositório e nome do arquivo, para ter o caminho completo até a localização do arquivo.
 # Notar que é utilizado duas barras, pois, somente uma barra represente quebra de texto, ou seja, mudança de linha sem sair do contexto atual.
 employee_file_repository_path = (source_repository_path + '\\' + employees_file_name)
+
+# ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #
+
+# Variável com o comando para verificar se o repositório origem, o mesmo da variável (source_repository_path) existe.
+check_existence_source_repository = os.path.isdir(source_repository_path)
 
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #
 
@@ -52,19 +59,25 @@ empty_list_to_receive_values = []
 
 try:
 
-    # O comando (iter_rows) realiza a iteração de comandos com as linhas.
-    # O comando (iter_cols) realiza a iteração de comandos com as colunas.
-    # Neste caso, estamos percorrendo a planilha, ou sheet, chamada ('employee_registration'), que está na variável (sheet_employee_registration).
-    # Estamos percorrendo essa planilha, iniciando na linha minima 2, e lendo todos os valores.
-    # Estamos utilizando o loop for para realizar a leitura completa dessa planilha, onde, para cada linha (row), retornamos os valores da instrução sheet_employee_registration.iter_rows(min_row=2, values_only=True).
-    # Notar que teremos os valores devolvidos como tuplas, e tuplas são objetos imutáveis no python, ou seja, não é possível realizar nenhum tipo de modificação.
-    for row in sheet_employee_registration.iter_rows(min_row=2, values_only=True):
+    if check_existence_source_repository:
 
-        empty_list_to_receive_values.append(row)
+        # O comando (iter_rows) realiza a iteração de comandos com as linhas.
+        # O comando (iter_cols) realiza a iteração de comandos com as colunas.
+        # Neste caso, estamos percorrendo a planilha, ou sheet, chamada ('employee_registration'), que está na variável (sheet_employee_registration).
+        # Estamos percorrendo essa planilha, iniciando na linha minima 2, e lendo todos os valores.
+        # Estamos utilizando o loop for para realizar a leitura completa dessa planilha, onde, para cada linha (row), retornamos os valores da instrução sheet_employee_registration.iter_rows(min_row=2, values_only=True).
+        # Notar que teremos os valores devolvidos como tuplas, e tuplas são objetos imutáveis no python, ou seja, não é possível realizar nenhum tipo de modificação.
+        for row in sheet_employee_registration.iter_rows(min_row=2, values_only=True):
 
-        tuples = tuple(empty_list_to_receive_values)
+            empty_list_to_receive_values.append(row)
 
-        print(tuples[0][0:2])
+            tuples = tuple(empty_list_to_receive_values)
+
+            print(tuples[0][0:2])
+
+    else:
+
+        print('Repositório não existe.')
 
 except Exception as error:
 
