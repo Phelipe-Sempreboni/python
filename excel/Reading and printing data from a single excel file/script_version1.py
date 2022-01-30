@@ -11,16 +11,16 @@ Last modification: 30/01/2022.
 # Bloco 1
 
 # Importação de bibliotecas.
-import os
-import openpyxl
-import sys
+import os  # biblioteca que realiza operações com arquivos do sistema windows.
+import openpyxl  # biblioteca para operações com arquivos do tipo excel.
+import sys  # biblioteca que realiza operações nativas do sistema windows.
 
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #
 
 # Bloco 2
 
 # Variável com o caminho do repositório de origem.
-source_repository_path = r'C:\Users\pheli\OneDrive\Archives\2 - Github\Repositories\python\excel\reading a single excel file\archives'
+source_repository_path = r'C:\Users\pheli\OneDrive\Archives\2 - Github\Repositories\python\excel\Reading and printing data from a single excel file\archives'
 
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #
 
