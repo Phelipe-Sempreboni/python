@@ -9,8 +9,7 @@ Last modification: 30/01/2022.
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #
 
 # Importing libraries
-import os.path
-
+import os
 import openpyxl
 
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #
@@ -36,8 +35,22 @@ check_existence_source_repository = os.path.isdir(source_repository_path)
 
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #
 
-# Variável com o comando para abertura do arquivo excel que desejamos trabalhar, onde é feito com a biblioteca (openpyxl).
-wbk_employee = openpyxl.load_workbook(employee_file_repository_path)
+# Variável com o comando para verificar se o arquivo origem, o mesmo da variável (employees_file_name) existe.
+check_existence_source_file = os.path.isfile(employee_file_repository_path)
+
+# ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #
+
+try:
+
+    # Variável com o comando para abertura do arquivo excel que desejamos trabalhar, onde é feito com a biblioteca (openpyxl).
+    wbk_employee = openpyxl.load_workbook(employee_file_repository_path)
+
+    # Continua com os demais comandos caso não haja erro no try, que neste caso, é na abertura do arquivo, indicando sua existência.
+    pass
+
+except Exception as error:
+
+    print(f'erro na leitura de arquivo {error.__class__}')
 
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #
 
@@ -61,23 +74,29 @@ try:
 
     if check_existence_source_repository:
 
-        # O comando (iter_rows) realiza a iteração de comandos com as linhas.
-        # O comando (iter_cols) realiza a iteração de comandos com as colunas.
-        # Neste caso, estamos percorrendo a planilha, ou sheet, chamada ('employee_registration'), que está na variável (sheet_employee_registration).
-        # Estamos percorrendo essa planilha, iniciando na linha minima 2, e lendo todos os valores.
-        # Estamos utilizando o loop for para realizar a leitura completa dessa planilha, onde, para cada linha (row), retornamos os valores da instrução sheet_employee_registration.iter_rows(min_row=2, values_only=True).
-        # Notar que teremos os valores devolvidos como tuplas, e tuplas são objetos imutáveis no python, ou seja, não é possível realizar nenhum tipo de modificação.
-        for row in sheet_employee_registration.iter_rows(min_row=2, values_only=True):
+        if check_existence_source_file:
 
-            empty_list_to_receive_values.append(row)
+            # O comando (iter_rows) realiza a iteração de comandos com as linhas.
+            # O comando (iter_cols) realiza a iteração de comandos com as colunas.
+            # Neste caso, estamos percorrendo a planilha, ou sheet, chamada ('employee_registration'), que está na variável (sheet_employee_registration).
+            # Estamos percorrendo essa planilha, iniciando na linha minima 2, e lendo todos os valores.
+            # Estamos utilizando o loop for para realizar a leitura completa dessa planilha, onde, para cada linha (row), retornamos os valores da instrução sheet_employee_registration.iter_rows(min_row=2, values_only=True).
+            # Notar que teremos os valores devolvidos como tuplas, e tuplas são objetos imutáveis no python, ou seja, não é possível realizar nenhum tipo de modificação.
+            for row in sheet_employee_registration.iter_rows(min_row=2, values_only=True):
 
-            tuples = tuple(empty_list_to_receive_values)
+                empty_list_to_receive_values.append(row)
 
-            print(tuples[0][0:2])
+                tuples = tuple(empty_list_to_receive_values)
+
+                print(tuples[0][0:2])
+
+        else:
+
+            print('Arquivo não existe')
 
     else:
 
-        print('Repositório não existe.')
+        print('Repositório não existe')
 
 except Exception as error:
 
