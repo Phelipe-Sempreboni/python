@@ -146,6 +146,8 @@ try:
         convert_tuple = tuple(empty_list_to_receive_values)
 
         # Mensagem exibida ao usuário com os dados do loop for que foi executado.
+        # Notar que como estamos executando um loop for, os itens serão inseridos individualmente na lista, assim gerando diversos registros, e o registro que será válido, é o último, que irá conter todos os valores adicionados.
+        # Notar que este é um caso que estamos adicionando valores em uma lista vazia, porém, podemos somente converter para lista e já utilizar essa lista existente para adição de novos registros.
         print(convert_tuple)
 
 # Caso ocorra um erro, então será executado o comando (except abaixo).
