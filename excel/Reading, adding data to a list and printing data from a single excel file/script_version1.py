@@ -113,6 +113,14 @@ sheet_employee_registration = wbk_employee_registration['employee_registration']
 
 # Bloco 10
 
+# Variável de lista que está vazia, pois, irá receber os valores da planilha que ficarão armazenados e posteriormente adicionados no banco de dados.
+# No final do script essa lista será esvaziada por questões de segurança, para não ocorrer erros e/ou acumulo de valores na próxima execução de script.
+empty_list_to_receive_values = []
+
+# ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #
+
+# Bloco 11
+
 # Bloco com try/except para para isolar um erro caso seja necessário, e, informar de uma maneira mais amigável ao usuário sobre um possível erro com uma, mensagem personalizada.
 try:
 
@@ -124,8 +132,21 @@ try:
     # Notar que teremos os valores devolvidos como tuplas, e tuplas são objetos imutáveis no python, ou seja, não é possível realizar nenhum tipo de modificação.
     for row in sheet_employee_registration.iter_rows(min_row=2, values_only=True):
 
+        # Converter a tupla, que é o objeto origem da variável (row) em uma lista.
+        # O objeto está sendo convertido de (tupla) para (lista), pois, a tupla é imutável, ou seja, não é possível realizar nenhum tipo de operação, e a lista é mutável, ou seja, é possível realizar qualquer tipo de operação.
+        # Dessa maneira será possível preencher a lista vazia, da variável (empty_list_to_receive_values) com os dados da variável (row).
+        conversion_list = list(row)
+
+        # Inserindo os dados da variável (conversion_list) na lista vazia da variável (empty_list_to_receive_values).
+        # Utilizamos o método (append) do objeto (lista) para inserir os dados da variável (conversion_list) na variável (empty_list_to_receive_values).
+        # Á partir daqui é possível trabalhar no formato de objeto (lista), onde essa conversão é muito útil para armazenar valores de diversos arquivos e posteriormente retornar para tupla, e por exemplo, adicionar esses dados em um banco de dados.
+        empty_list_to_receive_values.append(conversion_list)
+
+        # Convertendo a lista com os valores adicionados para a tupla.
+        convert_tuple = tuple(empty_list_to_receive_values)
+
         # Mensagem exibida ao usuário com os dados do loop for que foi executado.
-        print(row)
+        print(convert_tuple)
 
 # Caso ocorra um erro, então será executado o comando (except abaixo).
 # Notar que é utilizado o (Exception) e renomeado para (erro), assim conseguimos capturar o erro e posteriormente exibir sua classe de erro juntamente com a mensagem, conforme o print abaixo.
@@ -133,5 +154,9 @@ except Exception as erro:
 
     # Mensagem exibida ao usuário caso ocorra de leitura dos dados da tabela em excel.
     print(f'Erro enquando era realizada a leitura dos dados. Tipo do erro: {erro.__class__}')
+
+# Retornando a variável abaixo do objeto (lista) para vazio, assim evitamos acumulo de valores e possíveis registros duplicados.
+# Lembre-se sempre de zerar seu objeto após utilização.
+empty_list_to_receive_values = []
 
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #
