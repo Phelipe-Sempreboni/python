@@ -43,7 +43,7 @@ check_existence_source_repository = os.path.isdir(source_repository_path)
 # Bloco 5
 
 # Variável com o comando que lista os arquivos no caminho origem, ou seja, na variável (source_repository_path).
-files_repository_path = os.path.exists(source_repository_path)
+files_repository_path = os.path.isfile(source_repository_path)
 #print(files_repository_path)
 
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #
@@ -83,11 +83,6 @@ if check_existence_source_repository:
                     wbk_employee_registration = openpyxl.load_workbook(source_repository_path + '\\' + file)
 
                     print(wbk_employee_registration)
-
-                # Caso a cláusula seja falsa, então irá executar o comando abaixo.
-                # Se o arquivo for diferente das eXtensions (xlsx ou xlsm) então ele segue com a verificação, com o comando abaixo.
-                # Caso fosse colocado uma mensagem de erro e um comando para encerrar o script aqui, toda vez que o loop for localizar um arquivo fora dos parâmetros iria encerrar, e temos que continuar essa verificação.
-                else:
 
                     # Continua com os demais comandos caso não haja erro no try, que neste caso, é na abertura do arquivo, indicando sua existência.
                     pass
