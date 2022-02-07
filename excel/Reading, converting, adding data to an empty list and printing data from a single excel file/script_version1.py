@@ -155,22 +155,22 @@ try:
         # Mensagem exibida ao usuário com os dados do loop for que foi executado.
         # Notar que como estamos executando um loop for, os itens serão inseridos individualmente na lista, assim gerando diversos registros, e o registro que será válido, é o último, que irá conter todos os valores adicionados.
         # Notar que este é um caso que estamos adicionando valores em uma lista vazia, porém, podemos somente converter para lista e já utilizar essa lista existente para adição de novos registros.
-        #print(convert_tuple)
+        print(convert_tuple)
 
         # 2º maneira de impressão dos dados. Se for executar esse método, comente o 1º método.
         # Dessa maneira teremos os registros normais, um abaixo do outro, do mesmo jeito da tabela excel, porém, fora do objeto (tupla), mas isso dependenrá do que será feito com estes dados.
-        coluna0 = row[0]  # matricula
-        coluna1 = row[1]  # nome do funcionario
-        coluna2 = row[2]  # data de nascimento
-        coluna3 = row[3]  # idade
-        coluna4 = row[4]  # data contratacao
-        coluna5 = row[5]  # tipo da contratação
-        coluna6 = row[6]  # situacao
-        coluna7 = row[7]  # cargo
-        coluna8 = row[8]  # diretoria
-        coluna9 = row[9]  # setor
-        coluna10 = row[10]  # salario
-        coluna11 = row[11]  # data ultima atualizado dos registros
+        #coluna0 = row[0]  # matricula
+        #coluna1 = row[1]  # nome do funcionario
+        #coluna2 = row[2]  # data de nascimento
+        #coluna3 = row[3]  # idade
+        #coluna4 = row[4]  # data contratacao
+        #coluna5 = row[5]  # tipo da contratação
+        #coluna6 = row[6]  # situacao
+        #coluna7 = row[7]  # cargo
+        #coluna8 = row[8]  # diretoria
+        #coluna9 = row[9]  # setor
+        #coluna10 = row[10]  # salario
+        #coluna11 = row[11]  # data ultima atualizado dos registros
 
         # Impressão dos dados.
         # Assim ficaremos com um registro ao lado do outro.
@@ -178,24 +178,24 @@ try:
 
         # Impressão dos dados.
         # Assim ficaremos com um registro ao lado do outro e com vírgulas.
-        print(coluna0, ',', coluna1, ',', coluna2, ',', coluna3, ',', coluna4, ',', coluna5, ',', coluna6, ',', coluna7, ',', coluna8, ',', coluna9, ',', coluna10, ',', coluna11)
+        #print(coluna0, ',', coluna1, ',', coluna2, ',', coluna3, ',', coluna4, ',', coluna5, ',', coluna6, ',', coluna7, ',', coluna8, ',', coluna9, ',', coluna10, ',', coluna11)
 
-        '''
+        
         # Impressão dos dados.
         # Assim ficaremos com um registro abaixo do outro.
-        print(coluna0)
-        print(coluna1)
-        print(coluna2)
-        print(coluna3)
-        print(coluna4)
-        print(coluna5)
-        print(coluna6)
-        print(coluna7)
-        print(coluna8)
-        print(coluna9)
-        print(coluna10)
-        print(coluna11)
-        '''
+        #print(coluna0)
+        #print(coluna1)
+        #print(coluna2)
+        #print(coluna3)
+        #print(coluna4)
+        #print(coluna5)
+        #print(coluna6)
+        #print(coluna7)
+        #print(coluna8)
+        #print(coluna9)
+        #print(coluna10)
+        #print(coluna11)
+        
 
 # Caso ocorra um erro, então será executado o comando (except abaixo).
 # Notar que é utilizado o (Exception) e renomeado para (erro), assim conseguimos capturar o erro e posteriormente exibir sua classe de erro juntamente com a mensagem, conforme o print abaixo.
