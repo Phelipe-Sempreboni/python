@@ -127,6 +127,9 @@ empty_list_to_receive_values = []
 
 # Bloco 11
 
+# Declaração de variável global, onde neste caso, estamos imprimindo o valor da variável (convert_tuple) fora do loop for, assim evitamos que imprima diversos valores até chegar ao resultado final.
+global convert_tuple
+
 # Bloco com try/except para para isolar um erro caso seja necessário, e, informar de uma maneira mais amigável ao usuário sobre um possível erro com uma, mensagem personalizada.
 try:
 
@@ -155,7 +158,7 @@ try:
         # Mensagem exibida ao usuário com os dados do loop for que foi executado.
         # Notar que como estamos executando um loop for, os itens serão inseridos individualmente na lista, assim gerando diversos registros, e o registro que será válido, é o último, que irá conter todos os valores adicionados.
         # Notar que este é um caso que estamos adicionando valores em uma lista vazia, porém, podemos somente converter para lista e já utilizar essa lista existente para adição de novos registros.
-        print(convert_tuple)
+        #print(convert_tuple)
 
         # 2º maneira de impressão dos dados. Se for executar esse método, comente o 1º método.
         # Dessa maneira teremos os registros normais, um abaixo do outro, do mesmo jeito da tabela excel, porém, fora do objeto (tupla), mas isso dependenrá do que será feito com estes dados.
@@ -195,7 +198,6 @@ try:
         #print(coluna9)
         #print(coluna10)
         #print(coluna11)
-        
 
 # Caso ocorra um erro, então será executado o comando (except abaixo).
 # Notar que é utilizado o (Exception) e renomeado para (erro), assim conseguimos capturar o erro e posteriormente exibir sua classe de erro juntamente com a mensagem, conforme o print abaixo.
@@ -203,6 +205,10 @@ except Exception as erro:
 
     # Mensagem exibida ao usuário caso ocorra de leitura dos dados da tabela em excel.
     print(f'Erro enquando era realizada a leitura dos dados. Tipo do erro: {erro.__class__}')
+
+# Notar que temos este print fora do loop for, assim evitamos que imprima diversos valores até chegar ao resultado final.
+# Essa é uma maneira de imprimir somente o resultado final ao finalizar o loop for.
+print(convert_tuple)
 
 # Retornando a variável abaixo do objeto (lista) para vazio, assim evitamos acumulo de valores e possíveis registros duplicados.
 # Lembre-se sempre de zerar seu objeto após utilização.
