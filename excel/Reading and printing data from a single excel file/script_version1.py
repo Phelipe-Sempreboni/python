@@ -27,6 +27,7 @@ import sys  # biblioteca que realiza operações nativas do sistema windows.
 # Este caminho, neste caso, seta o repositório que o este script está locado, logo, os arquivos necessitam estar junto do script no repositório.
 path = os.path.abspath(__file__)
 source_repository_path = os.path.dirname(path)
+print(source_repository_path)
 
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #
 
@@ -133,26 +134,26 @@ try:
         # 1º maneira de impressão dos dados. Se for executar esse método, comente o 2º método.
         # Mensagem exibida ao usuário com os dados do loop for que foi executado.
         # Essa é uma mensagem simples. Abaixo temos um tipo de mensagem mais refinada.
-        print(row)
+        #print(row)
 
         # 2º maneira de impressão dos dados. Se for executar esse método, comente o 1º método.
         # Dessa maneira teremos os registros em formato de strings e não de um objeto lista. Sua utilização irá depender da intenção do usuário na utilização dos dados.
-        #coluna0 = row[0]  # matricula
-        #coluna1 = row[1]  # nome do funcionario
-        #coluna2 = row[2]  # data de nascimento
-        #coluna3 = row[3]  # idade
-        #coluna4 = row[4]  # data contratacao
-        #coluna5 = row[5]  # tipo da contratação
-        #coluna6 = row[6]  # situacao
-        #coluna7 = row[7]  # cargo
-        #coluna8 = row[8]  # diretoria
-        #coluna9 = row[9]  # setor
-        #coluna10 = row[10]  # salario
-        #coluna11 = row[11]  # data ultima atualizado dos registros
+        coluna0 = row[0]  # matricula
+        coluna1 = row[1]  # nome do funcionario
+        coluna2 = row[2]  # data de nascimento
+        coluna3 = row[3]  # idade
+        coluna4 = row[4]  # data contratacao
+        coluna5 = row[5]  # tipo da contratação
+        coluna6 = row[6]  # situacao
+        coluna7 = row[7]  # cargo
+        coluna8 = row[8]  # diretoria
+        coluna9 = row[9]  # setor
+        coluna10 = row[10]  # salario
+        coluna11 = row[11]  # data ultima atualizado dos registros
 
         # Impressão dos dados.
         # Assim ficaremos com um registro ao lado do outro.
-        #print(coluna0, coluna1, coluna2, coluna3, coluna4, coluna5, coluna6, coluna7, coluna8, coluna9, coluna10, coluna11)
+        print(coluna0, coluna1, coluna2, coluna3, coluna4, coluna5, coluna6, coluna7, coluna8, coluna9, coluna10, coluna11)
 
         # Impressão dos dados.
         # Assim ficaremos com um registro ao lado do outro e com vírgulas.
