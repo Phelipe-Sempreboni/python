@@ -19,7 +19,7 @@ import sys  # biblioteca que realiza operações nativas do sistema windows.
 # Este caminho, neste caso, seta o repositório que o este script está locado, logo, os arquivos necessitam estar junto do script no repositório.
 path = os.path.abspath(__file__)
 source_repository_path = os.path.dirname(path)
-print(source_repository_path)
+print('Repositório atual: ' + source_repository_path + '.')
 
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #
 
@@ -71,13 +71,73 @@ if check_existence_source_repository:
                 # Temos um arquivo de extensão (txt) no caminho origem, porém, não será lido, pois, o if realizou a restrição neste caso.
                 wbk_employee_registration = openpyxl.load_workbook(source_repository_path + '\\' + file)
 
-                print('Lendo o arquivo: ' + (source_repository_path + '\\' + file) + '.')
+                # Variável com o comando para verificar todas as planilhas disponiveis que temos para trabalhar na tabela.
+                wbk_employee_sheets_available = wbk_employee_registration.sheetnames
 
-            # Caso a cláusula seja falsa, então irá executar o comando abaixo.
-            else:
+                # Variável com o comando para escolher a planilha (sheet) que iremos querer trabalhar.
+                sheet_employee_registration = wbk_employee_registration['employee_registration']
 
-                # Continua com os demais comandos caso não haja erro no try, que neste caso, é na abertura do arquivo, indicando sua existência.
-                pass
+                # Bloco com try/except para para isolar um erro caso seja necessário, e, informar de uma maneira mais amigável ao usuário sobre um possível erro com uma, mensagem personalizada.
+                try:
+
+                    # O comando (iter_rows) realiza a iteração de comandos com as linhas.
+                    # O comando (iter_cols) realiza a iteração de comandos com as colunas.
+                    # Neste caso, estamos percorrendo a planilha, ou sheet, chamada ('employee_registration'), que está na variável (sheet_employee_registration).
+                    # Estamos percorrendo essa planilha, iniciando na linha minima 2, e lendo todos os valores.
+                    # Estamos utilizando o loop for para realizar a leitura completa dessa planilha, onde, para cada linha (row), retornamos os valores da instrução sheet_employee_registration.iter_rows(min_row=2, values_only=True).
+                    # Notar que teremos os valores devolvidos como tuplas, e tuplas são objetos imutáveis no python, ou seja, não é possível realizar nenhum tipo de modificação.
+                    for row in sheet_employee_registration.iter_rows(min_row=2, values_only=True):
+                        # 1º maneira de impressão dos dados. Se for executar esse método, comente o 2º método.
+                        # Mensagem exibida ao usuário com os dados do loop for que foi executado.
+                        # Essa é uma mensagem simples. Abaixo temos um tipo de mensagem mais refinada.
+                        print(row)
+
+                        # 2º maneira de impressão dos dados. Se for executar esse método, comente o 1º método.
+                        # Dessa maneira teremos os registros em formato de strings e não de um objeto lista. Sua utilização irá depender da intenção do usuário na utilização dos dados.
+                        # coluna0 = row[0]  # matricula
+                        # coluna1 = row[1]  # nome do funcionario
+                        # coluna2 = row[2]  # data de nascimento
+                        # coluna3 = row[3]  # idade
+                        # coluna4 = row[4]  # data contratacao
+                        # coluna5 = row[5]  # tipo da contratação
+                        # coluna6 = row[6]  # situacao
+                        # coluna7 = row[7]  # cargo
+                        # coluna8 = row[8]  # diretoria
+                        # coluna9 = row[9]  # setor
+                        # coluna10 = row[10]  # salario
+                        # coluna11 = row[11]  # data ultima atualizado dos registros
+
+                        # Impressão dos dados.
+                        # Assim ficaremos com um registro ao lado do outro.
+                        # print(coluna0, coluna1, coluna2, coluna3, coluna4, coluna5, coluna6, coluna7, coluna8, coluna9, coluna10, coluna11)
+
+                        # Impressão dos dados.
+                        # Assim ficaremos com um registro ao lado do outro e com vírgulas.
+                        # print(coluna0, ',', coluna1, ',', coluna2, ',', coluna3, ',', coluna4, ',', coluna5, ',', coluna6, ',', coluna7, ',', coluna8, ',', coluna9, ',', coluna10, ',', coluna11)
+
+                        # Impressão dos dados.
+                        # Assim ficaremos com um registro abaixo do outro.
+                        # print(coluna0)
+                        # print(coluna1)
+                        # print(coluna2)
+                        # print(coluna3)
+                        # print(coluna4)
+                        # print(coluna5)
+                        # print(coluna6)
+                        # print(coluna7)
+                        # print(coluna8)
+                        # print(coluna9)
+                        # print(coluna10)
+                        # print(coluna11)
+                # Caso ocorra um erro, então será executado o comando (except abaixo).
+                # Notar que é utilizado o (Exception) e renomeado para (erro), assim conseguimos capturar o erro e posteriormente exibir sua classe de erro juntamente com a mensagem, conforme o print abaixo.
+                except Exception as erro:
+
+                    # Mensagem exibida ao usuário caso ocorra de leitura dos dados da tabela em excel.
+                    print(f'Erro enquando era realizada a leitura dos dados. Tipo do erro: {erro.__class__}. \nPor favor, verifique o caminho informado ou se o repositório existe e tente novamente. \nProcesso finalizado sem êxito.')
+
+                    # Caso ocorra o erro, então o script é encerrado e não prosseguirá para o próximo passo, assim evitando erros para o usuário posteriormente.
+                    sys.exit()
 
 # Caso a cláusula seja falsa, então irá executar o comando abaixo.
 # Se o repositório não existir, será informado a mensagem abaixo ao usuário.
@@ -88,84 +148,5 @@ else:
 
     # Caso ocorra o erro, então o script é encerrado e não prosseguirá para o próximo passo, assim evitando erros para o usuário posteriormente.
     sys.exit()
-
-# ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #
-
-# Bloco 6
-
-# Variável com o comando para verificar todas as planilhas disponiveis que temos para trabalhar na tabela.
-wbk_employee_sheets_available = wbk_employee_registration.sheetnames
-
-# ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #
-
-# Bloco 7
-
-# Variável com o comando para escolher a planilha (sheet) que iremos querer trabalhar.
-sheet_employee_registration = wbk_employee_registration['employee_registration']
-
-# ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #
-
-# Bloco 10
-
-# Bloco com try/except para para isolar um erro caso seja necessário, e, informar de uma maneira mais amigável ao usuário sobre um possível erro com uma, mensagem personalizada.
-try:
-
-    # O comando (iter_rows) realiza a iteração de comandos com as linhas.
-    # O comando (iter_cols) realiza a iteração de comandos com as colunas.
-    # Neste caso, estamos percorrendo a planilha, ou sheet, chamada ('employee_registration'), que está na variável (sheet_employee_registration).
-    # Estamos percorrendo essa planilha, iniciando na linha minima 2, e lendo todos os valores.
-    # Estamos utilizando o loop for para realizar a leitura completa dessa planilha, onde, para cada linha (row), retornamos os valores da instrução sheet_employee_registration.iter_rows(min_row=2, values_only=True).
-    # Notar que teremos os valores devolvidos como tuplas, e tuplas são objetos imutáveis no python, ou seja, não é possível realizar nenhum tipo de modificação.
-    for row in sheet_employee_registration.iter_rows(min_row=2, values_only=True):
-
-        # 1º maneira de impressão dos dados. Se for executar esse método, comente o 2º método.
-        # Mensagem exibida ao usuário com os dados do loop for que foi executado.
-        # Essa é uma mensagem simples. Abaixo temos um tipo de mensagem mais refinada.
-        print(row)
-
-        # 2º maneira de impressão dos dados. Se for executar esse método, comente o 1º método.
-        # Dessa maneira teremos os registros em formato de strings e não de um objeto lista. Sua utilização irá depender da intenção do usuário na utilização dos dados.
-        #coluna0 = row[0]  # matricula
-        #coluna1 = row[1]  # nome do funcionario
-        #coluna2 = row[2]  # data de nascimento
-        #coluna3 = row[3]  # idade
-        #coluna4 = row[4]  # data contratacao
-        #coluna5 = row[5]  # tipo da contratação
-        #coluna6 = row[6]  # situacao
-        #coluna7 = row[7]  # cargo
-        #coluna8 = row[8]  # diretoria
-        #coluna9 = row[9]  # setor
-        #coluna10 = row[10]  # salario
-        #coluna11 = row[11]  # data ultima atualizado dos registros
-
-        # Impressão dos dados.
-        # Assim ficaremos com um registro ao lado do outro.
-        #print(coluna0, coluna1, coluna2, coluna3, coluna4, coluna5, coluna6, coluna7, coluna8, coluna9, coluna10, coluna11)
-
-        # Impressão dos dados.
-        # Assim ficaremos com um registro ao lado do outro e com vírgulas.
-        #print(coluna0, ',', coluna1, ',', coluna2, ',', coluna3, ',', coluna4, ',', coluna5, ',', coluna6, ',', coluna7, ',', coluna8, ',', coluna9, ',', coluna10, ',', coluna11)
-
-        # Impressão dos dados.
-        # Assim ficaremos com um registro abaixo do outro.
-        #print(coluna0)
-        #print(coluna1)
-        #print(coluna2)
-        #print(coluna3)
-        #print(coluna4)
-        #print(coluna5)
-        #print(coluna6)
-        #print(coluna7)
-        #print(coluna8)
-        #print(coluna9)
-        #print(coluna10)
-        #print(coluna11)
-
-# Caso ocorra um erro, então será executado o comando (except abaixo).
-# Notar que é utilizado o (Exception) e renomeado para (erro), assim conseguimos capturar o erro e posteriormente exibir sua classe de erro juntamente com a mensagem, conforme o print abaixo.
-except Exception as erro:
-
-    # Mensagem exibida ao usuário caso ocorra de leitura dos dados da tabela em excel.
-    print(f'Erro enquando era realizada a leitura dos dados. Tipo do erro: {erro.__class__}')
 
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #
