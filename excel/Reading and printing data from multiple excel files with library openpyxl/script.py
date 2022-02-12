@@ -25,64 +25,57 @@ print(source_repository_path)
 
 # Bloco 3
 
-# Variável com o nome do arquivo, que neste caso é fixo, mas pode ser alterado de acordo com a necessidade.
-file_name = 'employee_registration_many_lines.xlsx'
+# Variável com o nome da extensão do arquivo buscado, que neste caso é a extensão (xlsx).
+# Notar que conseguimos verificar mais de um tipo de extensão do arquivo excel.
+file_extension_one = 'xlsx'
+file_extension_two = 'xlsm'
 
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #
 
 # Bloco 4
-
-# Variável com a concatenação do repositório e nome do arquivo, para ter o caminho completo até a localização do arquivo.
-# Notar que é utilizado duas barras, pois, somente uma barra represente quebra de texto, ou seja, mudança de linha sem sair do contexto atual.
-file_repository_path = (source_repository_path + '\\' + file_name)
-
-# ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #
-
-# Bloco 5
 
 # Variável com o comando para verificar se o repositório origem, o mesmo da variável (source_repository_path) existe.
 check_existence_source_repository = os.path.isdir(source_repository_path)
 
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #
 
-# Bloco 6
-
-# Variável com o comando para verificar se o arquivo origem, o mesmo da variável (employees_file_name) existe.
-check_existence_source_file = os.path.isfile(file_repository_path)
-
-# ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #
-
-# Bloco 7
+# Bloco 5
 
 # Importante:
 # Este bloco realiza a verificação se o repositório existe, ou seja, o repositório origem da variável (source_repository_path).
-# Este bloco realiza a verificação se o arquivo existe, ou seja, o arquivo da variável (file_name).
+# Este bloco realiza a verificação se o arquivo que será lido é da extensão (xlsx ou xlsm), ou seja, um arquivo excel.
 # Caso o repositório ou o arquivo não exista, então haverá o erro e uma mensagem amigável será exibida ao usuário, tanto informando a inexistência do repositório ou do arquivo.
-# Caso o repositório ou o arquivo não exista, então além da mensagem exibida ao usuário, o script será encerrado neste bloco 7 e não serão executados os demais scripts abaixo.
+# Caso o repositório ou o arquivo não exista, então além da mensagem exibida ao usuário, o script será encerrado neste bloco 6 e não serão executados os demais scripts abaixo.
+
+# Declaração de variável global para utilização ao decorrer do script.
+global wbk_employee_registration
 
 # Caso a cláusula seja verdadeira, então irá executar o comando abaixo.
 # Verifica se o repositório origem existe. Caso existe, irá para o comando abaixo.
 if check_existence_source_repository:
 
-    # Caso a cláusula seja verdadeira, então irá executar o comando abaixo.
-    # Verifica se o arquivo existe, caso exista, irá para o comando abaixo.
-    if check_existence_source_file:
+    # loop for para verificar os arquivos existentes no repositório origem, ou seja, na variável (source_repository_path).
+    for root, dicts, files in os.walk(source_repository_path):
 
-        # Variável com o comando para abertura do arquivo excel que desejamos trabalhar, onde é feito com a biblioteca (openpyxl).
-        wbk_employee_registration = openpyxl.load_workbook(file_repository_path)
+        # loop for para verificar somente os arquivos, assim restringindo e melhorando a verificação.
+        for file in files:
 
-        # Continua com os demais comandos caso não haja erro no try, que neste caso, é na abertura do arquivo, indicando sua existência.
-        pass
+            # Caso a cláusula seja verdadeira, o comando abaixo é executado.
+            # Este (if) realiza um slicing (fatiamento) do nome do arquivo que foi localizado pelos quatro últimos caracteres, que neste caso, seria o (xlsx ou xlsm) que procuramos.
+            # Esse slicing (fatiamento) é comparado com a variável (file_extension_one e file_extension_two), que tem como valor (xlsx ou xlsm), ou seja, o valor que procuramos.
+            if file[-4:] == file_extension_one or file[-4:] == file_extension_two:
 
-    # Caso a cláusula seja falsa, então irá executar o comando abaixo.
-    # Se o arquivo não existir, será informado a mensagem abaixo ao usuário.
-    else:
+                # Variável com o comando para abertura dos arquivos excel que desejamos trabalhar, onde é feito com a biblioteca (openpyxl).
+                # Notar que neste caso, apontamos o caminho origem pela variável (source_repository_path) e concatenamos com a variável (file) que são os arquivos, visto que só teremos os arquivos no formato excel na extensão (xlsx ou xlsm) realizado pelo (if).
+                # Para ficar mais visível, neste exemplo, a variável (file) iria trazer os arquivos do caminho origem nomeados como (employee_registration_one.xlsx, employee_registration_two.xlsx e employee_registration_macro.xlsm).
+                # Temos um arquivo de extensão (txt) no caminho origem, porém, não será lido, pois, o if realizou a restrição neste caso.
+                wbk_employee_registration = openpyxl.load_workbook(source_repository_path + '\\' + file)
 
-        # Mensagem ao usuário caso o repositório não exista.
-        print('Arquivo (' + file_name + ') não existe. \nPor favor, verifique se o nome do arquivo está correto ou se existe no repositório origem e tente novamente. \nProcesso finalizado sem êxito.')
+            # Caso a cláusula seja falsa, então irá executar o comando abaixo.
+            else:
 
-        # Caso ocorra o erro, então o script é encerrado e não prosseguirá para o próximo passo, assim evitando erros para o usuário posteriormente.
-        sys.exit()
+                # Continua com os demais comandos caso não haja erro no try, que neste caso, é na abertura do arquivo, indicando sua existência.
+                pass
 
 # Caso a cláusula seja falsa, então irá executar o comando abaixo.
 # Se o repositório não existir, será informado a mensagem abaixo ao usuário.
@@ -96,14 +89,14 @@ else:
 
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #
 
-# Bloco 8
+# Bloco 6
 
 # Variável com o comando para verificar todas as planilhas disponiveis que temos para trabalhar na tabela.
 wbk_employee_sheets_available = wbk_employee_registration.sheetnames
 
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #
 
-# Bloco 9
+# Bloco 7
 
 # Variável com o comando para escolher a planilha (sheet) que iremos querer trabalhar.
 sheet_employee_registration = wbk_employee_registration['employee_registration']
