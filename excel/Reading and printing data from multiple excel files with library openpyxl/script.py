@@ -65,8 +65,6 @@ if check_existence_source_repository:
         # loop for para verificar somente os arquivos, assim restringindo e melhorando a verificação.
         for file in files:
 
-            print(files)
-
             # Caso a cláusula seja verdadeira, o comando abaixo é executado.
             # Realiza a verificação se existe algum arquivo no repositório da variável (). Aqui é qualquer arquivo, não depende da extensão.
             # Caso não exista nenhum arquivo, então será executado um else, com uma mensagem ao usuário e encerramento do script aqui, neste bloco 6.
