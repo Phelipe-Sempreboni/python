@@ -71,6 +71,8 @@ if check_existence_source_repository:
                 # Temos um arquivo de extensão (txt) no caminho origem, porém, não será lido, pois, o if realizou a restrição neste caso.
                 wbk_employee_registration = openpyxl.load_workbook(source_repository_path + '\\' + file)
 
+                print('Lendo o arquivo: ' + (source_repository_path + '\\' + file) + '.')
+
             # Caso a cláusula seja falsa, então irá executar o comando abaixo.
             else:
 
