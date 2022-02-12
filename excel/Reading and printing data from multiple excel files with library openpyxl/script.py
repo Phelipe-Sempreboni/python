@@ -20,7 +20,14 @@ import sys  # biblioteca que realiza operações nativas do sistema windows.
 # Bloco 2
 
 # Variável com o caminho do repositório de origem.
-source_repository_path = r'C:\Users\pheli\OneDrive\Archives\2 - Github\Repositories\python\excel\Reading and printing data from multiple excel files\archives'
+# Neste caso o caminho é fixo, ou seja, necessita de uma alteração manual.
+#source_repository_path = r'C:\Users\pheli\OneDrive\Archives\2 - Github\Repositories\python\excel\Reading and printing data from a single excel file\archives'
+
+# Neste caso o caminho é relativo, ou seja, não necessita de uma alteração manual.
+# Este caminho, neste caso, seta o repositório que o este script está locado, logo, os arquivos necessitam estar junto do script no repositório.
+path = os.path.abspath(__file__)
+source_repository_path = os.path.dirname(path)
+print(source_repository_path)
 
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #
 
