@@ -1,1 +1,1 @@
-Python é uma linguagem poderosa!
+Testando a gravacao de arquivos no Python em formato .txt
