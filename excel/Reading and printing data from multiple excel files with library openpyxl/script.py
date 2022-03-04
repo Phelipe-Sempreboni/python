@@ -87,6 +87,7 @@ if check_existence_source_repository:
                     # Estamos utilizando o loop for para realizar a leitura completa dessa planilha, onde, para cada linha (row), retornamos os valores da instrução sheet_employee_registration.iter_rows(min_row=2, values_only=True).
                     # Notar que teremos os valores devolvidos como tuplas, e tuplas são objetos imutáveis no python, ou seja, não é possível realizar nenhum tipo de modificação.
                     for row in sheet_employee_registration.iter_rows(min_row=2, values_only=True):
+
                         # 1º maneira de impressão dos dados. Se for executar esse método, comente o 2º método.
                         # Mensagem exibida ao usuário com os dados do loop for que foi executado.
                         # Essa é uma mensagem simples. Abaixo temos um tipo de mensagem mais refinada.
