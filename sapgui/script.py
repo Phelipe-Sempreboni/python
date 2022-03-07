@@ -15,27 +15,37 @@ import os  # Módulo para fornecer acesso a funções específicas do sistema pa
 import glob  # Módulo usado para retornar todos os caminhos de arquivo que correspondem a um padrão específico.
 import subprocess  # Módulo subprocess permite que você execute programas externos e inspecione suas saídas com facilidade.
 import time  # Módulo provê várias funções relacionadas à tempo, onde neste caso estamos utilizando para a função (sleep).
-from datetime import datetime  # 
+from datetime import datetime  # Módulo fornece classes para manipular datas e tempo de forma simples ou complexas. Apesar de cálculos aritméticos com data e tempo serem suportados, o foco da implementação está na extração eficiente de atributo para formatar resultados e manipulação.
+import getpass  # Módulo para mascarar a senha quando é inserida no terminal.
+
+# ------------------------------------------------------------------------------------------------------------------------ #
+
+# Variável da data atual para inserção nos campos do SAP GUI, neste caso a variável (data).
+# Variável (data_atual) formata o padrão da data.
+data = datetime.now()
+data_atual = data.strftime('%d.%m.%Y')
+
+# ------------------------------------------------------------------------------------------------------------------------ #
+
+# Variável da hora atual para inserção nos campos do SAP GUI, neste caso a variável (hora_atual).
+hora_atual = time.strftime('%Hh%M', time.localtime())
+
+# ------------------------------------------------------------------------------------------------------------------------ #
+
+# Variáveis com nome do caminho facilitar o preenchimento de campos.
+nome_caminho = r'C:\Users\br0234206128\Enel Spa\SM - Acompanhamento - General\Medidores Substituídos Piloto\Extrações\ZUDWM_OT300_EQUI\Medidores'
+
+# Variáveis com nome dos dos arquivos de exportação para facilitar o preenchimento de campos.
+nome_arquivo_principal = r'\1 - Notas de equips medidores - Principal.xlsx'
+nome_arquivo_complemento = r'\2 - Notas de equips medidores - Complemento.xlsx'
+
+# Variáveis com nome do arquivo para indicar a atualização das exportações.
+nome_txt = r'\Atualização em ' + data_atual + ' às ' + hora_atual + '.txt'
+nome_txt_caminho = nome_caminho + nome_txt
 
 # ------------------------------------------------------------------------------------------------------------------------ #
 
 def saplogin_rpa():
-
-    #Variáveis de data para inserção nos campos do SAP.
-    data = datetime.now()
-    data_atual = data.strftime('%d.%m.%Y')
-    hora_atual = time.strftime('%Hh%M', time.localtime())
-
-    #Variáveis com nome do caminho facilitar o preenchimento de campos.
-    nome_caminho = r'C:\Users\br0234206128\Enel Spa\SM - Acompanhamento - General\Medidores Substituídos Piloto\Extrações\ZUDWM_OT300_EQUI\Medidores'
-
-    #Variáveis com nome dos dos arquivos de exportação para facilitar o preenchimento de campos.
-    nome_arquivo_principal = r'\1 - Notas de equips medidores - Principal.xlsx'
-    nome_arquivo_complemento = r'\2 - Notas de equips medidores - Complemento.xlsx'
-
-    #Variáveis com nome do arquivo para indicar a atualização das exportações.
-    nome_txt = r'\Atualização em ' + data_atual + ' às ' + hora_atual + '.txt'
-    nome_txt_caminho = nome_caminho + nome_txt
 
     #Conexão com SAP GUI.
     try:
