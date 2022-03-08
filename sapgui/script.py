@@ -124,7 +124,7 @@ try:
             # Variável declarada como uma lista vazia, para conseguirmos comparar caso a variável (files) seja ou não vazia, que no caso do (elif) acima, o foco é comparar se (files) não é vazio.
             lista_vazia_2 = []
 
-            
+
 
 finally:
 
