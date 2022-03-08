@@ -98,6 +98,7 @@ try:
         # Este (if) verifica se existem arquivos de qualquer tipo de extensão no repositório da variável (nome_caminho).
         # Caso não exista nenhum tipo de arquivo, uma mensagem é exibida ao usuário; o script irá aguardar 30 segundos e será encerrado sem prosseguir para os passos seguintes.
         # Aqui o resultado da variável (files) é devolvido em formato de lista, logo, não é necessário realizar um (loop for) para verificar os arquivos; é verificado somente se o valor da lista é vazio ou não.
+        # Aqui utilizamos a variável (lista_vazia) para comparar como valor da variável (files), onde caso seja vazio irá comparar com a variável (lista_vazia).
         if files == lista_vazia:
 
             # Print para realizar as divisões entre as mensagens, visando deixar a leitura do usuário mais organizada.
