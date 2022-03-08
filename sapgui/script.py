@@ -5,7 +5,7 @@
 
 '''
 
-# ------------------------------------------------------------------------------------------------------------------------ #
+# ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- #
 
 # Importação de módulos
 
@@ -18,7 +18,7 @@ import time  # Módulo provê várias funções relacionadas à tempo, onde nest
 from datetime import datetime  # Módulo fornece classes para manipular datas e tempo de forma simples ou complexas. Apesar de cálculos aritméticos com data e tempo serem suportados, o foco da implementação está na extração eficiente de atributo para formatar resultados e manipulação.
 import getpass  # Módulo para mascarar a senha quando é inserida no terminal.
 
-# ------------------------------------------------------------------------------------------------------------------------ #
+# ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- #
 
 # Variável da data atual para inserção nos campos do SAP GUI, neste caso a variável (data).
 # Variável (data_atual) formata o padrão da data.
@@ -26,38 +26,38 @@ import getpass  # Módulo para mascarar a senha quando é inserida no terminal.
 data = datetime.now()
 data_atual = data.strftime('%d.%m.%Y')
 
-# ------------------------------------------------------------------------------------------------------------------------ #
+# ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- #
 
 # Variável da hora atual para inserção nos campos do SAP GUI, neste caso a variável (hora_atual).
 # Essa hora fica pré definida para facilitar o preenchimento no SAP GUI e controle de variáveis no script.
 hora_atual = time.strftime('%Hh%M', time.localtime())
 
-# ------------------------------------------------------------------------------------------------------------------------ #
+# ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- #
 
 # Variável com o endereço do caminho onde as bases de dados extraídas do SAP GUI serão salvas.
 # Esse caminho fica pré definido para facilitar o preenchimento no SAP GUI e controle de variáveis no script.
 nome_caminho = r'C:\Users\Zézinho\ZUDWM_OT850_EQUIPS\Equipamentos'
 
-# ------------------------------------------------------------------------------------------------------------------------ #
+# ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- #
 
 # Variável com o nome do arquivo que será salvo na extração do SAP GUI.
 # Esse caminho fica pré definido para facilitar o preenchimento no SAP GUI e controle de variáveis no script.
 nome_arquivo_principal = r'\1 - Notas de equips medidores - Principal.xlsx'
 
-# ------------------------------------------------------------------------------------------------------------------------ #
+# ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- #
 
 # Variável com o nome do arquivo que será salvo na extração do SAP GUI. Neste caso, seria por exemplo, um arquivo complementar da extração ou um segundo arquivo de extração.
 # Esse caminho fica pré definido para facilitar o preenchimento no SAP GUI e controle de variáveis no script.
 nome_arquivo_complemento = r'\2 - Notas de equips medidores - Complemento.xlsx'
 
-# ------------------------------------------------------------------------------------------------------------------------ #
+# ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- #
 
 # Variável (nome_txt) que monta o nome de um arquivo no formato (txt) para indicar no final do script, a data e hora da atualização.
 # Variável (nome_txt_caminho) que concatena o caminho dos arquivos da extração do SAP GUI e o arquivo montado com a informação da da variável (nome_txt).
 nome_txt = r'\Atualização em ' + data_atual + ' às ' + hora_atual + '.txt'
 nome_txt_caminho = nome_caminho + nome_txt
 
-# ------------------------------------------------------------------------------------------------------------------------ #
+# ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- #
 
 
 def saplogin_rpa():
