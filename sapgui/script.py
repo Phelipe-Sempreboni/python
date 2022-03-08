@@ -22,22 +22,35 @@ import getpass  # Módulo para mascarar a senha quando é inserida no terminal.
 
 # Variável da data atual para inserção nos campos do SAP GUI, neste caso a variável (data).
 # Variável (data_atual) formata o padrão da data.
+# Essa data fica pré definida para facilitar o preenchimento no SAP GUI e controle de variáveis no script.
 data = datetime.now()
 data_atual = data.strftime('%d.%m.%Y')
 
 # ------------------------------------------------------------------------------------------------------------------------ #
 
 # Variável da hora atual para inserção nos campos do SAP GUI, neste caso a variável (hora_atual).
+# Essa hora fica pré definida para facilitar o preenchimento no SAP GUI e controle de variáveis no script.
 hora_atual = time.strftime('%Hh%M', time.localtime())
 
 # ------------------------------------------------------------------------------------------------------------------------ #
 
-# Variáveis com nome do caminho facilitar o preenchimento de campos.
-nome_caminho = r'C:\Users\br0234206128\Enel Spa\SM - Acompanhamento - General\Medidores Substituídos Piloto\Extrações\ZUDWM_OT300_EQUI\Medidores'
+# Variável com o endereço do caminho onde as bases de dados extraídas do SAP GUI serão salvas.
+# Esse caminho fica pré definido para facilitar o preenchimento no SAP GUI e controle de variáveis no script.
+nome_caminho = r'C:\Users\Zézinho\ZUDWM_OT850_EQUIPS\Equipamentos'
 
-# Variáveis com nome dos dos arquivos de exportação para facilitar o preenchimento de campos.
+# ------------------------------------------------------------------------------------------------------------------------ #
+
+# Variável com o nome do arquivo que será salvo na extração do SAP GUI.
+# Esse caminho fica pré definido para facilitar o preenchimento no SAP GUI e controle de variáveis no script.
 nome_arquivo_principal = r'\1 - Notas de equips medidores - Principal.xlsx'
+
+# ------------------------------------------------------------------------------------------------------------------------ #
+
+# Variável com o nome do arquivo que será salvo na extração do SAP GUI. Neste caso, seria por exemplo, um arquivo complementar da extração ou um segundo arquivo de extração.
+# Esse caminho fica pré definido para facilitar o preenchimento no SAP GUI e controle de variáveis no script.
 nome_arquivo_complemento = r'\2 - Notas de equips medidores - Complemento.xlsx'
+
+# ------------------------------------------------------------------------------------------------------------------------ #
 
 # Variáveis com nome do arquivo para indicar a atualização das exportações.
 nome_txt = r'\Atualização em ' + data_atual + ' às ' + hora_atual + '.txt'
