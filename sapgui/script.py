@@ -44,19 +44,19 @@ hora_atual = time.strftime('%Hh%M', time.localtime())
 
 # Variável com o endereço do caminho onde as bases de dados extraídas do SAP GUI serão salvas.
 # Esse caminho fica pré definido para facilitar o preenchimento no SAP GUI e controle de variáveis no script.
-nome_caminho = r'C:\Users\Zézinho\ZUDWM_OT850_EQUIPS\Equipamentos'
+nome_caminho = r'C:\Windows\Temp\testes'
 
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- #
 
 # Variável com o nome do arquivo que será salvo na extração do SAP GUI.
 # Esse caminho fica pré definido para facilitar o preenchimento no SAP GUI e controle de variáveis no script.
-nome_arquivo_principal = r'\1 - Notas - Principal.xlsx'
+nome_arquivo_principal = r'\Notas - Principal.xlsx'
 
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- #
 
 # Variável com o nome do arquivo que será salvo na extração do SAP GUI. Neste caso, seria por exemplo, um arquivo complementar da extração ou um segundo arquivo de extração.
 # Esse caminho fica pré definido para facilitar o preenchimento no SAP GUI e controle de variáveis no script.
-nome_arquivo_complemento = r'\2 - Notas - Complemento.xlsx'
+nome_arquivo_complemento = r'\Notas - Complemento.xlsx'
 
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- #
 
@@ -67,16 +67,21 @@ nome_txt_caminho = nome_caminho + nome_txt
 
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- #
 
-arquivos = glob.glob(r'C:\Users\br0234206128\Enel Spa\SM - Acompanhamento - General\Medidores Substituídos Piloto\Extrações\ZUDWM_OT300_EQUI\Medidores\*')
+# Bloco de try para tentar realizar a execução abaixo.
+try:
+
+    # 1º nível de verificação de (locais - root), (repositórios - dirs), (arquivos - files).
+    for root, dirs, files in os.walk(nome_caminho):
 
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- #
 
-for arquivos_repo in arquivos:
-    try:
-        os.remove(arquivos_repo)
-    finally:
-        0
+# 2º nível de verificação de (locais - root), (repositórios - dirs), (arquivos - files).
+# Este (if) verifica se o (local - root) é o mesmo do repositório (nome_caminho), visto que os arquivos utilizados estão neste repositório.
+# Também certifica que o script não percorra outros repositórios dentro do repositório principal da variável (nome_caminho).
+        if root == nome_caminho:
+
+            # Imprimir mensagem de validação do repositório atual ao usuário.
+            print('Validação do repositório atual: ' + root + '.\n')
 
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- #
-
 
