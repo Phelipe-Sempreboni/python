@@ -75,9 +75,9 @@ try:
 
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- #
 
-# 2º nível de verificação de (locais - root), (repositórios - dirs), (arquivos - files).
-# Este (if) verifica se o (local - root) é o mesmo do repositório (nome_caminho), visto que os arquivos utilizados estão neste repositório.
-# Também certifica que o script não percorra outros repositórios dentro do repositório principal da variável (nome_caminho).
+        # 2º nível de verificação de (locais - root), (repositórios - dirs), (arquivos - files).
+        # Este (if) verifica se o (local - root) é o mesmo do repositório (nome_caminho), visto que os arquivos utilizados estão neste repositório.
+        # Também certifica que o script não percorra outros repositórios dentro do repositório principal da variável (nome_caminho).
         if root == nome_caminho:
 
             # Imprimir mensagem de validação do repositório atual ao usuário.
@@ -95,6 +95,9 @@ try:
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- #
 
         # 3º nível de verificação de (locais - root), (repositórios - dirs), (arquivos - files).
+        # Este (if) verifica se existem arquivos de qualquer tipo de extensão no repositório da variável (nome_caminho).
+        # Caso não exista nenhum tipo de arquivo, uma mensagem é exibida ao usuário; o script irá aguardar 30 segundos e será encerrado sem prosseguir para os passos seguintes.
+        # Aqui o resultado da variável (files) é devolvido em formato de lista, logo, não é necessário realizar um (loop for) para verificar os arquivos; é verificado somente se o valor da lista é vazio ou não.
         if files == lista_vazia:
 
             # Print para realizar as divisões entre as mensagens, visando deixar a leitura do usuário mais organizada.
@@ -111,6 +114,8 @@ try:
 
             # Comando para encerrar o script neste ponto, visando não haver erros nos processos seguintes.
             sys.exit()
+
+# ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- #
 
 finally:
 
