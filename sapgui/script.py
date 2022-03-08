@@ -52,11 +52,13 @@ nome_arquivo_complemento = r'\2 - Notas de equips medidores - Complemento.xlsx'
 
 # ------------------------------------------------------------------------------------------------------------------------ #
 
-# Variáveis com nome do arquivo para indicar a atualização das exportações.
+# Variável (nome_txt) que monta o nome de um arquivo no formato (txt) para indicar no final do script, a data e hora da atualização.
+# Variável (nome_txt_caminho) que concatena o caminho dos arquivos da extração do SAP GUI e o arquivo montado com a informação da da variável (nome_txt).
 nome_txt = r'\Atualização em ' + data_atual + ' às ' + hora_atual + '.txt'
 nome_txt_caminho = nome_caminho + nome_txt
 
 # ------------------------------------------------------------------------------------------------------------------------ #
+
 
 def saplogin_rpa():
 
