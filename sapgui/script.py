@@ -90,7 +90,7 @@ try:
         # Se tentarmos utilizar (if files == '' or files == '[]'), não acontecerá nada, pois o valor retornado não é entendido pelo comando do (if).
         # Por isso a variável com a lista vazia foi criada, para conseguirmos comparar o valor vazio da variável (files) com um valor realmente vazio, neste caso, comparação com a variável (lista_vazia).
         # O (if) utilizando a comparação do valor vazio com a lista vazia está logo abaixo.
-        lista_vazia = []
+        lista_vazia_1 = []
 
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- #
 
@@ -99,7 +99,7 @@ try:
         # Caso não exista nenhum tipo de arquivo, uma mensagem é exibida ao usuário; o script irá aguardar 30 segundos e será encerrado sem prosseguir para os passos seguintes.
         # Aqui o resultado da variável (files) é devolvido em formato de lista, logo, não é necessário realizar um (loop for) para verificar os arquivos; é verificado somente se o valor da lista é vazio ou não.
         # Aqui utilizamos a variável (lista_vazia) para comparar como valor da variável (files), onde caso seja vazio irá comparar com a variável (lista_vazia).
-        if files == lista_vazia:
+        if files == lista_vazia_1:
 
             # Print para realizar as divisões entre as mensagens, visando deixar a leitura do usuário mais organizada.
             print('=======================================================================================================================================================================\n')
@@ -117,6 +117,14 @@ try:
             sys.exit()
 
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- #
+
+        # 4º nível de verificação de (locais - root), (repositórios - dirs), (arquivos - files).
+        elif files != lista_vazia_1:
+
+            # Variável declarada como uma lista vazia, para conseguirmos comparar caso a variável (files) seja ou não vazia, que no caso do (elif) acima, o foco é comparar se (files) não é vazio.
+            lista_vazia_2 = []
+
+            
 
 finally:
 
