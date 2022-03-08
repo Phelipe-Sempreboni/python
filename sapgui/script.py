@@ -72,6 +72,12 @@ arquivos = glob.glob(r'C:\Users\br0234206128\Enel Spa\SM - Acompanhamento - Gene
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- #
 
 
+
+
+
+# ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- #
+
+
 def saplogin_rpa():
 
     #Conexão com SAP GUI.
@@ -109,8 +115,6 @@ def saplogin_rpa():
         #Campos de login e senha do SAP.
         session.findById("wnd[0]/usr/txtRSYST-BNAME").text = login
         session.findById("wnd[0]/usr/pwdRSYST-BCODE").text = password
-
-
 
         for arquivos_gerais in arquivos:
             try:
