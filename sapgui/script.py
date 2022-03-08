@@ -85,3 +85,12 @@ try:
 
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- #
 
+        # Essa variável foi criada para caso não hajam arquivos no repositório.
+        # Caso não hajam arquivos, o valor retornado seria uma lista vazia, ou seja, o valor [].
+        # Se tentarmos utilizar (if files == '' or files == '[]'), não acontecerá nada, pois o valor retornado não é entendido pelo comando do (if).
+        # Por isso a variável com a lista vazia foi criada, para conseguirmos comparar o valor vazio da variável (files) com um valor realmente vazio, neste caso, comparação com a variável (lista_vazia).
+        # O (if) utilizando a comparação do valor vazio com a lista vazia está logo abaixo.
+        lista_vazia = []
+
+# ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- #
+
