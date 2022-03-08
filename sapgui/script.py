@@ -5,7 +5,11 @@ created by: Luiz Phelipe Utiama Sempreboni
 Script para:
 - Conexão com o SAP GUI com solicitação de usuário e senha para o usuário.
 - Limpeza e/ou exclusão de arquivos anteriores do repositório atual que os arquivos serão salvos, onde, este repositório sempre será limpo no início do script.
-
+- Entrar na transação do SAP GUI para iniciar o processo, onde neste caso é uma transação ficticia.
+- Executar os comandos automatizados do SAP GUI pelo script.
+- Realizar a extração das bases de dados.
+- Salvar as bases de dados.
+- Finalizar o script.
 
 '''
 
@@ -63,6 +67,10 @@ nome_txt_caminho = nome_caminho + nome_txt
 
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- #
 
+arquivos = glob.glob(r'C:\Users\br0234206128\Enel Spa\SM - Acompanhamento - General\Medidores Substituídos Piloto\Extrações\ZUDWM_OT300_EQUI\Medidores\*')
+
+# ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- #
+
 
 def saplogin_rpa():
 
@@ -102,7 +110,7 @@ def saplogin_rpa():
         session.findById("wnd[0]/usr/txtRSYST-BNAME").text = login
         session.findById("wnd[0]/usr/pwdRSYST-BCODE").text = password
 
-        arquivos = glob.glob(r'C:\Users\br0234206128\Enel Spa\SM - Acompanhamento - General\Medidores Substituídos Piloto\Extrações\ZUDWM_OT300_EQUI\Medidores\*')
+
 
         for arquivos_gerais in arquivos:
             try:
