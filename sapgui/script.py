@@ -1,6 +1,10 @@
 '''
 
+created by: Luiz Phelipe Utiama Sempreboni
 
+Script para:
+- Conexão com o SAP GUI com solicitação de usuário e senha para o usuário.
+- Limpeza e/ou exclusão de arquivos anteriores do repositório atual que os arquivos serão salvos, onde, este repositório sempre será limpo no início do script.
 
 
 '''
