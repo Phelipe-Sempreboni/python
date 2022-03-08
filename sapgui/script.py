@@ -50,13 +50,13 @@ nome_caminho = r'C:\Users\Zézinho\ZUDWM_OT850_EQUIPS\Equipamentos'
 
 # Variável com o nome do arquivo que será salvo na extração do SAP GUI.
 # Esse caminho fica pré definido para facilitar o preenchimento no SAP GUI e controle de variáveis no script.
-nome_arquivo_principal = r'\1 - Notas de equips medidores - Principal.xlsx'
+nome_arquivo_principal = r'\1 - Notas - Principal.xlsx'
 
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- #
 
 # Variável com o nome do arquivo que será salvo na extração do SAP GUI. Neste caso, seria por exemplo, um arquivo complementar da extração ou um segundo arquivo de extração.
 # Esse caminho fica pré definido para facilitar o preenchimento no SAP GUI e controle de variáveis no script.
-nome_arquivo_complemento = r'\2 - Notas de equips medidores - Complemento.xlsx'
+nome_arquivo_complemento = r'\2 - Notas - Complemento.xlsx'
 
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- #
 
@@ -71,135 +71,12 @@ arquivos = glob.glob(r'C:\Users\br0234206128\Enel Spa\SM - Acompanhamento - Gene
 
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- #
 
-
-
-
+for arquivos_repo in arquivos:
+    try:
+        os.remove(arquivos_repo)
+    finally:
+        0
 
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- #
 
 
-def saplogin_rpa():
-
-    #Conexão com SAP GUI.
-    try:
-        path = r"C:\Program Files (x86)\SAP\FrontEnd\SAPgui\saplogon.exe"
-        subprocess.Popen(path)
-        time.sleep(5)
-
-        SapGuiAuto = win32com.client.GetObject('SAPGUI')
-        if not type(SapGuiAuto) == win32com.client.CDispatch:
-            return
-
-        application = SapGuiAuto.GetScriptingEngine
-        if not type(application) == win32com.client.CDispatch:
-            SapGuiAuto = None
-            return
-        connection = application.OpenConnection("H181 RP1 ENEL SP CCS Produção (without SSO)", True)
-
-        if not type(connection) == win32com.client.CDispatch:
-            application = None
-            SapGuiAuto = None
-            return
-
-        session = connection.Children(0)
-        if not type(session) == win32com.client.CDispatch:
-            connection = None
-            application = None
-            SapGuiAuto = None
-            return
-
-        #Variáveis de login e senha dos campos do SAP.
-        login = input('Informe seu login: ')
-        password = getpass.getpass('Informe sua senha: ')
-
-        #Campos de login e senha do SAP.
-        session.findById("wnd[0]/usr/txtRSYST-BNAME").text = login
-        session.findById("wnd[0]/usr/pwdRSYST-BCODE").text = password
-
-        for arquivos_gerais in arquivos:
-            try:
-                os.remove(arquivos_gerais)
-            finally:
-                0
-
-        #Scrip gerado do SAP.
-        #Alguns campos dos scripts do SAP são adaptados para funcionamento.
-        session.findById("wnd[0]").sendVKey(0)
-        session.findById("wnd[0]/tbar[0]/okcd").text = "SE16N"
-        session.findById("wnd[0]").sendVKey(0)
-        session.findById("wnd[0]/usr/ctxtGD-TAB").text = "ZUDWM_OT300_EQUI"
-        session.findById("wnd[0]").sendVKey(0)
-        session.findById("wnd[0]/usr/txtGD-MAX_LINES").text = ""
-        session.findById("wnd[0]/usr/ctxtGD-VARIANT").text = "/SM_EQUI_MED"
-        session.findById("wnd[0]/usr/tblSAPLSE16NSELFIELDS_TC/btnPUSH[4,8]").setFocus()
-        session.findById("wnd[0]/usr/tblSAPLSE16NSELFIELDS_TC/btnPUSH[4,8]").press()
-        session.findById("wnd[1]/usr/tblSAPLSE16NMULTI_TC/ctxtGS_MULTI_SELECT-LOW[1,0]").text = "USM*"
-        session.findById("wnd[1]/tbar[0]/btn[8]").press()
-        session.findById("wnd[0]/tbar[1]/btn[8]").press()
-        session.findById("wnd[0]/usr/cntlRESULT_LIST/shellcont/shell").selectAll()
-        session.findById("wnd[0]/usr/cntlRESULT_LIST/shellcont/shell").contextMenu()
-        session.findById("wnd[0]/usr/cntlRESULT_LIST/shellcont/shell").selectContextMenuItem("&XXL")
-        session.findById("wnd[1]/tbar[0]/btn[0]").press()
-        session.findById("wnd[1]/usr/ctxtDY_PATH").text = nome_caminho
-        session.findById("wnd[1]/usr/ctxtDY_FILENAME").text = nome_arquivo_principal
-        session.findById("wnd[1]/tbar[0]/btn[0]").press()
-
-        #Colocao o processo em espera por 10 segundos e aguarda até abertura do Excel.
-        time.sleep(30)
-
-        #Fecha o arquivo Excel que é aberto no final do processo de extração.
-        xl = win32com.client.Dispatch('Excel.Application')
-        xl.DisplayAlerts = False
-        xl.Quit()
-
-        #Scrip gerado do SAP.
-        #Alguns campos dos scripts do SAP são adaptados para funcionamento.
-        session.findById("wnd[0]/tbar[0]/btn[3]").press()
-        session.findById("wnd[0]/tbar[0]/btn[3]").press()
-        session.findById("wnd[0]").sendVKey(0)
-        session.findById("wnd[0]/tbar[0]/okcd").text = "SE16N"
-        session.findById("wnd[0]").sendVKey(0)
-        session.findById("wnd[0]/usr/ctxtGD-TAB").text = "ZUDWM_OT300_EQUI"
-        session.findById("wnd[0]").sendVKey(0)
-        session.findById("wnd[0]/usr/txtGD-MAX_LINES").text = ""
-        session.findById("wnd[0]/usr/ctxtGD-VARIANT").text = "/SM_EQUI_ME2"
-        session.findById("wnd[0]/usr/tblSAPLSE16NSELFIELDS_TC/btnPUSH[4,2]").setFocus()
-        session.findById("wnd[0]/usr/tblSAPLSE16NSELFIELDS_TC/btnPUSH[4,2]").press()
-        session.findById("wnd[1]/usr/tblSAPLSE16NMULTI_TC/ctxtGS_MULTI_SELECT-LOW[1,0]").text = "USM*"
-        session.findById("wnd[1]/tbar[0]/btn[8]").press()
-        session.findById("wnd[0]/tbar[1]/btn[8]").press()
-        session.findById("wnd[0]/usr/cntlRESULT_LIST/shellcont/shell").selectAll()
-        session.findById("wnd[0]/usr/cntlRESULT_LIST/shellcont/shell").contextMenu()
-        session.findById("wnd[0]/usr/cntlRESULT_LIST/shellcont/shell").selectContextMenuItem("&XXL")
-        session.findById("wnd[1]/tbar[0]/btn[0]").press()
-        session.findById("wnd[1]/usr/ctxtDY_PATH").text = nome_caminho
-        session.findById("wnd[1]/usr/ctxtDY_FILENAME").text = nome_arquivo_complemento
-        session.findById("wnd[1]/tbar[0]/btn[0]").press()
-
-        #Colocao o processo em espera por 10 segundos e aguarda até abertura do Excel.
-        time.sleep(30)
-
-        #Fecha o arquivo Excel que é aberto no final do processo de extração.
-        xl = win32com.client.Dispatch('Excel.Application')
-        xl.DisplayAlerts = False
-        xl.Quit()
-
-        #Encerra a tela de login do SAP.
-        session.findById("wnd[0]/tbar[0]/btn[3]").press()
-        session.findById("wnd[0]/tbar[0]/btn[3]").press()
-        session.findById("wnd[0]").close()
-        session.findById("wnd[1]/usr/btnSPOP-OPTION1").press()
-
-        open(nome_txt_caminho, 'a')
-
-        #Caso haja um erro nos processos acima, haverá a mensagem de erro abaixo.
-    except:
-        print(sys.exc_info()[0])
-
-    finally:
-        session = None
-        connection = None
-        application = None
-        SapGuiAuto = None
-
-saplogin_rpa()
