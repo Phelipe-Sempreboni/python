@@ -94,3 +94,24 @@ try:
 
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- #
 
+        # 3º nível de verificação de (locais - root), (repositórios - dirs), (arquivos - files).
+        if files == lista_vazia:
+
+            # Print para realizar as divisões entre as mensagens, visando deixar a leitura do usuário mais organizada.
+            print('=======================================================================================================================================================================\n')
+
+            # Imprimir mensagem abaixo para o usuário.
+            print('Não existe nenhum tipo de arquivo de arquivo neste repositório. \nPor favor, verifique o repositóro e tente novamente. \nProcesso executado sem êxito. \nEssa tela será fechada em 30 segundos. ')
+
+            # Print para realizar as divisões entre as mensagens, visando deixar a leitura do usuário mais organizada.
+            print('=======================================================================================================================================================================\n')
+
+            # Pausar ou colocar para dormir a execução do script por 30 segundos até a execução do comando abaixo.
+            time.sleep(30)
+
+            # Comando para encerrar o script neste ponto, visando não haver erros nos processos seguintes.
+            sys.exit()
+
+finally:
+
+    sys.exit()
