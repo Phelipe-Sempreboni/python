@@ -101,7 +101,7 @@ try:
             print('=======================================================================================================================================================================\n')
 
             # Imprimir mensagem abaixo para o usuário.
-            print('Não existe nenhum tipo de arquivo de arquivo neste repositório. \nPor favor, verifique o repositóro e tente novamente. \nProcesso executado sem êxito. \nEssa tela será fechada em 30 segundos. ')
+            print('Não existe nenhum tipo de arquivo de arquivo neste repositório. \nPor favor, verifique o repositóro e tente novamente. \nProcesso executado sem êxito. \nEssa tela será fechada em 30 segundos. \n')
 
             # Print para realizar as divisões entre as mensagens, visando deixar a leitura do usuário mais organizada.
             print('=======================================================================================================================================================================\n')
