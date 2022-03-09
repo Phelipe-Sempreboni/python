@@ -138,12 +138,13 @@ try:
         # Logo após, a variável (localizar_extensao_1) e (lista_vazia_2) são comparadas.
         # Caso a variável (localizar_extensao_1) seja igual a variável (lista_vazia_2), então o comando irá prosseguir para o (if aninhado com este if) abaixo.
         # Este (if) quer dizer que o valor de ambas variáveis são vazias, logo, irá imprimir a mensagem abaixo para o usuário, que não existe um arquivo com a extensão (xlsx).
-
+        # NOTAR QUE TEMOS OUTRO (ELIF) ABAIXO, PORÉM ESTÁ ANINHADO DENTRO DESTE (IF -> if localizar_extensao_1 == lista_vazia_2).
         elif files != lista_vazia_1:
 
             # Variável declarada como uma lista vazia, para conseguirmos comparar caso a variável (files) seja ou não vazia, que no caso do (elif) acima, o foco é comparar se (files) não é vazio.
             lista_vazia_2 = []
 
+            # Compara se ambas variáveis são iguais, que neste caso se ambas tem o valor de uma lista vazia, ou seja, igual à [].
             localizar_extensao_1 = [extensao_1 for extensao_1 in files if '.xlsx' in extensao_1]
 
             if localizar_extensao_1 == lista_vazia_2:
