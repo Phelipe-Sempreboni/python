@@ -7,9 +7,9 @@ Script para:
 - Verificação se existe qualquer tipo de arquivo dentro do repositório que foi apontado.
 - Verificação se existem arquivos com a extensão do tipo (xlsx/xlsm) do tipo excel.
 - Remoção (exclusão) apenas de arquivos com a extensão do tipo (xlsx/xlsm) do tipo excel do repositório que foi apontado.
+- Conexão com o SAP GUI com solicitação de usuário e senha para o usuário que estiver executando o comando.
 
 
-- Conexão com o SAP GUI com solicitação de usuário e senha para o usuário.
 - Entrar na transação do SAP GUI para iniciar o processo, onde neste caso é uma transação ficticia.
 - Executar os comandos automatizados do SAP GUI pelo script.
 - Realizar a extração das bases de dados.
