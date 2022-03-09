@@ -3,8 +3,13 @@
 created by: Luiz Phelipe Utiama Sempreboni
 
 Script para:
+- Verificação se o script está realmente atuando no repositório apontado e não está tentando realizar a leitura de demais repositórios internos.
+- Verificação se existe qualquer tipo de arquivo dentro do repositório que foi apontado.
+- Verificação se existem arquivos com a extensão do tipo (xlsx/xlsm) do tipo excel.
+- Remoção (exclusão) apenas de arquivos com a extensão do tipo (xlsx/xlsm) do tipo excel do repositório que foi apontado.
+
+
 - Conexão com o SAP GUI com solicitação de usuário e senha para o usuário.
-- Limpeza e/ou exclusão de arquivos anteriores do repositório atual que os arquivos serão salvos, onde, este repositório sempre será limpo no início do script.
 - Entrar na transação do SAP GUI para iniciar o processo, onde neste caso é uma transação ficticia.
 - Executar os comandos automatizados do SAP GUI pelo script.
 - Realizar a extração das bases de dados.
