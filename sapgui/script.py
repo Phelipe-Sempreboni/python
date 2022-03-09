@@ -115,9 +115,6 @@ try:
         # Aqui utilizamos a variável (lista_vazia) para comparar como valor da variável (files), onde caso seja vazio irá comparar com a variável (lista_vazia).
         if files == lista_vazia_1:
 
-            # Print para realizar as divisões entre as mensagens, visando deixar a leitura do usuário mais organizada.
-            print('=======================================================================================================================================================================\n')
-
             # Imprimir mensagem abaixo para o usuário.
             print('Não existe nenhum tipo de arquivo de arquivo neste repositório. \nPor favor, verifique o repositóro e tente novamente. \nProcesso executado sem êxito. \nEssa tela será fechada em 30 segundos. \n')
 
@@ -159,9 +156,6 @@ try:
             # Compara se ambas variáveis são iguais, que neste caso se ambas tem o valor de uma lista vazia, ou seja, igual à [].
             if localizar_extensao_1 == lista_vazia_2 and localizar_extensao_2 == lista_vazia_3:
 
-                # Print para realizar as divisões entre as mensagens, visando deixar a leitura do usuário mais organizada.
-                print('=======================================================================================================================================================================\n')
-
                 # Imprimir mensagem abaixo para o usuário.
                 print('Não existe um arquivo com a extensão do tipo (xlsx/xlsm) do excel nesse repositório. \nPor favor, verifique o repositóro e tente novamente. \nProcesso executado sem êxito. \nEssa tela será fechada em 30 segundos. \n')
 
@@ -202,7 +196,9 @@ try:
                         # Este (if) realiza o slicing (fatiamento) da string do nome arquivo e deixa somente os 4 últimos caracateres, neste caso, deixando somente a extensão do arquivo excel, ou seja (xlsx/xlsm).
                         if file[-4:] == 'xlsx' or file[-4:] == 'xlsm':
 
-                            print(file)
+                            os.remove(nome_caminho + '\\' + file)
+
+                            print('Arquivo: ' + file + ' removido com sucesso')
 
 
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- #
