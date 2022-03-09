@@ -70,7 +70,7 @@ nome_txt_caminho = nome_caminho + nome_txt
 # Print para realizar as divisões entre as mensagens, visando deixar a leitura do usuário mais organizada.
 print('=======================================================================================================================================================================\n')
 
-# # Imprimir mensagem abaixo para o usuário.
+# Imprimir mensagem abaixo para o usuário.
 print('Iniciando o processo de extração de dados do SAP GUI.\n')
 
 # Print para realizar as divisões entre as mensagens, visando deixar a leitura do usuário mais organizada.
@@ -130,12 +130,27 @@ try:
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- #
 
         # 4º nível de verificação de (locais - root), (repositórios - dirs), (arquivos - files).
+        # Este (elif) verifica se existem arquivos de qualquer tipo de extensão no repositório.
+        # Caso existam arquivos, mas nenhum com a extensão (xlsx) do tipo excel, ele irá exibir a mensagem abaixo para o usuário, que não existe um arquivo excel nesse repositório.
+        # Logo após a exibição da mensagem, irá começar um contador de 30 segundos e o código será encerrado para não comprometer os processos abaixo.
+
         elif files != lista_vazia_1:
 
             # Variável declarada como uma lista vazia, para conseguirmos comparar caso a variável (files) seja ou não vazia, que no caso do (elif) acima, o foco é comparar se (files) não é vazio.
             lista_vazia_2 = []
 
+            localizar_extensao_1 = [extensao_1 for extensao_1 in files if '.xlsx' in extensao_1]
 
+            if localizar_extensao_1 == lista_vazia_2:
+
+                # Print para realizar as divisões entre as mensagens, visando deixar a leitura do usuário mais organizada.
+                print('=======================================================================================================================================================================\n')
+
+                # Imprimir mensagem abaixo para o usuário.
+                print('Não existe um arquivo com a extensão (xlsx) do excel nesse repositório. \nPor favor, verifique o repositóro e tente novamente. \nProcesso executado sem êxito. \nEssa tela será fechada em 30 segundos. \n')
+
+                # Print para realizar as divisões entre as mensagens, visando deixar a leitura do usuário mais organizada.
+                print('=======================================================================================================================================================================\n')
 
 finally:
 
