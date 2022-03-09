@@ -162,6 +162,9 @@ try:
                 # Print para realizar as divisões entre as mensagens, visando deixar a leitura do usuário mais organizada.
                 print('=======================================================================================================================================================================\n')
 
+                # Pausar ou colocar para dormir a execução do script por 30 segundos até a execução do comando abaixo.
+                time.sleep(30)
+
                 # Comando para encerrar o script neste ponto, visando não haver erros nos processos seguintes.
                 sys.exit()
 
@@ -214,7 +217,14 @@ try:
                             # Neste caso o comando será encerrado neste ponto para não prejudicar os próximos passos do processo.
                             print('Não foi possível excluir o arquivo: ' + file + '\nPor favor, verifique, por exemplo, se o arquivo não está aberto ou outro motivo e tente novamente. \nProcesso executado sem êxito. \nEssa tela será fechada em 30 segundos. \n')
 
+                            # Print para realizar as divisões entre as mensagens, visando deixar a leitura do usuário mais organizada.
+                            print('=======================================================================================================================================================================\n')
 
+                            # Pausar ou colocar para dormir a execução do script por 30 segundos até a execução do comando abaixo.
+                            time.sleep(30)
+
+                            # Comando para encerrar o script neste ponto, visando não haver erros nos processos seguintes.
+                            sys.exit()
 
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- #
 
