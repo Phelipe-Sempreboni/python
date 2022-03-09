@@ -196,9 +196,24 @@ try:
                         # Este (if) realiza o slicing (fatiamento) da string do nome arquivo e deixa somente os 4 últimos caracateres, neste caso, deixando somente a extensão do arquivo excel, ou seja (xlsx/xlsm).
                         if file[-4:] == 'xlsx' or file[-4:] == 'xlsm':
 
+                            # Remove os arquivos com as extensões (xlsx/xlsm) do tipo excel.
                             os.remove(nome_caminho + '\\' + file)
 
-                            print('Arquivo: ' + file + ' removido com sucesso')
+                            # Imprimir mensagem abaixo para o usuário.
+                            print('Arquivo: ' + file + ' removido com sucesso. \n')
+
+                            # Print para realizar as divisões entre as mensagens, visando deixar a leitura do usuário mais organizada.
+                            print('=======================================================================================================================================================================\n')
+
+                        else:
+
+                            # Imprimir mensagem abaixo para o usuário.
+                            # Notar que neste caso não iremos apontar uma mensagem que não existem arquivos do tipo da extensão (xlsx/xlsm) do tipo excel.
+                            # Não será impressa uma mensagem assim, pois, nos (ifs) acima já verificamos se existem arquivos do tipo de extensão (xls/xlsm).
+                            # Então, caso não seja excluído um arquivo e pare neste (else), é realmente porquê não foi possível deletar o arquivo por motivo, por exemplo, de estar aberto no momento da execução do comando de remoção.
+                            # Neste caso o comando será encerrado neste ponto para não prejudicar os próximos passos do processo.
+                            print('Não foi possível excluir o arquivo: ' + file + '\nPor favor, verifique, por exemplo, se o arquivo não está aberto ou outro motivo e tente novamente. \nProcesso executado sem êxito. \nEssa tela será fechada em 30 segundos. \n')
+
 
 
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- #
