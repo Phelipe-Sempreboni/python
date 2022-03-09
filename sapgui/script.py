@@ -200,7 +200,9 @@ try:
                         # Este (if) realiza o slicing (fatiamento) da string do nome arquivo e deixa somente os 4 últimos caracateres, neste caso, deixando somente a extensão do arquivo excel, ou seja (xlsx/xlsm).
                         if file[-4:] == 'xlsx' or file[-4:] == 'xlsm':
 
-                            print('Arquivo: ' + file + ' será excluído do repositório: ' + root + '.')
+                                print('Arquivo: ' + file + ' excluído com sucesso do repositório: ' + root + '.')
+
+
 
 
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- #
