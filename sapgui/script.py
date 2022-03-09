@@ -133,6 +133,10 @@ try:
         # Este (elif) verifica se existem arquivos de qualquer tipo de extensão no repositório.
         # Caso existam arquivos, mas nenhum com a extensão (xlsx) do tipo excel, ele irá exibir a mensagem abaixo para o usuário, que não existe um arquivo excel nesse repositório.
         # Logo após a exibição da mensagem, irá começar um contador de 30 segundos e o código será encerrado para não comprometer os processos abaixo.
+        # O primeiro (elif) verifica se a variável (lista_vazia_1) é diferente de vazia e se for verdadeiro, então seguirá para a declaração das variáveis e o if aninhado com este (elif) abaixo.
+        # A variável (localizar_extensao_1) procura por arquivos da extensão (xlsx) dentro da variável (files) que aponta para os arquivos do repositório.
+        # Logo após, a variável (localizar_extensao_1) e (lista_vazia_2) são comparadas.
+        #
 
         elif files != lista_vazia_1:
 
