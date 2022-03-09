@@ -94,6 +94,9 @@ try:
             # Imprimir mensagem de validação do repositório atual ao usuário.
             print('Validação do repositório atual: ' + root + '.\n')
 
+            # Print para realizar as divisões entre as mensagens, visando deixar a leitura do usuário mais organizada.
+            print('=======================================================================================================================================================================\n')
+
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- #
 
         # Essa variável foi criada para caso não hajam arquivos no repositório.
@@ -194,9 +197,10 @@ try:
                         # Transformando os valores resultantes da variável (file) em valores de strings minusculas.
                         file = file.lower()
 
+                        # Este (if) realiza o slicing (fatiamento) da string do nome arquivo e deixa somente os 4 últimos caracateres, neste caso, deixando somente a extensão do arquivo excel, ou seja (xlsx/xlsm).
                         if file[-4:] == 'xlsx' or file[-4:] == 'xlsm':
 
-                            print(file)
+                            print('Arquivo: ' + file + ' será excluído do repositório: ' + root + '.')
 
 
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- #
