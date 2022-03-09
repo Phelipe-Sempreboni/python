@@ -131,30 +131,36 @@ try:
 
         # 4º nível de verificação de (locais - root), (repositórios - dirs), (arquivos - files).
         # Este (elif) verifica se existem arquivos de qualquer tipo de extensão no repositório.
-        # Caso existam arquivos, mas nenhum com a extensão (xlsx) do tipo excel, ele irá exibir a mensagem abaixo para o usuário, que não existe um arquivo excel nesse repositório.
+        # Caso existam arquivos, mas nenhum com a extensão (xlsx/xlsm) do tipo excel, ele irá exibir a mensagem abaixo para o usuário, que não existe um arquivo excel nesse repositório.
         # Logo após a exibição da mensagem, irá começar um contador de 30 segundos e o código será encerrado para não comprometer os processos abaixo.
         # O primeiro (elif) verifica se a variável (lista_vazia_1) é diferente de vazia e se for verdadeiro, então seguirá para a declaração das variáveis e o if aninhado com este (elif) abaixo.
-        # A variável (localizar_extensao_1) procura por arquivos da extensão (xlsx) dentro da variável (files) que aponta para os arquivos do repositório.
+        # A variável (localizar_extensao_1) procura por arquivos da extensão (xlsx/xlsm) dentro da variável (files) que aponta para os arquivos do repositório.
         # Logo após, a variável (localizar_extensao_1) e (lista_vazia_2) são comparadas.
         # Caso a variável (localizar_extensao_1) seja igual a variável (lista_vazia_2), então o comando irá prosseguir para o (if aninhado com este if) abaixo.
-        # Este (if) quer dizer que o valor de ambas variáveis são vazias, logo, irá imprimir a mensagem abaixo para o usuário, que não existe um arquivo com a extensão (xlsx).
-        # NOTAR QUE TEMOS OUTRO (ELIF) ABAIXO, PORÉM ESTÁ ANINHADO DENTRO DESTE (IF -> if localizar_extensao_1 == lista_vazia_2).
+        # Este (if) quer dizer que o valor de ambas variáveis são vazias, logo, irá imprimir a mensagem abaixo para o usuário, que não existe um arquivo com a extensão (xlsx/xlsm).
+        # NOTAR QUE TEMOS OUTRO (ELIF) ABAIXO, PORÉM ESTÁ ANINHADO DENTRO DESTE (IF -> if localizar_extensao_1 == lista_vazia_2 and localizar_extensao_2 == lista_vazia_3).
         elif files != lista_vazia_1:
 
             # Variável declarada como uma lista vazia, para conseguirmos comparar caso a variável (files) seja ou não vazia, que no caso do (elif) acima, o foco é comparar se (files) não é vazio.
             lista_vazia_2 = []
 
+            # Variável declarada como uma lista vazia, para conseguirmos comparar caso a variável (files) seja ou não vazia, que no caso do (elif) acima, o foco é comparar se (files) não é vazio.
+            lista_vazia_3 = []
+
             # Monta a variável que busca dentro da lista variável (files) se existe algum arquivo com a extensão (xlsx) do tipo excel.
             localizar_extensao_1 = [extensao_1 for extensao_1 in files if '.xlsx' in extensao_1]
 
+            # Monta a variável que busca dentro da lista variável (files) se existe algum arquivo com a extensão (xlsm) do tipo excel.
+            localizar_extensao_2 = [extensao_2 for extensao_2 in files if '.xlsm' in extensao_2]
+
             # Compara se ambas variáveis são iguais, que neste caso se ambas tem o valor de uma lista vazia, ou seja, igual à [].
-            if localizar_extensao_1 == lista_vazia_2:
+            if localizar_extensao_1 == lista_vazia_2 and localizar_extensao_2 == lista_vazia_3:
 
                 # Print para realizar as divisões entre as mensagens, visando deixar a leitura do usuário mais organizada.
                 print('=======================================================================================================================================================================\n')
 
                 # Imprimir mensagem abaixo para o usuário.
-                print('Não existe um arquivo com a extensão (xlsx) do excel nesse repositório. \nPor favor, verifique o repositóro e tente novamente. \nProcesso executado sem êxito. \nEssa tela será fechada em 30 segundos. \n')
+                print('Não existe um arquivo com a extensão do tipo (xlsx/xlsm) do excel nesse repositório. \nPor favor, verifique o repositóro e tente novamente. \nProcesso executado sem êxito. \nEssa tela será fechada em 30 segundos. \n')
 
                 # Print para realizar as divisões entre as mensagens, visando deixar a leitura do usuário mais organizada.
                 print('=======================================================================================================================================================================\n')
@@ -164,39 +170,6 @@ try:
 
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- #
 
-            # 5º nível de verificação de (locais - root), (repositórios - dirs), (arquivos - files).
-            # Este (elif) verifica se existem arquivos de qualquer tipo de extensão no repositório.
-            # Caso existam arquivos, mas nenhum com a extensão (xlsm) do tipo excel, ele irá exibir a mensagem abaixo para o usuário, que não existe um arquivo excel nesse repositório.
-            # Logo após a exibição da mensagem, irá começar um contador de 30 segundos e o código será encerrado para não comprometer os processos abaixo.
-            # O primeiro (elif) verifica se a variável (lista_vazia_1) é diferente de vazia e se for verdadeiro, então seguirá para a declaração das variáveis e o if aninhado com este (elif) abaixo.
-            # A variável (localizar_extensao_1) procura por arquivos da extensão (xlsx) dentro da variável (files) que aponta para os arquivos do repositório.
-            # Logo após, a variável (localizar_extensao_1) e (lista_vazia_2) são comparadas.
-            # Caso a variável (localizar_extensao_1) seja igual a variável (lista_vazia_2), então o comando irá prosseguir para o (if aninhado com este if) abaixo.
-            # Este (if) quer dizer que o valor de ambas variáveis são vazias, logo, irá imprimir a mensagem abaixo para o usuário, que não existe um arquivo com a extensão (xlsm).
-            # NOTAR QUE TEMOS OUTRO (ELIF) ABAIXO, PORÉM ESTÁ ANINHADO DENTRO DESTE (IF -> if localizar_extensao_1 == lista_vazia_2).
-            elif files != lista_vazia_1:
-
-                # Variável declarada como uma lista vazia, para conseguirmos comparar caso a variável (files) seja ou não vazia, que no caso do (elif) acima, o foco é comparar se (files) não é vazio.
-                lista_vazia_3 = []
-
-                # Monta a variável que busca dentro da lista variável (files) se existe algum arquivo com a extensão (xlsm) do tipo excel.
-                localizar_extensao_2 = [extensao_2 for extensao_2 in files if '.xlsm' in extensao_2]
-
-                # Compara se ambas variáveis são iguais, que neste caso se ambas tem o valor de uma lista vazia, ou seja, igual à [].
-                if localizar_extensao_2 == lista_vazia_3:
-
-                    # Print para realizar as divisões entre as mensagens, visando deixar a leitura do usuário mais organizada.
-                    print('=======================================================================================================================================================================\n')
-
-                    # Imprimir mensagem abaixo para o usuário.
-                    print('Não existe um arquivo com a extensão (xlsm) do excel nesse repositório. \nPor favor, verifique o repositóro e tente novamente. \nProcesso executado sem êxito. \nEssa tela será fechada em 30 segundos. \n')
-
-                    # Print para realizar as divisões entre as mensagens, visando deixar a leitura do usuário mais organizada.
-                    print('=======================================================================================================================================================================\n')
-
-
-
-# ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- #
 
 finally:
 
