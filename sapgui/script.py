@@ -176,13 +176,29 @@ try:
             # Variável declarada como uma lista vazia, para conseguirmos comparar caso a variável (files) seja ou não vazia, que no caso do (elif) acima, o foco é comparar se (files) não é vazio.
             lista_vazia_4 = []
 
+            # Variável declarada como uma lista vazia, para conseguirmos comparar caso a variável (files) seja ou não vazia, que no caso do (elif) acima, o foco é comparar se (files) não é vazio.
+            lista_vazia_5 = []
+
             # Monta a variável que busca dentro da lista variável (files) se existe algum arquivo com a extensão (xlsx) do tipo excel.
             localizar_extensao_3 = [extensao_3 for extensao_3 in files if '.xlsx' in extensao_3]
 
             # Monta a variável que busca dentro da lista variável (files) se existe algum arquivo com a extensão (xlsm) do tipo excel.
             localizar_extensao_4 = [extensao_4 for extensao_4 in files if '.xlsm' in extensao_4]
 
-            
+            # Compara se ambas variáveis são iguais, que neste caso se ambas tem o valor de uma lista vazia, ou seja, igual à [].
+            if localizar_extensao_3 == lista_vazia_4 and localizar_extensao_4 == lista_vazia_5:
+
+                # loop for para restringir a buscar somente por arquivos no repositório atual.
+                for file in files:
+
+                    # Transformando os valores resultantes da variável (file) em valores de strings minusculas.
+                    files = files.lower()
+
+
+
+
+
+
 
 
 
