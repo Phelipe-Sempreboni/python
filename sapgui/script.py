@@ -253,3 +253,42 @@ except Exception as error:
           f'\n3 - Verifique se os arquivos não estão com erro de formato. \nTipo do erro: {error.__class__}\n')
 
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- #
+
+
+# Função criada para realizar a conexão com o SAP GUI.
+def sap_connection():
+
+    try:
+            path = r"C:\Program Files (x86)\SAP\FrontEnd\SAPgui\saplogon.exe"
+            subprocess.Popen(path)
+            time.sleep(5)
+
+            SapGuiAuto = win32com.client.GetObject('SAPGUI')
+            if not type(SapGuiAuto) == win32com.client.CDispatch:
+                return
+
+            application = SapGuiAuto.GetScriptingEngine
+            if not type(application) == win32com.client.CDispatch:
+                SapGuiAuto = None
+                return
+            connection = application.OpenConnection("H181 RP1 ENEL SP CCS Produção (without SSO)", True)
+
+            if not type(connection) == win32com.client.CDispatch:
+                application = None
+                SapGuiAuto = None
+                return
+
+            session = connection.Children(0)
+            if not type(session) == win32com.client.CDispatch:
+                connection = None
+                application = None
+                SapGuiAuto = None
+                return
+
+            #Variáveis de login e senha dos campos do SAP.
+            login = input('Informe seu login: ')
+            password = getpass.getpass('Informe sua senha: ')
+
+    except:
+
+        print('erro')
