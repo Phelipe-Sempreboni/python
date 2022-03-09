@@ -136,7 +136,8 @@ try:
         # O primeiro (elif) verifica se a variável (lista_vazia_1) é diferente de vazia e se for verdadeiro, então seguirá para a declaração das variáveis e o if aninhado com este (elif) abaixo.
         # A variável (localizar_extensao_1) procura por arquivos da extensão (xlsx) dentro da variável (files) que aponta para os arquivos do repositório.
         # Logo após, a variável (localizar_extensao_1) e (lista_vazia_2) são comparadas.
-        #
+        # Caso a variável (localizar_extensao_1) seja igual a variável (lista_vazia_2), então o comando irá prosseguir para o (if aninhado com este if) abaixo.
+        # Este (if) quer dizer que o valor de ambas variáveis são vazias, logo, irá imprimir a mensagem abaixo para o usuário, que não existe um arquivo com a extensão (xlsx).
 
         elif files != lista_vazia_1:
 
