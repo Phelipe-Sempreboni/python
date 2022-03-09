@@ -208,6 +208,15 @@ try:
                             # Print para realizar as divisões entre as mensagens, visando deixar a leitura do usuário mais organizada.
                             print('=======================================================================================================================================================================\n')
 
+                        # Este (elif) verificar se os arquivos do repositório tem extensões diferente de (xlsx/xlsm) do tipo excel.
+                        # Caso o repositório contenha arquivos que não sejam dessas extensões, então executará o comando (continue) abaixo.
+                        # O comando (continue) ignora os arquivos que não tem a extensão do tipo (xlsx/xlsm), ou seja, sem fazer nenhuma alteração, no caso, remoção de arquivos.
+                        elif file[-4:] != 'xlsx' or file[-4:] != 'xlsm':
+
+                            # Caso o (elif) acima tenha o valor da cláusula (verdadeiro), então o comando prosseguirá sem fazer nenhuma alteração, no caso, remoção de arquivos.
+                            continue
+
+                        # Este (else) só será executado caso as cláusulas acima não sejam (verdadeiras).
                         else:
 
                             # Imprimir mensagem abaixo para o usuário.
