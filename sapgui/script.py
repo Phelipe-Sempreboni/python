@@ -203,7 +203,7 @@ try:
                             os.remove(nome_caminho + '\\' + file)
 
                             # Imprimir mensagem abaixo para o usuário.
-                            print('Arquivo: ' + file + ' removido com sucesso. \n')
+                            print('Arquivo: (' + file + ') removido com sucesso. \n')
 
                             # Print para realizar as divisões entre as mensagens, visando deixar a leitura do usuário mais organizada.
                             print('=======================================================================================================================================================================\n')
