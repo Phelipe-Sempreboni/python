@@ -173,7 +173,9 @@ try:
 
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- #
 
-            #
+            # 5º nível de verificação de (locais - root), (repositórios - dirs), (arquivos - files).
+            # Este (elif) aninhado com o (if) acima, verifica se existem arquivos do tipo de extensão (xlsx/xlsm) do excel no repositório atual.
+            # Caso existam arquivos da extensão (xlsx/xlsm) do tipo excel neste repositório, então ele prosseguirá para o (try / except) aninhado, onde realiza a exclusão dos arquivos da extensão (xlsx/xlsm).
             elif files != lista_vazia_1:
 
                 # Variável declarada como uma lista vazia, para conseguirmos comparar caso a variável (files) seja ou não vazia, que no caso do (elif) acima, o foco é comparar se (files) não é vazio.
@@ -200,11 +202,19 @@ try:
                         # Este (if) realiza o slicing (fatiamento) da string do nome arquivo e deixa somente os 4 últimos caracateres, neste caso, deixando somente a extensão do arquivo excel, ou seja (xlsx/xlsm).
                         if file[-4:] == 'xlsx' or file[-4:] == 'xlsm':
 
-                            print('Arquivo: ' + file + ' excluído com sucesso do repositório: ' + root + '.')
+                            print(file)
+
 
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- #
 
+# Este é o (except) do (try) geral, ou seja, é o que fecha o primeiro comando (try) aberto.
+# Caso nenhuma das verificações dentro do (try) geral for verdadeira, então irá ativar este (except).
+except Exception as error:
 
-finally:
+    print(f'Não foi possível realizar o processo de validação de repositório e arquivos. '
+          f'\nPor favor, verifique os seguintes pontos que podem estar causando o erro: '
+          f'\n1 - Verifique se o repositório indicado no caminho da variável (nome_caminho) realmente existe. '
+          f'\n2 - Verifique se existem arquivos com as extensões (xlsx/xlsm) no repositório. '
+          f'\n3 - Verifique se os arquivos não estão com erro de formato. \nTipo do erro: {error.__class__}\n')
 
-    sys.exit()
+# ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- #
