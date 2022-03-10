@@ -26,8 +26,28 @@
 
 - [x] 1 - conversion method
 
+- O script realiza a conversão de um arquivo Excel para um arquivo CSV.
+
+- Este é um script pequeno, então é bem fácil de utilizar. Só é necessário atentar para a inserção dos caminhos de acordo com sua máquina local ou servidor.
+
 ---
 
-- [x] 1 - conversion method
+- [x] 2 - conversion method
+
+- O script realiza a conversão de um arquivo CSV para um arquivo Excel.
+
+- Este é um script pequeno, então é bem fácil de utilizar. Só é necessário atentar para a inserção dos caminhos de acordo com sua máquina local ou servidor.
 
 ---
+
+[Acesse meu GitHub :cat:](https://github.com/Phelipe-Sempreboni)
+
+[Acesse meu LinkedIn :computer:](https://www.linkedin.com/in/luiz-phelipe-utiama-sempreboni-319902169/)
+
+---
+
+_Espero ajudar_ :smiley:
+
+---
+
+
