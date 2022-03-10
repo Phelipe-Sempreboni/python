@@ -261,7 +261,7 @@ def sap_connection():
     try:
 
         # Caminho onde o executável do SAP GUI está locado. Varia de máquina para máquina.
-        path = r"C:\Program Files (x86)\SAP\FrontEnd\SAPgui\saplogon.exe"
+        path = r"D:\Programming\SAP\FrontEnd\SapGui\saplogon.exe"
 
         # Realiza a abertura de um processo, neste caso o processo de execução do executável do SAP GUI.
         subprocess.Popen(path)
