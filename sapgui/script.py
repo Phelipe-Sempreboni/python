@@ -269,16 +269,23 @@ def sap_connection():
         # Realiza uma contagem de 5 segundos até execução do processo abaixo.
         time.sleep(5)
 
+        # Variável que define o objeto, neste caso, o (SAPGUI), para execução do objeto SAP GUI.
         sap_gui_auto = win32com.client.GetObject('SAPGUI')
+
+        # Este (if) verifica se não existe nenhum tipo de objeto da variável (sap_gui_auto).
         if not type(sap_gui_auto) == win32com.client.CDispatch:
             return
 
+        # Aqui utilizamos a variável (sap_gui_auto) junto do método (GetScriptingEngine).
+        # Essa variável (application) executa a tecnologia, ou seja, o SAP GUI, fazendo com que o sistema seja aberto.
         application = sap_gui_auto.GetScriptingEngine
         if not type(application) == win32com.client.CDispatch:
             sap_gui_auto = None
             return sap_gui_auto
 
-        connection = application.OpenConnection("H181 RP1 ENEL SP CCS Produção (without SSO)", True)
+        # Aqui utilizamos a variável (application) com o método (OpenConnection).
+        # Essa variável (connection) executa o módulo do SAP GUI, ou seja, o que você precisa realmente se conectar, por exemplo, CCS PRODUTIVO.
+        connection = application.OpenConnection("CCS PRODUTIVO", True)
         if not type(connection) == win32com.client.CDispatch:
             application = None
             sap_gui_auto = None
@@ -300,3 +307,5 @@ def sap_connection():
         print(f'erro {error_2.__class__}')
 
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- #
+
+
