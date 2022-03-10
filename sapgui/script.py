@@ -259,8 +259,14 @@ except Exception as error:
 def sap_connection():
 
     try:
+
+        # Caminho onde o executável do SAP GUI está locado. Varia de máquina para máquina.
         path = r"C:\Program Files (x86)\SAP\FrontEnd\SAPgui\saplogon.exe"
+
+        # Realiza a abertura de um processo, neste caso o processo de execução do executável do SAP GUI.
         subprocess.Popen(path)
+
+        # Realiza uma contagem de 5 segundos até execução do processo abaixo.
         time.sleep(5)
 
         sap_gui_auto = win32com.client.GetObject('SAPGUI')
@@ -270,25 +276,27 @@ def sap_connection():
         application = sap_gui_auto.GetScriptingEngine
         if not type(application) == win32com.client.CDispatch:
             sap_gui_auto = None
-            return
-        connection = application.OpenConnection("H181 RP1 ENEL SP CCS Produção (without SSO)", True)
+            return sap_gui_auto
 
+        connection = application.OpenConnection("H181 RP1 ENEL SP CCS Produção (without SSO)", True)
         if not type(connection) == win32com.client.CDispatch:
             application = None
             sap_gui_auto = None
-            return
+            return application, sap_gui_auto
 
         session = connection.Children(0)
         if not type(session) == win32com.client.CDispatch:
             connection = None
             application = None
             sap_gui_auto = None
-            return
+            return connection, application, sap_gui_auto
 
         #Variáveis de login e senha dos campos do SAP.
         login = input('Informe seu login: ')
         password = getpass.getpass('Informe sua senha: ')
 
-    except:
+    except Exception as error_2:
 
-        print('erro')
+        print(f'erro {error_2.__class__}')
+
+# ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- #
