@@ -30,7 +30,7 @@
 
 - É necessário realizar a inserção do caminho manualmente do repositório e/ou servidor onde se deseja realizar a exclusão do arquivo.
 
-- É necessário realizar a inserção do nome do arquivo do tipo Excel, onde este arquivo do tipo Excel será ignorado pelo script e os demais arquivos serão todos excluídos do repositório.
+- É necessário realizar a inserção do nome do arquivo do tipo Excel, onde este arquivo do tipo Excel será ignorado pelo script e os demais arquivos serão todos excluídos do repositório e/ou servidor.
 
 - Este script utiliza a instrução (continue), que neste caso ignora o arquivo da variável (nome_arquivo) do tipo Excel. Não esqueça de inserir o nome do arquivo.
 
@@ -38,9 +38,13 @@
 
 - [x] 2 - delete method
 
-- O script realiza a conversão de um arquivo CSV para um arquivo Excel.
+- O script realiza a exclusão do arquivo do tipo Excel do repositório e/ou servidor e mantém os demais arquivos.
 
 - É necessário realizar a inserção do caminho manualmente do repositório e/ou servidor onde se deseja realizar a exclusão do arquivo.
+
+- É necessário realizar a inserção do nome do arquivo do tipo Excel, onde este arquivo do tipo Excel será excluído pelo script e os demais arquivos serão todos mantidos no repositório e/ou servidor.
+
+- Este script utiliza a instrução (continue), que neste caso ignora os arquivos que não contenham o nome da variável (nome_arquivo) do tipo Excel. Não esqueça de inserir o nome do arquivo.
 
 ---
 
