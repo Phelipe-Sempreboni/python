@@ -26,11 +26,11 @@
 
 - [x] 1 - delete method:
 
-- Função principal do script:
+- #### Função principal do script:
 
   - Realizar a exclusão de arquivos do repositório e/ou servidor e mantém o arquivo do tipo Excel.
 
-- O que esse script faz ?:
+- #### O que esse script faz ?:
 
   - Verifica se o repositório setado manualmente pelo usuário realmente existe. Caso não exista o script apresentará uma mensagem e será encerrado.
   
@@ -44,7 +44,7 @@
 
   - Este script utiliza a instrução (continue), que neste caso ignora o arquivo da variável (nome_arquivo) do tipo Excel. Não esqueça de inserir o nome do arquivo.
 
-- Pontos para atentar ao utilziar o script:
+- #### Pontos para atentar ao utilziar o script:
 
   - É necessário realizar a inserção do caminho manualmente do repositório e/ou servidor onde se deseja realizar a exclusão do arquivo.
 
