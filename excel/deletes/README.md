@@ -1,6 +1,6 @@
 ---
 
-## Métodos de exclusão de arquivos do tipo Excel  
+## Métodos de exclusão de arquivos do tipo Excel com Python
 
 ---
 
@@ -8,7 +8,7 @@
 
 ---
 
-- Este repositório foi criado para alocação de scripts que realizam conversões de arquivos com Python com foco em (de/para) com Excel.
+- Este repositório foi criado para alocação de scripts que realizam exclusões de arquivos do tipo Excel com Python.
 
 - Neste repositório explicaremos como cada script funciona de acordo com o seu repositório.
 
@@ -24,7 +24,7 @@
 
 ---
 
-- [x] 1 - conversion method
+- [x] 1 - delete method
 
 - O script realiza a conversão de um arquivo Excel para um arquivo CSV.
 
@@ -32,7 +32,7 @@
 
 ---
 
-- [x] 2 - conversion method
+- [x] 2 - delete method
 
 - O script realiza a conversão de um arquivo CSV para um arquivo Excel.
 
