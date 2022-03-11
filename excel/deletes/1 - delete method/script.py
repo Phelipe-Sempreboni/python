@@ -50,7 +50,10 @@ if verificao_existencia_repositorio:
 else:
 
     # Mensagem ao usuário caso o repositório não exista.
-    print('Repositório (' + caminho_origem + ') não existe. \nPor favor, verifique o caminho informado ou se o repositório existe e tente novamente. \nEssa tela será fechada em 10 segundos. \nProcesso finalizado sem êxito.')
+    print('Repositório (' + caminho_origem + ') não existe. '
+    f'\nPor favor, verifique o caminho informado ou se o repositório existe e tente novamente. '
+    f'\nEssa tela será fechada em 10 segundos. '
+    f'\nProcesso finalizado sem êxito.')
 
     # Pausar ou colocar para dormir a execução do script por 30 segundos até a execução do comando abaixo.
     time.sleep(10)
