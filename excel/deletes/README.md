@@ -1,6 +1,6 @@
 ---
 
-## Conversões de arquivos com Python com foco em (de/para) com Excel
+## Métodos de exclusão de arquivos do tipo Excel  
 
 ---
 
