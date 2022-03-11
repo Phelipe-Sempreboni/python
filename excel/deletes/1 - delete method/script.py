@@ -6,7 +6,7 @@
 import os  # Biblioteca para manipular arquivos do sistema operacional do windows.
 
 # Declaração do caminho origem, ou seja, onde os arquivos se encontram.
-caminho_origem = r'C:\Users\Zé\Desktop\MeusArquivos'
+caminho_origem = r'C:\Windows\Temp\testes'
 
 # Declaração de variável com o nome do arquivo, que neste caso irá facilitar para utilização no decorrer do script.
 nome_arquivo = 'Sou-Milionário.xlsx'
