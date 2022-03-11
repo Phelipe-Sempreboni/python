@@ -1,5 +1,5 @@
-# Modelo excluir arquivos de um determinado repositório (pasta).
-# Neste caso o arquivo principal é ignorado, ou seja, mantido no repositório, e os demais arquivos são excluídos.
+# Modelo para excluir arquivos de qualquer tipo de exntensão de um determinado repositório (pasta) e manter o arquivo do tipo Excel.
+# Neste caso o arquivo principal da variável (nome_arquivo) é ignorado, ou seja, mantido no repositório, e os demais arquivos serão excluídos.
 # Altere o nome das variáveis para funcionar corretamente em seu script.
 
 # Importação de biblioteca.
