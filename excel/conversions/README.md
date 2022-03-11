@@ -28,7 +28,7 @@
 
 - O script realiza a conversão de um arquivo Excel para um arquivo CSV.
 
-- Este é um script pequeno, então é bem fácil de utilizar. Só é necessário atentar para a inserção dos caminhos de acordo com sua máquina local ou servidor.
+- É necessário realizar a inserção do caminho manualmente do repositório e/ou servidor onde se deseja realizar a conversão do arquivo.
 
 ---
 
@@ -36,7 +36,7 @@
 
 - O script realiza a conversão de um arquivo CSV para um arquivo Excel.
 
-- Este é um script pequeno, então é bem fácil de utilizar. Só é necessário atentar para a inserção dos caminhos de acordo com sua máquina local ou servidor.
+- É necessário realizar a inserção do caminho manualmente do repositório e/ou servidor onde se deseja realizar a conversão do arquivo.
 
 ---
 
