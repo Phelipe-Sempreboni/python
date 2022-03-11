@@ -26,9 +26,13 @@
 
 - [x] 1 - delete method
 
-- O script realiza a conversão de um arquivo Excel para um arquivo CSV.
+- O script realiza a exclusão de um arquivo do tipo Excel do repositório e/ou servidor.
 
 - É necessário realizar a inserção do caminho manualmente do repositório e/ou servidor onde se deseja realizar a exclusão do arquivo.
+
+- É necessário realizar a inserção do nome do arquivo, e este arquivo será ignorado pelo script e os demais arquivos serão todos excluídos do repositório.
+
+- Este script utiliza a instrução (continue), que neste caso ignora o arquivo da variável (nome_arquivo). 
 
 ---
 
