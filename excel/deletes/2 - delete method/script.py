@@ -20,15 +20,14 @@ for root, dirs, files in os.walk(caminho_origem):
         # If para verificar somente o arquivo com o noem da variável (nome_arquivo).
         if file == nome_arquivo:
 
-            # Remove os arquivos que não tem o nome da variável (nome_arquivo).
+            # Remove o arquivo que tem o nome da variável (nome_arquivo).
             os.remove(caminho_origem + '\\' + file)
 
-            # Imprimi na tela a mensagem dos arquivos que foram excluídos.
+            # Imprimi na tela a mensagem do arquivo que foi excluídos.
             print('Arquivo', file, 'removido com sucesso!')
 
-        # Else para excluir os demais arquivos que estiverem no caminho origem, ou seja, na variável que carrega o caminho.
+        # Else para manter os demais arquivos que estiverem no caminho origem, ou seja, na variável que carrega o caminho.
         else:
 
-            # Caso o arquivo da variável (nome_arquivo) seja localizado, então o processo irá prosseguir e ignorar este arquivo.
+            # Caso os arquivos do repositório não tiverem o nome da variável (nome_arquivo), então o processo irá prosseguir e ignorar estes arquivos.
             continue
-
