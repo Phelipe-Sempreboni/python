@@ -73,6 +73,7 @@ try:
         # Caso ocorra o erro, então o script é encerrado e não prosseguirá para o próximo passo, assim evitando erros para o usuário posteriormente.
         sys.exit()
 
+# Este (except) só será executado caso os (ifs) dentro do (loop for) não sejam suficientes para capturar possíveis erros, logo, o (excep) será ativado.
 except Exception as error:
 
     #Print para realizar as divisões entre as mensagens, visando deixar a leitura do usuário mais organizada.
