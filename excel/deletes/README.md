@@ -38,7 +38,7 @@
 
 - [x] 2 - delete method
 
-- OO script realiza a exclusão do arquivo do tipo Excel do repositório e/ou servidor e mantém os demais arquivos.
+- O script realiza a exclusão do arquivo do tipo Excel do repositório e/ou servidor e mantém os demais arquivos.
 
 - É necessário realizar a inserção do caminho manualmente do repositório e/ou servidor onde se deseja realizar a exclusão do arquivo.
 
