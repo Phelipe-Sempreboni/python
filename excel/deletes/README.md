@@ -26,13 +26,13 @@
 
 - [x] 1 - delete method
 
-- O script realiza a exclusão de um arquivo do tipo Excel do repositório e/ou servidor.
+- O script realiza a exclusão de arquivos do repositório e/ou servidor e mantém o arquivo do tipo Excel.
 
 - É necessário realizar a inserção do caminho manualmente do repositório e/ou servidor onde se deseja realizar a exclusão do arquivo.
 
-- É necessário realizar a inserção do nome do arquivo, e este arquivo será ignorado pelo script e os demais arquivos serão todos excluídos do repositório.
+- É necessário realizar a inserção do nome do arquivo do tipo Excel, onde este arquivo do tipo Excel será ignorado pelo script e os demais arquivos serão todos excluídos do repositório.
 
-- Este script utiliza a instrução (continue), que neste caso ignora o arquivo da variável (nome_arquivo). 
+- Este script utiliza a instrução (continue), que neste caso ignora o arquivo da variável (nome_arquivo) do tipo Excel. Não esqueça de inserir o nome do arquivo.
 
 ---
 
