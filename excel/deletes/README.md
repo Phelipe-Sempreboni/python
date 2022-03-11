@@ -24,19 +24,35 @@
 
 ---
 
-- [x] 1 - delete method
+- [x] 1 - delete method:
 
-- O script realiza a exclusão de arquivos do repositório e/ou servidor e mantém o arquivo do tipo Excel.
+- Função principal do script:
 
-- É necessário realizar a inserção do caminho manualmente do repositório e/ou servidor onde se deseja realizar a exclusão do arquivo.
+  - Realizar a exclusão de arquivos do repositório e/ou servidor e mantém o arquivo do tipo Excel.
 
-- É necessário realizar a inserção do nome do arquivo do tipo Excel, onde este arquivo do tipo Excel será ignorado pelo script e os demais arquivos serão todos excluídos do repositório e/ou servidor.
+- O que esse script faz ?:
 
-- Este script utiliza a instrução (continue), que neste caso ignora o arquivo da variável (nome_arquivo) do tipo Excel. Não esqueça de inserir o nome do arquivo.
+  - Verifica se o repositório setado manualmente pelo usuário realmente existe. Caso não exista o script apresentará uma mensagem e será encerrado.
+  
+  - Verifica os arquivos existentes no repositório e/ou servidor setado manualmente pelo usuário.
+
+  - Verifica se o repositório setado manualmente pelo usuário é o mesmo que o loop for está realmente percorrendo.
+
+  - Verifica se o nome arquivo da setado pelo usuário manualmente é igual ao nome do arquivo que o loop for está percorrendo pela variável (file).
+
+  - 
+
+  - Este script utiliza a instrução (continue), que neste caso ignora o arquivo da variável (nome_arquivo) do tipo Excel. Não esqueça de inserir o nome do arquivo.
+
+- Pontos para atentar ao utilziar o script:
+
+  - É necessário realizar a inserção do caminho manualmente do repositório e/ou servidor onde se deseja realizar a exclusão do arquivo.
+
+  - É necessário realizar a inserção do nome do arquivo do tipo Excel, onde este arquivo do tipo Excel será ignorado pelo script e os demais arquivos serão todos excluídos do repositório e/ou servidor.
 
 ---
 
-- [x] 2 - delete method
+- [x] 2 - delete method:
 
 - O script realiza a exclusão do arquivo do tipo Excel do repositório e/ou servidor e mantém os demais arquivos.
 
