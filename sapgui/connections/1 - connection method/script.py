@@ -84,6 +84,11 @@ def sap_connection():
     # Caso ocorra qualquer tipo de erro no bloco deste (try), então será acionado o (except), impressa a mensagem abaixo e o programa será encerrado.
     except Exception as error:
 
+        # Print para realizar as divisões entre as mensagens, visando deixar a leitura do usuário mais organizada.
+        print(
+            '\n=======================================================================================================================================================================\n')
+
+        # Mensagem impressa para na tela para o usuário.
         print(f'Ocorreu um erro ao tentar realizar o processo de login no SAP GUI. '
               f'\nPor favor, verifique e tente novamente.'
               f'\nProcesso finalizado sem êxito.'
