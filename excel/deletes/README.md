@@ -48,6 +48,8 @@
 
 - #### Pontos para atentar ao utilziar o script:
 
+  - Este é um script de (caminho fixo), ou seja, o usuário necessita realizar a alteração manualmente do local que ele necessita que seja executado este script.
+
   - É necessário realizar a inserção do caminho manualmente do repositório e/ou servidor onde se deseja realizar a exclusão do arquivo.
 
   - É necessário realizar a inserção do nome do arquivo do tipo Excel, onde este arquivo do tipo Excel será ignorado pelo script e os demais arquivos serão todos excluídos do repositório e/ou servidor.
@@ -77,6 +79,8 @@
   - Todo esse bloco está dentro de um bloco principal (try) com (except). Caso o programa não consiga executar o processo de exclusão, então o (except) do (try) é acionado e exibida uma mensagem para o usuário que não foi possível realizar o processo de exclusão de arquivos.
 
 - #### Pontos para atentar ao utilziar o script:
+
+  - Este é um script de (caminho fixo), ou seja, o usuário necessita realizar a alteração manualmente do local que ele necessita que seja executado este script.
 
   - É necessário realizar a inserção do caminho manualmente do repositório e/ou servidor onde se deseja realizar a exclusão do arquivo.
 
