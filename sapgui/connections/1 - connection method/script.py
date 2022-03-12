@@ -81,6 +81,7 @@ def sap_connection():
         # Comanndo para entrar efetivamente no sistema após inserção do usuário e senha.
         session.findById("wnd[0]").sendVKey(0)
 
+    # Caso ocorra qualquer tipo de erro no bloco deste (try), então será acionado o (except), impressa a mensagem abaixo e o programa será encerrado.
     except Exception as error:
 
         print(f'Ocorreu um erro ao tentar realizar o processo de login no SAP GUI. '
