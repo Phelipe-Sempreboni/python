@@ -56,13 +56,31 @@
 
 - [x] 2 - delete method:
 
-- O script realiza a exclusão do arquivo do tipo Excel do repositório e/ou servidor e mantém os demais arquivos.
+- #### Função principal do script:
 
-- É necessário realizar a inserção do caminho manualmente do repositório e/ou servidor onde se deseja realizar a exclusão do arquivo.
+  - Realizar a exclusão de arquivos do repositório e/ou servidor e mantém o arquivo do tipo Excel.
 
-- É necessário realizar a inserção do nome do arquivo do tipo Excel, onde este arquivo do tipo Excel será excluído pelo script e os demais arquivos serão todos mantidos no repositório e/ou servidor.
+- #### O que esse script faz ?:
 
-- Este script utiliza a instrução (continue), que neste caso ignora os arquivos que não contenham o nome da variável (nome_arquivo) do tipo Excel. Não esqueça de inserir o nome do arquivo.
+  - Verifica se o repositório setado manualmente pelo usuário realmente existe. Caso não exista o script apresentará uma mensagem e será encerrado.
+  
+  - Verifica os arquivos existentes no repositório e/ou servidor setado manualmente pelo usuário.
+
+  - Verifica se o repositório setado manualmente pelo usuário é o mesmo que o loop for está realmente percorrendo.
+
+  - Verifica se o nome arquivo setado pelo usuário manualmente é igual ao nome do arquivo que o loop for está percorrendo pela variável (file).
+
+  - Se ambos nomes forem iguais, então este arquivo do tipo Excel é ignorado com o comando (continue), ou seja, o arquivo é mantido no repositório.
+
+  - Caso ambos nomes sejam diferentes, então é executado o (else), e os demais arquivos serão excluídos, inclusive se no repositório haver arquivos do tipo Excel, porém, com o nome diferente do que foi setado manualmente pelo usuário.
+
+  - Todo esse bloco está dentro de um bloco principal (try) com (except). Caso o programa não consiga executar o processo de exclusão, então o (except) do (try) é acionado e exibida uma mensagem para o usuário que não foi possível realizar o processo de exclusão de arquivos.
+
+- #### Pontos para atentar ao utilziar o script:
+
+  - É necessário realizar a inserção do caminho manualmente do repositório e/ou servidor onde se deseja realizar a exclusão do arquivo.
+
+  - É necessário realizar a inserção do nome do arquivo do tipo Excel, onde este arquivo do tipo Excel será ignorado pelo script e os demais arquivos serão todos excluídos do repositório e/ou servidor.
 
 ---
 
