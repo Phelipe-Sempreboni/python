@@ -38,11 +38,15 @@
 
   - Verifica se o repositório setado manualmente pelo usuário é o mesmo que o loop for está realmente percorrendo.
 
-  - Verifica se o nome arquivo da setado pelo usuário manualmente é igual ao nome do arquivo que o loop for está percorrendo pela variável (file).
+  - Verifica se o nome arquivo setado pelo usuário manualmente é igual ao nome do arquivo que o loop for está percorrendo pela variável (file).
 
-  - 
+  - Se ambos nomes forem iguais, então este arquivo do tipo Excel é ignorado com o comando (continue), ou seja, o arquivo é mantido no repositório.
 
-  - Este script utiliza a instrução (continue), que neste caso ignora o arquivo da variável (nome_arquivo) do tipo Excel. Não esqueça de inserir o nome do arquivo.
+  - Caso ambos nomes sejam diferentes, então é executado o (else), e os demais arquivos serão excluídos, inclusive se no repositório haver arquivos do tipo Excel, porém, com o nome diferente do que foi setado manualmente pelo usuário.
+
+  - Todo esse bloco está dentro de um bloco principal (try) com (except). Caso o programa não consiga executar o processo de exclusão, então o (except) do (try) é acionado e exibida uma mensagem para o usuário que não foi possível realizar o processo de exclusão de arquivos.
+
+---
 
 - #### Pontos para atentar ao utilziar o script:
 
