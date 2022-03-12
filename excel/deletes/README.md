@@ -24,6 +24,30 @@
 
 ---
 
+- [x] 1 - delete method:
+
+- #### Função principal do script:
+
+  - Realizar a exclusão de arquivos do repositório e/ou servidor e mantém o arquivo do tipo Excel.
+
+- #### O que esse script faz ?:
+
+  - Verifica se o nome arquivo setado pelo usuário manualmente é igual ao nome do arquivo que o loop for está percorrendo pela variável (file).
+
+  - Se ambos nomes forem iguais, então este arquivo do tipo Excel é ignorado com o comando (continue), ou seja, o arquivo é mantido no repositório.
+
+  - Caso ambos nomes sejam diferentes, então é executado o (else), e os demais arquivos serão excluídos, inclusive se no repositório haver arquivos do tipo Excel, porém, com o nome diferente do que foi setado manualmente pelo usuário.
+
+- #### Pontos para atentar ao utilziar o script:
+
+  - Este é um script de (caminho fixo), ou seja, o usuário necessita realizar a alteração manualmente do local que ele necessita que seja executado este script.
+
+  - É necessário realizar a inserção do caminho manualmente do repositório e/ou servidor onde se deseja realizar a exclusão do arquivo.
+
+  - É necessário realizar a inserção do nome do arquivo do tipo Excel, onde este arquivo do tipo Excel será ignorado pelo script e os demais arquivos serão todos excluídos do repositório e/ou servidor.
+
+---
+
 - [x] 3 - delete method:
 
 - #### Função principal do script:
