@@ -46,8 +46,6 @@
 
   - Todo esse bloco está dentro de um bloco principal (try) com (except). Caso o programa não consiga executar o processo de exclusão, então o (except) do (try) é acionado e exibida uma mensagem para o usuário que não foi possível realizar o processo de exclusão de arquivos.
 
----
-
 - #### Pontos para atentar ao utilziar o script:
 
   - É necessário realizar a inserção do caminho manualmente do repositório e/ou servidor onde se deseja realizar a exclusão do arquivo.
