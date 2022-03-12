@@ -58,7 +58,7 @@
 
 - #### Função principal do script:
 
-  - Realizar a exclusão de arquivos do repositório e/ou servidor e mantém o arquivo do tipo Excel.
+  - Realizar a exclusão do arquivo do tipo Excel do repositório e/ou servidor e manter os demais arquivos com qualquer tipo de extensão.
 
 - #### O que esse script faz ?:
 
@@ -70,9 +70,9 @@
 
   - Verifica se o nome arquivo setado pelo usuário manualmente é igual ao nome do arquivo que o loop for está percorrendo pela variável (file).
 
-  - Se ambos nomes forem iguais, então este arquivo do tipo Excel é ignorado com o comando (continue), ou seja, o arquivo é mantido no repositório.
+  - Se ambos nomes forem iguais, então este arquivo do tipo Excel é excluído do repositório e/ou servidor.
 
-  - Caso ambos nomes sejam diferentes, então é executado o (else), e os demais arquivos serão excluídos, inclusive se no repositório haver arquivos do tipo Excel, porém, com o nome diferente do que foi setado manualmente pelo usuário.
+  - Caso ambos nomes sejam diferentes, então é executado o (else), e os demais arquivos serão mantidos, pois é executado o comando (continue) que ignora e mantém esses arquivos. Notar que podemos ter arquivos da extensão do tipo Excel no repositório e/ou servidor, porém, se esses arquivos não forem o mesmo do nome setado pelo usuário manualmente, então, esse arquivo será mantido.
 
   - Todo esse bloco está dentro de um bloco principal (try) com (except). Caso o programa não consiga executar o processo de exclusão, então o (except) do (try) é acionado e exibida uma mensagem para o usuário que não foi possível realizar o processo de exclusão de arquivos.
 
