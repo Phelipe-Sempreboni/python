@@ -73,10 +73,10 @@ def sap_connection():
             return connection, application, sap_gui_auto
 
         # Comando interno gerado pelo script do SAP GUI para escrever o usuário na tela do sistema.
-        session.findById("wnd[0]/usr/txtRSYST-BNAME").text = 'LSEMPREBONI'
+        session.findById("wnd[0]/usr/txtRSYST-BNAME").text = 'USER'
 
         # Comando interno gerado pelo script do SAP GUI para escrever a senha na tela do sistema.
-        session.findById("wnd[0]/usr/pwdRSYST-BCODE").text = 'Estudar123+'
+        session.findById("wnd[0]/usr/pwdRSYST-BCODE").text = 'PASS'
 
         # Comanndo para entrar efetivamente no sistema após inserção do usuário e senha.
         session.findById("wnd[0]").sendVKey(0)
