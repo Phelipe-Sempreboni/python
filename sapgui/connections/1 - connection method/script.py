@@ -1,3 +1,22 @@
+'''
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------ /
+
+Created by: Luiz Phelipe Utiama Sempreboni
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------ /
+
+Função resumida do script:
+- Realizar uma conexão com o SAP GUI.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------ /
+
+Para mais informações sobre as funções do script, consulte o arquivo README.md deste repositório.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------ \
+
+'''
+
 import win32com.client  # Módulo para criação de componentes COM (Common Object Model) em Python. Pode-se tanto criar componentes para serem utilizados por outras linguagens/aplicações (servidores) quanto criar objetos previamente existentes (clientes) criados em outras linguagens.
 import subprocess  # Módulo subprocess permite que você execute programas externos e inspecione suas saídas com facilidade.
 import time  # Módulo provê várias funções relacionadas à tempo, onde neste caso estamos utilizando para a função (sleep).
