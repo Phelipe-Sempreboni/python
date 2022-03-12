@@ -1,3 +1,22 @@
+'''
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------ /
+
+Created by: Luiz Phelipe Utiama Sempreboni
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------ /
+
+Função resumida do script:
+- Realizar a exclusão de arquivos do repositório e/ou servidor e mantém o arquivo do tipo Excel.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------ /
+
+Para mais informações sobre as funções do script, consulte o arquivo README.md deste repositório.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------ \
+
+'''
+
 # Modelo para excluir arquivos de qualquer tipo de extensão de um determinado repositório (pasta) e manter o arquivo do tipo Excel.
 # Neste caso o arquivo principal da variável (nome_arquivo) é ignorado, ou seja, mantido no repositório, e os demais arquivos serão excluídos.
 # Altere o nome das variáveis para funcionar corretamente em seu script.
