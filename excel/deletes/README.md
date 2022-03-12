@@ -24,7 +24,7 @@
 
 ---
 
-- [x] 1 - delete method:
+- [x] 3 - delete method:
 
 - #### Função principal do script:
 
@@ -54,7 +54,7 @@
 
 ---
 
-- [x] 2 - delete method:
+- [x] 4 - delete method:
 
 - #### Função principal do script:
 
