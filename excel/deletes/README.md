@@ -46,6 +46,8 @@
 
   - É necessário realizar a inserção do nome do arquivo do tipo Excel, onde este arquivo do tipo Excel será ignorado pelo script e os demais arquivos serão todos excluídos do repositório e/ou servidor.
 
+  - Para este caso não é necessário a instalação de novos módulos novos, pois, os módulos utilizados são nativos do Python. Caso ocorra algum erro relacionado a módulos, por favor, verifique se o seu Python realmente tem o módulo instalado.
+
 ---
 
 - [x] 2 - delete method:
@@ -69,7 +71,9 @@
   - É necessário realizar a inserção do caminho manualmente do repositório e/ou servidor onde se deseja realizar a exclusão do arquivo.
 
   - É necessário realizar a inserção do nome do arquivo do tipo Excel, onde este arquivo do tipo Excel será ignorado pelo script e os demais arquivos serão todos excluídos do repositório e/ou servidor.
-  - 
+
+  - Para este caso não é necessário a instalação de novos módulos novos, pois, os módulos utilizados são nativos do Python. Caso ocorra algum erro relacionado a módulos, por favor, verifique se o seu Python realmente tem o módulo instalado.
+  
 ---
 
 - [x] 3 - delete method:
@@ -102,6 +106,8 @@
 
   - É necessário realizar a inserção do nome do arquivo do tipo Excel, onde este arquivo do tipo Excel será ignorado pelo script e os demais arquivos serão todos excluídos do repositório e/ou servidor.
 
+  - Para este caso não é necessário a instalação de novos módulos novos, pois, os módulos utilizados são nativos do Python. Caso ocorra algum erro relacionado a módulos, por favor, verifique se o seu Python realmente tem o módulo instalado.
+
 ---
 
 - [x] 4 - delete method:
@@ -133,6 +139,8 @@
   - É necessário realizar a inserção do caminho manualmente do repositório e/ou servidor onde se deseja realizar a exclusão do arquivo.
 
   - É necessário realizar a inserção do nome do arquivo do tipo Excel, onde este arquivo do tipo Excel será ignorado pelo script e os demais arquivos serão todos excluídos do repositório e/ou servidor.
+
+  - Para este caso não é necessário a instalação de novos módulos novos, pois, os módulos utilizados são nativos do Python. Caso ocorra algum erro relacionado a módulos, por favor, verifique se o seu Python realmente tem o módulo instalado.
 
 ---
 
