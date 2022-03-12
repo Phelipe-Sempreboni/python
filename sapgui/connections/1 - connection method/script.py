@@ -17,10 +17,15 @@ Para mais informações sobre as funções do script, consulte o arquivo README.
 
 '''
 
+# ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #
+
+# Importação de módulos
 import win32com.client  # Módulo para criação de componentes COM (Common Object Model) em Python. Pode-se tanto criar componentes para serem utilizados por outras linguagens/aplicações (servidores) quanto criar objetos previamente existentes (clientes) criados em outras linguagens.
 import subprocess  # Módulo subprocess permite que você execute programas externos e inspecione suas saídas com facilidade.
 import time  # Módulo provê várias funções relacionadas à tempo, onde neste caso estamos utilizando para a função (sleep).
 import getpass  # Módulo para mascarar a senha quando é inserida no terminal.
+
+# ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #
 
 
 # Função criada para realizar a conexão com o SAP GUI.
@@ -79,5 +84,10 @@ def sap_connection():
 
         print(f'erro {error_2.__class__}')
 
+# ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #
 
+
+# Chamada da função para login no SAP GUI.
 sap_connection()
+
+# ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #
