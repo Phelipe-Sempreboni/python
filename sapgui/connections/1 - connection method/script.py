@@ -23,7 +23,7 @@ Para mais informações sobre as funções do script, consulte o arquivo README.
 import win32com.client  # Módulo para criação de componentes COM (Common Object Model) em Python. Pode-se tanto criar componentes para serem utilizados por outras linguagens/aplicações (servidores) quanto criar objetos previamente existentes (clientes) criados em outras linguagens.
 import subprocess  # Módulo subprocess permite que você execute programas externos e inspecione suas saídas com facilidade.
 import time  # Módulo provê várias funções relacionadas à tempo, onde neste caso estamos utilizando para a função (sleep).
-import getpass  # Módulo para mascarar a senha quando é inserida no terminal.
+import sys  # Módulo para fornecer funções e variáveis usadas para manipular diferentes partes do ambiente de tempo de execução do Python e apesar de serem completamente diferentes, muitas pessoas confundem o módulo sys e o módulo os (módulo para manipular o sistema operacional).
 
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #
 
@@ -31,6 +31,7 @@ import getpass  # Módulo para mascarar a senha quando é inserida no terminal.
 # Função criada para realizar a conexão com o SAP GUI.
 def sap_connection():
 
+    # Bloco com (try) para tentarmos executar as ações abaixo.
     try:
 
         # Caminho onde o executável do SAP GUI está locado. Varia de máquina para máquina.
@@ -71,18 +72,32 @@ def sap_connection():
             sap_gui_auto = None
             return connection, application, sap_gui_auto
 
+        # Comando interno gerado pelo script do SAP GUI para escrever o usuário na tela do sistema.
+        session.findById("wnd[0]/usr/txtRSYST-BNAME").text = 'LSEMPREBONI'
 
-        login = input('Informe seu login: ')
-        session.findById("wnd[0]/usr/txtRSYST-BNAME").text = login
+        # Comando interno gerado pelo script do SAP GUI para escrever a senha na tela do sistema.
+        session.findById("wnd[0]/usr/pwdRSYST-BCODE").text = 'Estudar123+'
 
-        password = getpass.getpass()
-        session.findById("wnd[0]/usr/pwdRSYST-BCODE").text = password
-
+        # Comanndo para entrar efetivamente no sistema após inserção do usuário e senha.
         session.findById("wnd[0]").sendVKey(0)
 
-    except Exception as error_2:
+    except Exception as error:
 
-        print(f'erro {error_2.__class__}')
+        print(f'Ocorreu um erro ao tentar realizar o processo de login no SAP GUI. '
+              f'\nPor favor, verifique e tente novamente.'
+              f'\nProcesso finalizado sem êxito.'
+              f'\nTipo do erro: {error.__class__}'
+              f'\nEssa tela será fechada em 10 segundos')
+
+        # Print para realizar as divisões entre as mensagens, visando deixar a leitura do usuário mais organizada.
+        print(
+            '\n=======================================================================================================================================================================\n')
+
+        # Pausar ou colocar para dormir a execução do script por 30 segundos até a execução do comando abaixo.
+        time.sleep(10)
+
+        # Caso ocorra o erro, então o script é encerrado e não prosseguirá para o próximo passo, assim evitando erros para o usuário posteriormente.
+        sys.exit()
 
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #
 
