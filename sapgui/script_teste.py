@@ -34,7 +34,7 @@ def sap_connection():
 
         # Aqui utilizamos a variável (application) com o método (OpenConnection).
         # Essa variável (connection) executa o módulo do SAP GUI, ou seja, o que você precisa realmente se conectar, por exemplo, CCS PRODUTIVO.
-        connection = application.OpenConnection("SAP Freire Alunos", True)
+        connection = application.OpenConnection("SAP", True)
         if not type(connection) == win32com.client.CDispatch:
             application = None
             sap_gui_auto = None
@@ -47,16 +47,18 @@ def sap_connection():
             sap_gui_auto = None
             return connection, application, sap_gui_auto
 
-        #Variáveis de login e senha dos campos do SAP.
-        login = input('Informe seu login: ')
-        password = getpass.getpass('Informe sua senha: ')
 
-        #Campos de login e senha do SAP.
+        login = input('Informe seu login: ')
         session.findById("wnd[0]/usr/txtRSYST-BNAME").text = login
+
+        password = getpass.getpass()
         session.findById("wnd[0]/usr/pwdRSYST-BCODE").text = password
+
+        session.findById("wnd[0]").sendVKey(0)
 
     except Exception as error_2:
 
         print(f'erro {error_2.__class__}')
+
 
 sap_connection()
