@@ -77,6 +77,9 @@ print('Iniciando o processo de extração de dados do SAP GUI.\n')
 # Print para realizar as divisões entre as mensagens, visando deixar a leitura do usuário mais organizada.
 print('=======================================================================================================================================================================\n')
 
+# Pausar ou colocar para dormir a execução do script por 2 segundos até a execução do comando abaixo.
+time.sleep(2)
+
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- #
 
 
@@ -184,6 +187,9 @@ try:
 
             # Print para realizar as divisões entre as mensagens, visando deixar a leitura do usuário mais organizada.
             print('=======================================================================================================================================================================\n')
+
+            # Pausar ou colocar para dormir a execução do script por 2 segundos até a execução do comando abaixo.
+            time.sleep(2)
 
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- #
 
@@ -379,8 +385,7 @@ try:
         if root == nome_caminho:
 
             # Imprimir mensagem de validação do repositório atual ao usuário.
-            print('Realizando a verificação se todos os arquivos do tipo Excel foram excluídos do repositório para prosseguir com o processo. '
-                  '\nPor favor, aguarde.\n')
+            print('Realizando a verificação se todos os arquivos do tipo Excel foram excluídos do repositório para prosseguir com o processo. Por favor, aguarde.\n')
 
             # Print para realizar as divisões entre as mensagens, visando deixar a leitura do usuário mais organizada.
             print('=======================================================================================================================================================================\n')
@@ -424,9 +429,18 @@ try:
             # Compara se ambas variáveis são iguais, que neste caso se ambas tem o valor de uma lista vazia, ou seja, igual à [].
             if localizar_extensao_1 == lista_vazia_2 and localizar_extensao_2 == lista_vazia_3:
 
+                # Imprimir mensagem de validação do repositório atual ao usuário.
+                print('Realizando a abertura e login no SAP GUI. Por favor, aguarde. \n')
+
+                # Print para realizar as divisões entre as mensagens, visando deixar a leitura do usuário mais organizada.
+                print('=======================================================================================================================================================================\n')
+
                 # Caso a cláusula seja verdadeira, ou seja, não existam arquivos do tipo Excel com as exntensões (xlsx/xlsm) no repositório, é realizada a chamada da função (sap_connection()).
                 # Ou seja, é realizada a abertura do SAP GUI e a tentativa de conexão.
                 sap_connection()
+
+                # Pausar ou colocar para dormir a execução do script por 2 segundos até a execução do comando abaixo.
+                time.sleep(2)
 
             # Caso a cláusula seja falsa, ou seja, ainda existam arquivos do tipo Excel com as exntensões (xlsx/xlsm) no repositório, é exibida uma mensagem ao usuário e o script encerrado.
             else:
