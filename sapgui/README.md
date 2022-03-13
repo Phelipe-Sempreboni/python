@@ -91,6 +91,8 @@
   - Para este caso é necessário a instalação de um módulo, que está no arquivo (requirements.txt). É possível instalar diretamente pelo Prompt de Comando se for Windows, ou também é possível instalar diretamente pelo arquivo (requirements.txt). Consulte este tutorial: https://github.com/Phelipe-Sempreboni/python/blob/main/tutorials/installing%20or%20exporting%20libraries%20with%20requirements.txt/documentation.md
 
   - IMPORTANTE: Para o módulo (getpass) que realiza a criptografia da senha digitada pelo usuário, é válido lembrar que essa criptografia só funciona com a execução do script do Python pelo terminal, ou seja, pelo Prompt de Comando. Se estiver tentando executar por uma IDLE igual o PyCharm, o módulo não conseguirá atuar. Então lembre-se, é necessário executar o script pelo terminal e/ou criando um executável do script.
+  
+  - Se estiver utilizando o PyCharm ou o VisualStudioCode (VSCode), é possível rodar também diretamente pelo terminal do IDLE. Ambas IDLE possuem um terminal do Prompt de Comando embutidos, onde é possível executar os passos abaixo no próprio terminal do IDLE. 
 
   - Para executar o script pelo terminal, realize os seguintes passos:
     - Abra o terminal do Windows.
