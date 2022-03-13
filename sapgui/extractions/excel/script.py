@@ -482,3 +482,5 @@ except Exception as error_3:
 
     # Comando para encerrar o script neste ponto, visando não haver erros nos processos seguintes.
     sys.exit()
+
+# ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- #
