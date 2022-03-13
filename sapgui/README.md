@@ -28,7 +28,7 @@
 
 - #### Função principal do script:
 
-  - Realizar o login no SAP GUI com Python.
+  - Realizar o login no SAP GUI com usuário e senha fixas com Python.
 
 - #### O que esse script faz ?:
 
