@@ -23,28 +23,6 @@ import win32com.client  # Módulo para criação de componentes COM (Common Obje
 import subprocess  # Módulo subprocess permite que você execute programas externos e inspecione suas saídas com facilidade.
 import time  # Módulo provê várias funções relacionadas à tempo, onde neste caso estamos utilizando para a função (sleep).
 import sys  # Módulo para fornecer funções e variáveis usadas para manipular diferentes partes do ambiente de tempo de execução do Python e apesar de serem completamente diferentes, muitas pessoas confundem o módulo sys e o módulo os (módulo para manipular o sistema operacional).
-import msvcrt
-
-# ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #
-
-
-def secure_password_input(prompt=''):
-    p_s = ''
-    proxy_string = [' '] * 64
-    while True:
-        sys.stdout.write('\x0D' + prompt + ''.join(proxy_string))
-        c = msvcrt.getch()
-        if c == b'\r':
-            break
-        elif c == b'\x08':
-            p_s = p_s[:-1]
-            proxy_string[len(p_s)] = " "
-        else:
-            proxy_string[len(p_s)] = "*"
-            p_s += c.decode()
-
-    sys.stdout.write('\n')
-    return p_s
 
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #
 
@@ -99,7 +77,6 @@ def sap_connection():
 
         # Comando interno gerado pelo script do SAP GUI para escrever a senha na tela do sistema.
         pwd = input('Informe a senha: ')
-        secure_password_input(pwd)
         session.findById("wnd[0]/usr/pwdRSYST-BCODE").text = pwd
 
         # Comanndo para entrar efetivamente no sistema após inserção do usuário e senha.
