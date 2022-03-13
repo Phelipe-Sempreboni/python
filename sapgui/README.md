@@ -48,6 +48,28 @@
 
 ---
 
+- [x] 2 - connection method:
+
+- #### Função principal do script:
+
+  - Realizar o login no SAP GUI com solicitação de inserção de usuário e senha sem criptografia com Python.
+
+- #### O que esse script faz ?:
+
+  - Verificar a possibilidade de um erro de forma geral desde a abertura das telas do SAP GUI até o login com o usuário e senha. Essa verificação fica em um bloco (try) com (except).
+
+  - Solicita a inserção do usuário e senha na tela do SAP GUI sem criptografia e entra na próxima tela, que seria a inicial.
+
+- #### Pontos para atentar ao utilizar o script:
+
+  - É necessário realizar a alteração da variável (path), que indica o caminho do executável (.exe) do Python na máquina que estiver alocado.
+
+  - É necessário alterar a variável (connection = application.OpenConnection("SAP", True)), onde o ("SAP") deve ser o módulo que você deseja entrar, por exemplo ("CCS PRODUTIVO"). Altere este local para seu módulo do SAP GUI.
+
+  - Para este caso é necessário a instalação de um módulo, que está no arquivo (requirements.txt). É possível instalar diretamente pelo Prompt de Comando se for Windows, ou também é possível instalar diretamente pelo arquivo (requirements.txt). Consulte este tutorial: https://github.com/Phelipe-Sempreboni/python/blob/main/tutorials/installing%20or%20exporting%20libraries%20with%20requirements.txt/documentation.md
+
+---
+
 [Acesse meu GitHub :cat:](https://github.com/Phelipe-Sempreboni)
 
 [Acesse meu LinkedIn :computer:](https://www.linkedin.com/in/luiz-phelipe-utiama-sempreboni-319902169/)
