@@ -204,7 +204,10 @@ try:
         if files == lista_vazia_1:
 
             # Imprimir mensagem abaixo para o usuário.
-            print('Não existe nenhum tipo de arquivo de arquivo neste repositório. \nPor favor, verifique o repositóro e tente novamente. \nProcesso executado sem êxito. \nEssa tela será fechada em 30 segundos. \n')
+            print('Não existe nenhum tipo de arquivo de arquivo neste repositório. '
+                  '\nPor favor, verifique o repositóro e tente novamente. '
+                  '\nProcesso executado sem êxito. '
+                  '\nEssa tela será fechada em 30 segundos. \n')
 
             # Print para realizar as divisões entre as mensagens, visando deixar a leitura do usuário mais organizada.
             print('=======================================================================================================================================================================\n')
@@ -245,7 +248,10 @@ try:
             if localizar_extensao_1 == lista_vazia_2 and localizar_extensao_2 == lista_vazia_3:
 
                 # Imprimir mensagem abaixo para o usuário.
-                print('Não existe um arquivo com a extensão do tipo (xlsx/xlsm) do excel nesse repositório. \nPor favor, verifique o repositóro e tente novamente. \nProcesso executado sem êxito. \nEssa tela será fechada em 30 segundos. \n')
+                print('Não existe um arquivo com a extensão do tipo (xlsx/xlsm) do excel nesse repositório. '
+                      '\nPor favor, verifique o repositóro e tente novamente. '
+                      '\nProcesso executado sem êxito. '
+                      '\nEssa tela será fechada em 30 segundos. \n')
 
                 # Print para realizar as divisões entre as mensagens, visando deixar a leitura do usuário mais organizada.
                 print('=======================================================================================================================================================================\n')
@@ -312,7 +318,9 @@ try:
                             # Não será impressa uma mensagem assim, pois, nos (ifs) acima já verificamos se existem arquivos do tipo de extensão (xls/xlsm).
                             # Então, caso não seja excluído um arquivo e pare neste (else), é realmente porquê não foi possível deletar o arquivo por motivo, por exemplo, de estar aberto no momento da execução do comando de remoção.
                             # Neste caso o comando será encerrado neste ponto para não prejudicar os próximos passos do processo.
-                            print('Não foi possível excluir o arquivo: ' + file + '\nPor favor, verifique, por exemplo, se o arquivo não está aberto ou outro motivo e tente novamente. \nProcesso executado sem êxito. \nEssa tela será fechada em 30 segundos. \n')
+                            print('Não foi possível excluir o arquivo: ' + file + '\nPor favor, verifique, por exemplo, se o arquivo não está aberto ou outro motivo e tente novamente. '
+                                                                                  '\nProcesso executado sem êxito. '
+                                                                                  '\nEssa tela será fechada em 30 segundos. \n')
 
                             # Print para realizar as divisões entre as mensagens, visando deixar a leitura do usuário mais organizada.
                             print('=======================================================================================================================================================================\n')
@@ -371,10 +379,14 @@ try:
         if root == nome_caminho:
 
             # Imprimir mensagem de validação do repositório atual ao usuário.
-            print('Realizando a verificação de algumas informações para prosseguir com o process.\n')
+            print('Realizando a verificação se todos os arquivos do tipo Excel foram excluídos do repositório para prosseguir com o processo. '
+                  '\nPor favor, aguarde.\n')
 
             # Print para realizar as divisões entre as mensagens, visando deixar a leitura do usuário mais organizada.
             print('=======================================================================================================================================================================\n')
+
+            # Pausar ou colocar para dormir a execução do script por 5 segundos até a execução do comando abaixo.
+            time.sleep(5)
 
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- #
 
@@ -395,7 +407,7 @@ try:
         # Logo após, a variável (localizar_extensao_1) e (lista_vazia_2) são comparadas.
         # Caso a variável (localizar_extensao_1) seja igual a variável (lista_vazia_2), então o comando irá prosseguir para o (if aninhado com este if) abaixo.
         # Este (if) quer dizer que o valor de ambas variáveis são vazias, logo, irá imprimir a mensagem abaixo para o usuário, que não existe um arquivo com a extensão (xlsx/xlsm).
-        if files != lista_vazia_1:
+        if files == lista_vazia_1 or files != lista_vazia_1:
 
             # Variável declarada como uma lista vazia, para conseguirmos comparar caso a variável (files) seja ou não vazia, que no caso do (elif) acima, o foco é comparar se (files) não é vazio.
             lista_vazia_2 = []
@@ -412,11 +424,18 @@ try:
             # Compara se ambas variáveis são iguais, que neste caso se ambas tem o valor de uma lista vazia, ou seja, igual à [].
             if localizar_extensao_1 == lista_vazia_2 and localizar_extensao_2 == lista_vazia_3:
 
+                # Caso a cláusula seja verdadeira, ou seja, não existam arquivos do tipo Excel com as exntensões (xlsx/xlsm) no repositório, é realizada a chamada da função (sap_connection()).
+                # Ou seja, é realizada a abertura do SAP GUI e a tentativa de conexão.
                 sap_connection()
 
+            # Caso a cláusula seja falsa, ou seja, ainda existam arquivos do tipo Excel com as exntensões (xlsx/xlsm) no repositório, é exibida uma mensagem ao usuário e o script encerrado.
             else:
 
-                print('Ainda existem arquivos do tipo Excel no repositório.')
+                # Imprimir mensagem abaixo para o usuário.
+                print('Ainda existem arquivos do tipo Excel no repositório. '
+                      '\nPor favor, verifique e tente novamente. '
+                      '\nProcesso executado sem êxito. '
+                      '\nEssa tela será fechada em 30 segundos. \n')
 
                 # Print para realizar as divisões entre as mensagens, visando deixar a leitura do usuário mais organizada.
                 print('=======================================================================================================================================================================\n')
@@ -431,14 +450,15 @@ try:
 
 # Este é o (except) do (try) geral, ou seja, é o que fecha o primeiro comando (try) aberto.
 # Caso nenhuma das verificações dentro do (try) geral for verdadeira, então irá ativar este (except).
-except Exception as error_2:
+except Exception as error_3:
 
     # Print para realizar as divisões entre as mensagens, visando deixar a leitura do usuário mais organizada.
     print('=======================================================================================================================================================================\n')
 
+    # Imprimir mensagem abaixo para o usuário.
     print(f'Não foi possível realizar o processo de abertura e login no SAP GUI. '
           f'\nPor favor, verifique e tente novamente. ' 
-          f'\nTipo do erro: {error_2.__class__}\n')
+          f'\nTipo do erro: {error_3.__class__}\n')
 
     # Print para realizar as divisões entre as mensagens, visando deixar a leitura do usuário mais organizada.
     print('=======================================================================================================================================================================\n')
