@@ -92,17 +92,17 @@
 
   - IMPORTANTE: Para o módulo (getpass) que realiza a criptografia da senha digitada pelo usuário, é válido lembrar que essa criptografia só funciona com a execução do script do Python pelo terminal, ou seja, pelo Prompt de Comando. Se estiver tentando executar por uma IDLE igual o PyCharm, o módulo não conseguirá atuar. Então lembre-se, é necessário executar o script pelo terminal e/ou criando um executável do script.
   
-  - Se estiver utilizando o PyCharm ou o VisualStudioCode (VSCode), é possível rodar também diretamente pelo terminal do IDLE. Ambas IDLE possuem um terminal do Prompt de Comando embutidos, onde é possível executar os passos abaixo no próprio terminal do IDLE. 
+    - Se estiver utilizando o PyCharm ou o VisualStudioCode (VSCode), é possível rodar também diretamente pelo terminal do IDLE. Ambas IDLE possuem um terminal do Prompt de Comando embutidos, onde é possível executar os passos abaixo no próprio terminal do IDLE. 
 
-  - Para executar o script pelo terminal, realize os seguintes passos:
-    - Abra o terminal do Windows.
-    - Navegue até o repositório (pasta) que o script estiver locado.
-    - Digite o comando: python nome_script.py
-    - Aperte a tecla ENTER do teclado.
-    - Dessa maneira o script será executado.
-    - Exemplo: C:\Users\ConexaoSAP\> python .\script.py ou C:\Users\ConexaoSAP\> python script.py
+    - Para executar o script pelo terminal, realize os seguintes passos:
+      - Abra o terminal do Windows.
+      - Navegue até o repositório (pasta) que o script estiver locado.
+      - Digite o comando: python nome_script.py
+      - Aperte a tecla ENTER do teclado.
+      - Dessa maneira o script será executado.
+      - Exemplo: C:\Users\ConexaoSAP\> python .\script.py ou C:\Users\ConexaoSAP\> python script.py
 
-  - Para gerar um executável do Python, consulte este tutorial:
+    - Para gerar um executável do Python, consulte este tutorial:
 
 ---
 
