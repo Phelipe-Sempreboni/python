@@ -158,6 +158,21 @@ def sap_connection_and_transaction():
         # Essa data está no primeiro bloco do SAP GUI na transação, no bloco nomeado como (Notification Selection).
         session.findById("wnd[0]/usr/ctxtDATUB").text = data_final
 
+        # Comando para executar a transação.
+        session.findById("wnd[0]/tbar[1]/btn[8]").press()
+
+        # Comando para selecionar todos os dados que foram retornados após executar a transação.
+        session.findById("wnd[0]/usr/cntlGRID1/shellcont/shell").selectAll()
+
+        # Comando para abrir o menu de opções e selecionar a exportação de dados, que neste caso será exportação com o excel.
+        session.findById("wnd[0]/usr/cntlGRID1/shellcont/shell").contextMenu()
+
+        # Comando para selecionar dentro do menu o tipo da exportação, que será uma extensão excel.
+        session.findById("wnd[0]/usr/cntlGRID1/shellcont/shell").selectContextMenuItem("&XXL")
+
+        # Comando para executar e realizar a extração dos dados.
+        session.findById("wnd[1]/tbar[0]/btn[0]").press()
+
 
     # Caso ocorra qualquer tipo de erro no bloco deste (try), então será acionado o (except), impressa a mensagem abaixo e o programa será encerrado.
     except Exception as error_1:
