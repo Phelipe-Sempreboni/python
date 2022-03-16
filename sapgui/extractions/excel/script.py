@@ -144,6 +144,21 @@ def sap_connection_and_transaction():
         # Comanndo para entrar efetivamente no sistema após inserção do usuário e senha.
         session.findById("wnd[0]").sendVKey(0)
 
+        # Comando para escrever a transação IW59.
+        session.findById("wnd[0]/tbar[0]/okcd").text = "iW59"
+
+        # Comanndo para entrar efetivamente na transação IW59.
+        session.findById("wnd[0]").sendVKey(0)
+
+        # Comando para preencher a data de notificação inicial com a varíável (data_inicial), que está pré definida no início do script.
+        # Essa data está no primeiro bloco do SAP GUI na transação, no bloco nomeado como (Notification Selection).
+        session.findById("wnd[0]/usr/ctxtDATUV").text = data_inicial
+
+        # Comando para preencher a data de notificação final com a varíável (data_final), que está pré definida no início do script.
+        # Essa data está no primeiro bloco do SAP GUI na transação, no bloco nomeado como (Notification Selection).
+        session.findById("wnd[0]/usr/ctxtDATUB").text = data_final
+
+
     # Caso ocorra qualquer tipo de erro no bloco deste (try), então será acionado o (except), impressa a mensagem abaixo e o programa será encerrado.
     except Exception as error_1:
 
