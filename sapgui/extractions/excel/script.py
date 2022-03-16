@@ -85,8 +85,8 @@ print('Iniciando o processo de extração de dados do SAP GUI.\n')
 # Print para realizar as divisões entre as mensagens, visando deixar a leitura do usuário mais organizada.
 print('=======================================================================================================================================================================\n')
 
-# Pausar ou colocar para dormir a execução do script por 2 segundos até a execução do comando abaixo.
-time.sleep(2)
+# Pausar ou colocar para dormir a execução do script por 5 segundos até a execução do comando abaixo.
+time.sleep(5)
 
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- #
 
@@ -173,6 +173,28 @@ def sap_connection_and_transaction():
         # Comando para executar e realizar a extração dos dados.
         session.findById("wnd[1]/tbar[0]/btn[0]").press()
 
+        # Comando para definir o caminho para onde a extração de dados no formato excel será alocada.
+        session.findById("wnd[1]/usr/ctxtDY_PATH").text = nome_caminho
+
+        # Comando para definir o nome do arquivo no formato excel.
+        session.findById("wnd[1]/usr/ctxtDY_FILENAME").text = nome_arquivo_principal
+
+        # Comando para executar e realizar a exportação dos dados no formato excel para o repositório de destino.
+        session.findById("wnd[1]/tbar[0]/btn[0]").press()
+
+        # Pausar ou colocar para dormir a execução do script por 10 segundos até a execução do comando abaixo.
+        # Neste caso, é para o sistema conseguir responder à tempo de fechar o arquivo Excel, pois, se o arquivo for muito grande a máquina "fraca", então pode travar o excel e o processo do script.
+        time.sleep(10)
+
+        # Variável que cria a aplicação do excel para utilização.
+        excel = win32com.client.Dispatch('Excel.Application')
+
+        # Comando para desativar os possíveis alertas quando fechar o excel.
+        excel.DisplayAlerts = False
+
+        # Comando para sair do excel.
+        excel.Quit()
+
 
     # Caso ocorra qualquer tipo de erro no bloco deste (try), então será acionado o (except), impressa a mensagem abaixo e o programa será encerrado.
     except Exception as error_1:
@@ -217,6 +239,9 @@ try:
             # Imprimir mensagem de validação do repositório atual ao usuário.
             print('Validação do repositório atual: ' + root + '.\n')
 
+            # Pausar ou colocar para dormir a execução do script por 5 segundos até a execução do comando abaixo.
+            time.sleep(5)
+
             # Print para realizar as divisões entre as mensagens, visando deixar a leitura do usuário mais organizada.
             print('=======================================================================================================================================================================\n')
 
@@ -226,8 +251,8 @@ try:
             # Print para realizar as divisões entre as mensagens, visando deixar a leitura do usuário mais organizada.
             print('=======================================================================================================================================================================\n')
 
-            # Pausar ou colocar para dormir a execução do script por 2 segundos até a execução do comando abaixo.
-            time.sleep(2)
+            # Pausar ou colocar para dormir a execução do script por 5 segundos até a execução do comando abaixo.
+            time.sleep(5)
 
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- #
 
@@ -346,6 +371,9 @@ try:
                             # Print para realizar as divisões entre as mensagens, visando deixar a leitura do usuário mais organizada.
                             print('=======================================================================================================================================================================\n')
 
+                            # Pausar ou colocar para dormir a execução do script por 3 segundos até a execução do comando abaixo.
+                            time.sleep(3)
+
                         # Este (elif) verificar se os arquivos do repositório tem extensões diferente de (xlsx/xlsm) do tipo excel.
                         # Caso o repositório contenha arquivos que não sejam dessas extensões, então executará o comando (continue) abaixo.
                         # O comando (continue) ignora os arquivos que não tem a extensão do tipo (xlsx/xlsm), ou seja, sem fazer nenhuma alteração, no caso, remoção de arquivos.
@@ -403,9 +431,9 @@ except Exception as error_2:
 
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- #
 
-# Pausar ou colocar para dormir a execução do script por 10 segundos até a execução do comando abaixo.
+# Pausar ou colocar para dormir a execução do script por 5 segundos até a execução do comando abaixo.
 # O comando abaixo é para verificação, abertura e login do SAP GUI.
-time.sleep(10)
+time.sleep(5)
 
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- #
 
@@ -468,7 +496,7 @@ try:
             if localizar_extensao_1 == lista_vazia_2 and localizar_extensao_2 == lista_vazia_3:
 
                 # Imprimir mensagem de validação do repositório atual ao usuário.
-                print('Realizando a abertura e login no SAP GUI. Por favor, aguarde. \n')
+                print('Realizando a abertura, login e processo de extração de dados no SAP GUI. Por favor, aguarde. \n')
 
                 # Print para realizar as divisões entre as mensagens, visando deixar a leitura do usuário mais organizada.
                 print('=======================================================================================================================================================================\n')
@@ -477,8 +505,8 @@ try:
                 # Ou seja, é realizada a abertura do SAP GUI e a tentativa de conexão.
                 sap_connection_and_transaction()
 
-                # Pausar ou colocar para dormir a execução do script por 2 segundos até a execução do comando abaixo.
-                time.sleep(2)
+                # Pausar ou colocar para dormir a execução do script por 5 segundos até a execução do comando abaixo.
+                time.sleep(5)
 
             # Caso a cláusula seja falsa, ou seja, ainda existam arquivos do tipo Excel com as exntensões (xlsx/xlsm) no repositório, é exibida uma mensagem ao usuário e o script encerrado.
             else:
