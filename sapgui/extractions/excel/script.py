@@ -76,6 +76,12 @@ nome_txt_caminho = nome_caminho + nome_txt
 
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- #
 
+# Variável que cria a aplicação do excel para utilização.
+# Essa variável será utilizada no na função (sap_connection_and_transaction) para fechar o excel ao final de cada extração que o SAP GUI realizar, pois toda vez que é realizada uma extração, é aberto o arquivo também.
+excel = win32com.client.Dispatch('Excel.Application')
+
+# ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- #
+
 # Print para realizar as divisões entre as mensagens, visando deixar a leitura do usuário mais organizada.
 print('=======================================================================================================================================================================\n')
 
@@ -182,19 +188,15 @@ def sap_connection_and_transaction():
         # Comando para executar e realizar a exportação dos dados no formato excel para o repositório de destino.
         session.findById("wnd[1]/tbar[0]/btn[0]").press()
 
-        # Pausar ou colocar para dormir a execução do script por 10 segundos até a execução do comando abaixo.
+        # Pausar ou colocar para dormir a execução do script por 5 segundos até a execução do comando abaixo.
         # Neste caso, é para o sistema conseguir responder à tempo de fechar o arquivo Excel, pois, se o arquivo for muito grande a máquina "fraca", então pode travar o excel e o processo do script.
-        time.sleep(10)
-
-        # Variável que cria a aplicação do excel para utilização.
-        excel = win32com.client.Dispatch('Excel.Application')
+        #time.sleep(5)
 
         # Comando para desativar os possíveis alertas quando fechar o excel.
         excel.DisplayAlerts = False
 
         # Comando para sair do excel.
         excel.Quit()
-
 
     # Caso ocorra qualquer tipo de erro no bloco deste (try), então será acionado o (except), impressa a mensagem abaixo e o programa será encerrado.
     except Exception as error_1:
