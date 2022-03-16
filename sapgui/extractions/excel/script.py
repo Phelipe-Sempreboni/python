@@ -84,7 +84,7 @@ time.sleep(2)
 
 
 # Função criada para realizar a conexão com o SAP GUI.
-def sap_connection():
+def sap_connection_and_transaction():
 
     # Bloco com (try) para tentarmos executar as ações abaixo.
     try:
@@ -144,7 +144,7 @@ def sap_connection():
             '\n=======================================================================================================================================================================\n')
 
         # Mensagem impressa para na tela para o usuário.
-        print(f'Ocorreu um erro ao tentar realizar o processo de login no SAP GUI. '
+        print(f'Ocorreu um erro ao tentar realizar o processo no SAP GUI. '
               f'\nPor favor, verifique e tente novamente.'
               f'\nProcesso finalizado sem êxito.'
               f'\nTipo do erro: {error_1.__class__}'
@@ -437,7 +437,7 @@ try:
 
                 # Caso a cláusula seja verdadeira, ou seja, não existam arquivos do tipo Excel com as exntensões (xlsx/xlsm) no repositório, é realizada a chamada da função (sap_connection()).
                 # Ou seja, é realizada a abertura do SAP GUI e a tentativa de conexão.
-                sap_connection()
+                sap_connection_and_transaction()
 
                 # Pausar ou colocar para dormir a execução do script por 2 segundos até a execução do comando abaixo.
                 time.sleep(2)
