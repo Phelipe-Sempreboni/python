@@ -37,6 +37,14 @@ data_atual = data.strftime('%d.%m.%Y')
 
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- #
 
+# Variável da data inicial e da data final para inserção nos campos que exigem datas.
+# Essa data fica pré definida para facilitar o preenchimento no SAP GUI e controle de variáveis no script.
+# Notar que a data_final é a mesma da data_atual, mas pode ser alterado.
+data_inicial = '01.10.2020'
+data_final = data_atual
+
+# ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- #
+
 # Variável da hora atual para inserção nos campos do SAP GUI, neste caso a variável (hora_atual).
 # Essa hora fica pré definida para facilitar o preenchimento no SAP GUI e controle de variáveis no script.
 hora_atual = time.strftime('%Hh%M', time.localtime())
@@ -51,13 +59,13 @@ nome_caminho = r'C:\Windows\Temp\testes'
 
 # Variável com o nome do arquivo que será salvo na extração do SAP GUI.
 # Esse caminho fica pré definido para facilitar o preenchimento no SAP GUI e controle de variáveis no script.
-nome_arquivo_principal = r'\Notas - Principal.xlsx'
+nome_arquivo_principal = r'\Arquivo_1.xlsx'
 
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- #
 
 # Variável com o nome do arquivo que será salvo na extração do SAP GUI. Neste caso, seria por exemplo, um arquivo complementar da extração ou um segundo arquivo de extração.
 # Esse caminho fica pré definido para facilitar o preenchimento no SAP GUI e controle de variáveis no script.
-nome_arquivo_complemento = r'\Notas - Complemento.xlsx'
+nome_arquivo_complemento = r'\Arquivo_2.xlsx'
 
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- #
 
