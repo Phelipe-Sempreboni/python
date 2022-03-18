@@ -24,6 +24,7 @@ import sys  # Módulo para fornecer funções e variáveis usadas para manipular
 import os  # Módulo para fornecer acesso a funções específicas do sistema para lidar com o sistema de arquivos, processos, planejador, etc.
 import subprocess  # Módulo subprocess permite que você execute programas externos e inspecione suas saídas com facilidade.
 import time  # Módulo provê várias funções relacionadas à tempo, onde neste caso estamos utilizando para a função (sleep).
+import psutil  # Módulo de plataforma cruzada Python usada para acessar detalhes do sistema e utilitários de processo. É usado para controlar a utilização de vários recursos no sistema
 from datetime import datetime  # Módulo fornece classes para manipular datas e tempo de forma simples ou complexas. Apesar de cálculos aritméticos com data e tempo serem suportados, o foco da implementação está na extração eficiente de atributo para formatar resultados e manipulação.
 
 
@@ -76,12 +77,6 @@ nome_txt_caminho = nome_caminho + nome_txt
 
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- #
 
-# Variável que cria a aplicação do excel para utilização.
-# Essa variável será utilizada no na função (sap_connection_and_transaction) para fechar o excel ao final de cada extração que o SAP GUI realizar, pois toda vez que é realizada uma extração, é aberto o arquivo também.
-excel = win32com.client.Dispatch('Excel.Application')
-
-# ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- #
-
 # Print para realizar as divisões entre as mensagens, visando deixar a leitura do usuário mais organizada.
 print('=======================================================================================================================================================================\n')
 
@@ -93,6 +88,43 @@ print('=========================================================================
 
 # Pausar ou colocar para dormir a execução do script por 5 segundos até a execução do comando abaixo.
 time.sleep(5)
+
+# ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- #
+
+
+# Função criada para realizar a finalização processo do excel diretamente na aplicação do gerenciador de tarefas.
+def close_excel():
+
+    # Bloco com (try) para tentarmos executar as ações abaixo.
+    try:
+
+        # loop for para verificar a existência do processo do windows (EXCEL.EXE).
+        for processos in psutil.process_iter():
+
+            # Atribuição de valor a variável (processos_gerais), onde o valor recebido é o processo do windows, e aqui, são todos os processos atuais.
+            processos_gerais = processos.as_dict(attrs=['name'])
+
+            # Executar caso a verificação seja verdadeira.
+            # Caso o processo do windows que está sendo verificado seja o (EXCEL.EXE), então executar o script abaixo.
+            # Encerrando a aplicação do excel diretamente no gerenciador de tarefas caso tenha e/ou ainda esteja ativo.
+            if processos_gerais == {'name': 'EXCEL.EXE'} or processos_gerais == {'name': 'EXCEL.exe'} or processos_gerais == {'name': 'excel.EXE'} or processos_gerais == {'name': 'excel.exe'}:
+
+                # Finaliza o processo no windows (EXCEL.EXE).
+                os.system('TASKKILL /F /IM EXCEL.EXE\n')
+
+                print('\n=======================================================================================================================================================================\n')
+
+            # Executar caso a verificação for falsa.
+            else:
+
+                # Continua a execução script.
+                pass
+
+    # Utilizando o (except) com (Exception) para capturar o erro e imprimir na tela pra o usuário.
+    except Exception as error_4:
+
+        # Caso haja erro na finalização da aplicação do Excel, então exibirá a mensagem para ao usuário.
+        print(f'Não foi possível finalizar o processo do Excel. \nTipo do erro: {error_4.__class__}\n')
 
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- #
 
@@ -190,13 +222,16 @@ def sap_connection_and_transaction():
 
         # Pausar ou colocar para dormir a execução do script por 5 segundos até a execução do comando abaixo.
         # Neste caso, é para o sistema conseguir responder à tempo de fechar o arquivo Excel, pois, se o arquivo for muito grande a máquina "fraca", então pode travar o excel e o processo do script.
-        #time.sleep(5)
+        time.sleep(5)
 
-        # Comando para desativar os possíveis alertas quando fechar o excel.
-        excel.DisplayAlerts = False
+        # Executa a função para realizar a finalização processo do excel diretamente na aplicação do gerenciador de tarefas.
+        close_excel()
 
-        # Comando para sair do excel.
-        excel.Quit()
+        # Encerra a tela de login do SAP.
+        session.findById("wnd[0]/tbar[0]/btn[3]").press()
+        session.findById("wnd[0]/tbar[0]/btn[3]").press()
+        session.findById("wnd[0]").close()
+        session.findById("wnd[1]/usr/btnSPOP-OPTION1").press()
 
     # Caso ocorra qualquer tipo de erro no bloco deste (try), então será acionado o (except), impressa a mensagem abaixo e o programa será encerrado.
     except Exception as error_1:
