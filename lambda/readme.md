@@ -61,11 +61,18 @@ Notar acima que temos a mesma função, porém uma escrita com uma função decl
 
 ---
 
+Diferença entre _def_ e _lambda_ para criar funções:
 
+- _def_ -> Cria um objeto e atribui um nome a ele (nome da funçã), exemplo "def potencia()".
 
+- _lambda_ -> Cria um objeto, mas o retorna (return) como um resultado em tempo de execução, ou podemos também dizer ad-hoc.
 
+---
 
+[Acesse meu GitHub :cat:](https://github.com/Phelipe-Sempreboni)
 
+[Acesse meu LinkedIn :computer:](https://www.linkedin.com/in/luiz-phelipe-utiama-sempreboni-319902169/)
 
+---
 
-
+_Espero ajudar_ :smiley:
