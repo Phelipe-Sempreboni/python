@@ -2,7 +2,7 @@
 
 ----
 
-### Repositório para informações e apoio de Python, com informações gerais e para dados.
+### Repositório destinado para diversas informações, tutoriais e apoio com Python !
 
 ---
 
