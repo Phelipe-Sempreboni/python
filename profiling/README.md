@@ -10,9 +10,9 @@ Pandas Profiling é uma biblioteca de código aberto que pode gerar poderosos re
 
 Para cada coluna do dataset serão apresentados os seguintes dados estatísticos:
 
-- **Inferência do tipo de dado:** Detecta o tipo de coluna em um dataframe.
+- **Inferência do tipo de dado:** Detecta os tipos de colunas em um dataframe.
 
-- **Descrição de variáveis:** Descreve o tipo, valores ausentes, valores únicos e valores frequentes.
+- **Descrição de variáveis:** Descreve o tipo, valores ausentes, valores únicos/exclusivos e valores frequentes.
 
 - **Estatísticas dos quartis:** Valores mínimos, Q1, média, Q3, máximo, variação.
 
