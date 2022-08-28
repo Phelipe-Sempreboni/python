@@ -1,7 +1,17 @@
 {
   "data_asset_type": null,
   "expectation_suite_name": "suite_training_two",
-  "expectations": [],
+  "expectations": [
+    {
+      "expectation_type": "expect_column_values_to_be_between",
+      "kwargs": {
+        "column": "passenger_count",
+        "max_value": 6,
+        "min_value": 1
+      },
+      "meta": {}
+    }
+  ],
   "ge_cloud_id": null,
   "meta": {
     "citations": [
