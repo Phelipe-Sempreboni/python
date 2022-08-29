@@ -17,6 +17,31 @@
         "column": "vendor_id"
       },
       "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_between",
+      "kwargs": {
+        "column": "payment_type",
+        "max_value": 4,
+        "min_value": 1
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_unique",
+      "kwargs": {
+        "column": "vendor_id"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_between",
+      "kwargs": {
+        "column": "vendor_id",
+        "max_value": 4,
+        "min_value": 1
+      },
+      "meta": {}
     }
   ],
   "ge_cloud_id": null,
