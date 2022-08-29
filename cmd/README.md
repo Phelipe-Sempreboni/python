@@ -8,6 +8,10 @@
 
 ---
 
+- [x] Notar que são comandos destinados para utilização com o terminal do Windows.
+
+---
+
 - [x] Normalmente teremos os scripts na extensão _**.py**_ e _**ipynb**_ para facilitar o entendimento e utilização por todos :vulcan_salute:
 
 ---
