@@ -8,6 +8,10 @@
 
 ---
 
+- [x] Normalmente teremos os scripts na extensão _**.py**_ e _**ipynb**_ para facilitar o entendimento e utilização por todos :vulcan_salute:
+
+---
+
 #### Fique à vontade nesse repositório :vulcan_salute:
 
 ---
