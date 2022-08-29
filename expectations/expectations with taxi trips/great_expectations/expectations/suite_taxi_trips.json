@@ -10,6 +10,13 @@
         "min_value": 1
       },
       "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "vendor_id"
+      },
+      "meta": {}
     }
   ],
   "ge_cloud_id": null,
