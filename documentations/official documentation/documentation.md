@@ -1,3 +1,7 @@
-# Link para documentação oficial do Python.
+## Link para documentação oficial do Python.
 
-# https://docs.python.org/3/
+---
+
+## https://docs.python.org/3/
+
+---
