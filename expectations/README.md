@@ -6,6 +6,10 @@
 
 ### O dataset pode ser uma base de dados, uma tabelas, arquivos csv, entre outros.
 
+### Existem mais de 50 expectativas e/ou regras para utilização.
+
+### Este tipo de biblioteca é muito útil para aplicação de expectativas/regras de qualidade.
+
 ---
 
 #### Essa biblioteca é muito útil para aplicação de expectativas ou podemos chamar também de regras para simplificar o assunto, como: 
@@ -16,14 +20,6 @@
   - Verificar a existência de valores entre um determinado intervalo de valores.
   - Aplicação de alertas com base nas expectativas/regras.
   - Entre outras entre outros.
-
----
-
-#### Existem mais de 50 expectativas e/ou regras para utilização.
-
----
-
-#### Este tipo de biblioteca é muito útil para aplicação de expectativas/regras de qualidade.
 
 ---
 
