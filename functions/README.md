@@ -1,10 +1,10 @@
 ---
 
-## Repositório destinado para informações sobre _**built-in functions**_ no Python, que seriam funções incorpordas nativamente no Python.
+### Repositório destinado para informações e scripts sobre _**built-in functions**_ e _**functions**_ em geral no Python, que seriam funções incorpordas nativamente na linguagem de programação e outras que serão criadas para testes, aplicações e utilizações em geral.
 
 ---
 
-- [x] Neste repositório haverá informações sobre _**built-in functions**_ no Python, que seriam as bibliotecas incorpordas nativamente no Python.
+- [x] Neste repositório haverá informações e scripts sobre _**built-in functions**_ e _**functions**_ em geral no Python, que seriam funções incorpordas nativamente na linguagem de programação e outras que serão criadas para testes, aplicações e utilizações em geral.
 
 ---
 
