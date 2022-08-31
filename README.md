@@ -2,13 +2,20 @@
 
 ----
 
-### Repositório destinado para diversas informações, tutoriais e apoio com Python !
+### Repositório destinado para informações, tutoriais, scripts, entre outros assuntos e tópicos de apoio sobre o Python.
 
 ---
 
-Criei esse repositório para compartilhar informações de Python e melhorar os meus conhecimentos de forma contínua. Meu foco é em Ciência de Dados/Business Intelligence, onde a ferramenta Python é muito utilizada para análise exploratória de dados, porém, haverão informações gerais, pois, todo aprendizado é bem vindo! Compartilharei minha caminhada no aprendizado dessa ferramenta, tanto no trabalho, estudos, pesquisas na Web, fórum, etc.
+#### Esse repositório foi criado para compartilhar informações, tutoriais, scripts, entre outros assuntos e tópicos de apoio sobre o Python.
 
-Espero que esse repositório contribua para as pessoas que tiverem interesse e/ou curiosidade do assunto.
+---
+
+
+#### Normalmente teremos os scripts na extensão _**.py**_ e _**ipynb**_ para facilitar o entendimento e utilização por todos :vulcan_salute:
+
+---
+
+#### Fique à vontade nesse repositório :vulcan_salute:
 
 ---
 
