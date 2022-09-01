@@ -23,6 +23,3 @@
 ---
 
 _Espero ajudar_ :smiley:
-
-
-Python  - W3Schools
