@@ -1,0 +1,1 @@
+Testando a gravacao de arquivos no Python em formato .txt. Acrescentado este texto no arquivo atual.

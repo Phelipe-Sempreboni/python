@@ -1,0 +1,4 @@
+Olá, este arquivo foi gerado pelo próprio Jupyter Notebook.
+Podemos gerar quantas linhas quisermos e o Jupypter gera o arquivo final.
+Notar que este comando é do Jupyter Notebook e só irá funcionar na ferramenta.
+Se tentar executar no Python não irá funcionar, pois é nativo do Jupyter Notebook.
