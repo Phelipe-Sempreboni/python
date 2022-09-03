@@ -1,10 +1,10 @@
 ---
 
-## Repositório destinado para informações, tutoriais, manuais e scripts Python com o banco de dados MySQL.
+## Repositório destinado para informações, tutoriais, manuais e scripts Python com o banco de dados Teradata.
 
 ---
 
-- [x] Neste repositório teremos informações, tutoriais, manuais e scripts Python com o banco de dados MySQL.
+- [x] Neste repositório teremos informações, tutoriais, manuais e scripts Python com o banco de dados Teradata.
 
 ---
 
